@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import "@/styles/auth.css";
 import React from "react";
 
+// test
 // eslint-disable-next-line react/function-component-definition
 const App: AppType = ({ Component, pageProps }: AppProps) => {
     return (
