@@ -1,22 +1,22 @@
 import React from "react";
-import { Link } from "next/link";
-import Footer from "./Footer/Bottom/index";
+// import { Link } from "next/link";
+// import Footer from "./Footer/Bottom/index";
 import styles from "./demo.module.scss";
-import NavBar from "./Navbar/index";
-import SideBarMenu from "./SideBarMenu/index";
+// import NavBar from "./Navbar/index";
+// import SideBarMenu from "./SideBarMenu/index";
 
 const {
     headerWrapper,
     mainContainer,
     content,
-    settingsSideNav,
-    accountSettingsSideNavWrapper,
-    accountSettingsSideNavList,
-    accountSettingsSideNavListSub,
-    accountSettingsSideNavListItem,
-    svg,
-    active,
-    icon,
+    // settingsSideNav,
+    // accountSettingsSideNavWrapper,
+    // accountSettingsSideNavList,
+    // accountSettingsSideNavListSub,
+    // accountSettingsSideNavListItem,
+    // svg,
+    // active,
+    // icon,
     mainSideNav,
     accountSettingsWrapper,
     accountSettingsTitle,
@@ -34,12 +34,10 @@ const {
 export default function Demo() {
     return (
         <div>
-            <div className={headerWrapper}>
-                <NavBar />
-            </div>
+            <div className={headerWrapper}>{/* <NavBar /> */}</div>
             <div className={mainContainer}>
                 <div className={content}>
-                    <SideBarMenu />
+                    {/* <SideBarMenu /> */}
                     <div className={mainSideNav}>
                         <div className={accountSettingsWrapper}>
                             <h4 className={accountSettingsTitle}>Account</h4>
@@ -206,7 +204,7 @@ export default function Demo() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }
