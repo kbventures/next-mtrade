@@ -1,14 +1,14 @@
 import React from "react";
-import styles from "./footer.module.scss";
+// import styles from "./footer.module.scss";
 // import Bottom from "./Bottom";
 
-const { FooterWrapper } = styles;
+// const { FooterWrapper } = styles;
 
 export default function index() {
     return (
         <div>
             {/* <FooterExtra /> */}
-            <div className={FooterWrapper}>
+            <div>
                 {/* <FooterTop />
                                 <FooterContent /> */}
                 {/* <Bottom /> */}
