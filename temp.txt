@@ -4,6 +4,7 @@ USE MOCK DATA TO AND CONNECT IT TO UX/UI
 
 Starting giving functionalities to your data Set Mock which mimics kraken api data Set
 UX/UI to add kraken api
+Create Cron job to keep superbase alive
 Make Video
 
 
@@ -89,3 +90,11 @@ Example closed trade object:
   },
   count: 1
 }
+
+
+Plan:
+100Hours Project --> Enough for a 2 Minute Video
+Blog --> V1 Published
+OS --> Biodrop --> CCXT 
+Docker course --> AWS Certification
+Freelance Project 

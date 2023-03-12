@@ -1,28 +1,34 @@
+// pages/home/trades/index.tsx
+
 import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Footer from "./Footer/index";
-import styles from "./home.module.scss";
-import SideBarMenu from "./SideBarMenu/index";
-import NavBar from "./NavBar";
-import MainSideNav from "./MainSideNav";
+import TradesComponent from "@/components/Trades";
+import Footer from "../Footer/index";
+import styles from "../home.module.scss";
+import SideBarMenu from "../SideBarMenu/index";
+import NavBar from "../NavBar";
 
 const { headerWrapper, mainContainer, content } = styles;
 
-export default function Home() {
-    const { data: session } = useSession();
+function TradesPage() {
+    const { data: session, status } = useSession();
     const router = useRouter();
 
     useEffect(() => {
+        if (status === "loading") return; // Don't perform redirection while session is loading
+
         if (!session) {
             router.push("/"); // Redirect to the homepage if not authenticated
         }
-    }, [session, router]);
+    }, [session, router, status]);
 
-    if (!session) {
-        return null; // Return null to prevent rendering if not authenticated
+    if (status === "loading") {
+        // Optionally, display a loading indicator while session is loading
+        return <div>Loading...</div>;
     }
+
     return (
         <div>
             <div className={headerWrapper}>
@@ -31,7 +37,7 @@ export default function Home() {
             <div className={mainContainer}>
                 <div className={content}>
                     <SideBarMenu />
-                    <MainSideNav />
+                    <TradesComponent /> {/* Render your TradesComponent */}
                 </div>
             </div>
             <Footer />
@@ -40,12 +46,11 @@ export default function Home() {
 }
 
 export async function getServerSideProps({ locale }: { locale: string }) {
-    // Fetch data from your API here and pass it as props
-    //   const userData = await fetchDataFromAPI()
-
     return {
         props: {
             ...(await serverSideTranslations(locale, "common")),
         },
     };
 }
+
+export default TradesPage;

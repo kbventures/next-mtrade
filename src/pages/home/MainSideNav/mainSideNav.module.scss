@@ -1,8 +1,4 @@
-@import '../../styles/global.module.scss';
-
-.content > :nth-child(2) {
-    flex: 1; /* Make the second child take up the remaining space */
-  }
+@import '../../../styles/global.module.scss';
 
 .backGroundColor{
     background-color: red;

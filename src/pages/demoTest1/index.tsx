@@ -6,7 +6,7 @@ import SideBarMenu from "./SideBarMenu/index";
 import NavBar from "./NavBar";
 // import MainSideNav from "./MainSideNav";
 
-const { headerWrapper, mainContainer, content, childTwo } = styles;
+const { headerWrapper, mainContainer, content } = styles;
 
 export default function Home() {
     return (
@@ -18,9 +18,7 @@ export default function Home() {
                 <div className={content}>
                     <SideBarMenu />
                     {/* <MainSideNav /> */}
-                    <div className={childTwo}>
-                        <Trades />
-                    </div>
+                    <Trades />
                 </div>
             </div>
             <Footer />

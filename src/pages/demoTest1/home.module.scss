@@ -15,6 +15,7 @@
     border: 1px solid $background-color-variant;
 }
 
-.childTwo{
-    flex:1;
-}
+/* Applying styles to only the second child (Trades component) */
+.content > :nth-child(2) {
+    flex: 1; /* Make the second child take up the remaining space */
+  }
