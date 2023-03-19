@@ -54,7 +54,7 @@ function Login() {
             <div className={authLayoutContent}>
                 <form className={loginForm} onSubmit={handleSubmit}>
                     <h1 className={title}>{t("signup")}</h1>
-                    <label className={label}>
+                    {/* <label className={label}>
                         {t("email")}
                         <div className={cursor}>
                             <input
@@ -65,7 +65,7 @@ function Login() {
                                 placeholder={t("emailPlaceholder")}
                             />
                         </div>
-                    </label>
+                    </label> */}
                     <label className={label}>
                         {t("userName")}
                         <div className={cursor}>
