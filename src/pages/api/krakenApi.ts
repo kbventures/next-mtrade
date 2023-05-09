@@ -1,5 +1,3 @@
-// api/krakenApi.js
-
 import { NextApiRequest, NextApiResponse } from "next";
 import crypto from "crypto";
 // eslint-disable-next-line import/no-extraneous-dependencies
