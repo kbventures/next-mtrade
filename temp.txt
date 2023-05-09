@@ -1,9 +1,9 @@
 TODO:
-Access Kraken API
+Access THIRD Party API
 Documentation because this is important for potential clients / jobs
 Vercel Tests Deployment
 Update SQL Structure For Users And Trades
-Add Karen API Creator function
+Add Exchange API Creator function
 Visual Feature Showing Trades Data
 Automated test 
 Manual Trades TODO
@@ -12,11 +12,11 @@ Third Party API(Websockerse live data)
 Change Password using email and create user using email as confirmation
 Stripe for payements
 Run Postgresql Local Docker For Testing and Development
-
 2 Minutes Video Explaning project veted by mentor
 UML Diagram
 Implemenet CICD(Playwright)
-Setup Project
+Setup Project Management
+Postman Files
 
 
 Resources:
