@@ -1,5 +1,4 @@
 CSS + CSS MODULES + SASS Files from previous version in this version
-Deplay on vercel
 Expand Schema Data to Include Trades
 Trades Functionality
 Automated Testing

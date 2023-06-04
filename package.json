@@ -4,10 +4,9 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "nxp prisma generate && next build",
         "start": "next start",
-        "lint": "next lint --fix",
-        "postinstall": "npx prisma generate"
+        "lint": "next lint --fix"
     },
     "dependencies": {
         "@next-auth/prisma-adapter": "^1.0.6",
