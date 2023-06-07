@@ -1,10 +1,11 @@
-import type { AppProps } from "next/app";
+import type { AppProps, AppType } from "next/app";
 import { SessionProvider } from "next-auth/react";
 import "@/styles/globals.css";
 import "@/styles/auth.css";
 import React from "react";
 
-export default function App({ Component, pageProps }: AppProps) {
+// eslint-disable-next-line react/function-component-definition
+const App: AppType = ({ Component, pageProps }: AppProps) => {
     return (
         <SessionProvider>
             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
@@ -12,4 +13,22 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </SessionProvider>
     );
-}
+};
+
+export default App;
+
+// import type { AppProps } from "next/app";
+// import { SessionProvider } from "next-auth/react";
+// import "@/styles/globals.css";
+// import "@/styles/auth.css";
+// import React from "react";
+
+// export default function App({ Component, pageProps }: AppProps) {
+//     return (
+//         <SessionProvider>
+//             {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+//             {/* @ts-ignore */}
+//             <Component {...pageProps} />
+//         </SessionProvider>
+//     );
+// }
