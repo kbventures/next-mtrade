@@ -1,8 +1,11 @@
 CSS + CSS MODULES + SASS Files from previous version in this version
+Internationalisation
 Expand Schema Data to Include Trades
 Trades Functionality
 Automated Testing
 Docker Run Postgresql Instance Locally for Development
+Introduce Kraken API
+Stripe
 
 In paralel write blog about project how to
 Program used to white board how project works
