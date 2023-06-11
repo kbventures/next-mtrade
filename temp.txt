@@ -61,3 +61,7 @@ https://dev.to/josemukorivo/unlock-next-level-authentication-in-nextjs-with-next
 
 Dmitry next-auth.t.ds custom fields
 https://github.com/dmitrykulakovfrontend/InterviewPlayBook/blob/main/types/next-auth.d.ts
+
+
+Next.js configuration article
+https://www.ryanelainska.com/nextjs-starter
