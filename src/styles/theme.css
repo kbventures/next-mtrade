@@ -122,8 +122,6 @@
      
      */
  
- 
- 
      /* Font weights */
     --font-weight-extrabold: 700;
     --font-weight-semibold: 500;
@@ -134,8 +132,6 @@
     --lh-condensed-ultra: 1;
     --lh-condensed: 1.25;
     --lh-default: 1.5;
-
-
 
     /* Color Palette */
     --primary-color: rgb(1, 167, 129);
