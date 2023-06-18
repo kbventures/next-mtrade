@@ -1,10 +1,10 @@
 module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
+    root: true,
+    parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true,
     },
   },
 
@@ -16,7 +16,7 @@ module.exports = {
 
   settings: {
     react: {
-      version: "detect",
+            version: "detect",
     },
     "import/resolver": {
       node: {
