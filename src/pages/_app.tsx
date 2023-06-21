@@ -1,7 +1,6 @@
 import type { AppProps, AppType } from "next/app";
 import { SessionProvider } from "next-auth/react";
-import "@/styles/reset.css";
-import "@/styles/globals.css";
+import "@/styles/global.scss";
 import "@/styles/theme.css";
 import "@/styles/fonts.css";
 import "@/styles/auth.css";
