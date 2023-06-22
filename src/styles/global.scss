@@ -44,3 +44,77 @@ input{
   -webkit-appearance: none;
   border-radius: 0;
 }
+
+// Typography
+    /* Typography scale */
+    /* Modile */
+    $h00mobile: 2.5rem;
+    $h0mobile: 2rem;
+    $h1mobile: 1.63rem;
+    $h2mobile: 1.38rem;
+    $h3mobile: 1.13rem;
+    $h4mobile: 1rem;
+    $h5mobile: 0.88rem;
+    $h6mobile: 0.75rem;
+
+    $fiftyPx: 3.125rem;
+    $forty: 3rem;
+    $thirtyTwo: 2rem;
+    $thirtyfive: 2.188rem;
+    $thirty:1.875rem;
+    $twentyeight: 1.8rem;
+    $twentyFour: 1.5rem;
+    $twentyTwo: 1.375rem;
+    $twenty: 1.3rem;
+    $nineteen: 1.1875rem;
+    $eighteen:1.1rem;
+    $sixteen: 1rem;
+    $fifteen: 0.9375rem;
+    $fourteen:0.875rem;
+    $thirteen: 0.813rem;
+    $twelve: 0.75rem;
+    $eleven: 0.688rem;
+
+    /* Desktop */
+    $h00desktop: 3rem;
+    $h0desktop: 2.5rem;
+    $h1desktop: 2rem;
+    $h2desktop: 1.5rem;
+    $h3desktop: 1.25rem;
+    $h4desktop: 1rem;
+    $h5desktop: 0.88rem;
+    $h6desktop: 0.75rem;    
+
+    /*
+    Rem to Px
+
+    Mobile
+    40px
+    32px
+    26px
+    18px
+    16px
+    14px
+    12px
+    
+    Desktop
+    48px
+    40px
+    32px
+    24px
+    20px
+    16px
+    14px
+    12px    
+    */
+
+    /* Font weights */
+    $font-weight-extrabold: 700;
+    $font-weight-semibold: 500;
+    $font-weight-normal: 400;
+    $font-weight-light: 300;
+
+    /*  Line heights */
+    $lh-condensed-ultra: 1;
+    $lh-condensed: 1.25;
+    $lh-default: 1.5;
