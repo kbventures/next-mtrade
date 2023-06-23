@@ -72,3 +72,99 @@
     $lh-condensed-ultra: 1;
     $lh-condensed: 1.25;
     $lh-default: 1.5;
+
+    // Color Palette
+    $primary-color: rgb(1, 167, 129);
+    $primary-color-variant: rgb(1, 192, 149);
+    $secondary-color: rgb(228, 75, 68);
+    $secondary-color-variant: rgb(230, 94, 88);
+    $tertiary-color: rgb(130, 186, 246);
+    $tertiary-color-variant: rgb(143, 193, 246);
+    $background-color: rgb(16, 35, 49);
+    $background-color-variant: rgb(18, 31, 39);
+    $surface-color: rgb(23, 45, 62);
+    $surface-color-variant: rgb(42, 82, 114);
+    $on-surface-color: rgb(40, 68, 91);
+    $on-surface-color-variant: rgb(14, 52, 82);
+    $text-color: rgb(255, 255, 255);
+    $text-color-variant: rgb(150, 155, 158);
+    $text-color-menu-item: rgb(245, 248, 250);
+    $lb-dark-green-color: rgb(19,69,76);
+    $lp-border-color: rgb(88,104,113);
+    $timeRangeColor: rgb(84, 92, 98);
+    $borderColor: rgb(51, 74, 89);
+    $black-background: rgb(11,25,35);
+
+    // Extracted Colors from logo
+    $extracted-logo-color-1:rgb(96,208,99);
+    $extracted-logo-color-2:rgb(136,224,223);
+    $extracted-logo-color-3:rgb(220,243,247);
+    $extracted-logo-color-4:rgb(131,237,153);
+    $extracted-logo-color-5:rgb(179,222,242);
+    $extracted-logo-color-6:rgb(131,186,240);
+    $extracted-logo-color-7:rgb(114,156,200);
+    $extracted-logo-color-8:rgb(148,228,132);
+    $extracted-logo-color-9:rgb(84,116,180);
+
+
+// PX
+$spacer-1: 4px;
+$spacer-2: 8px;
+$spacer-3: 16px;
+$spacer-4: 24px;
+$spacer-5: 32px;
+$spacer-6: 40px;
+$spacer-7: 48px;
+$spacer-8: 64px;
+$spacer-9: 80px;
+$spacer-10: 96px;
+$spacer-11: 112px;
+$spacer-12: 128px;
+
+
+/* Spacing scale, margin & padding */
+$spacer-1: 4px;
+$spacer-2: 8px;
+$spacer-3: 16px;
+$spacer-4: 24px;
+$spacer-5: 32px;
+$spacer-6: 40px;
+
+/*Extended spacing, margin & paddding sale*/
+$spacer-7: 48px;
+$spacer-8: 64px;
+$spacer-9: 80px;
+$spacer-10: 96px;
+$spacer-11: 112px;
+$spacer-12: 128px;
+
+/* Vertical margin scale for text only */
+$vspacer-1: 0.25rem;
+$vspacer-2: 0.5rem;
+$vspacer-3: 1rem;
+$vspacer-4: 1.5rem;
+$vspacer-5: 2rem;
+$vspacer-6: 2.5rem;
+$spacer-7: 3rem;
+$spacer-8: 4rem;
+$spacer-9: 5rem;
+$spacer-10: 6rem;
+$spacer-11: 7rem;
+$spacer-12: 8rem;
+
+
+/* Rounded corners(Border Radius) */
+$rounded-0: none;
+$rounded-2:2px;
+$rounded-3:3px;
+$rounded-4: 4px;
+$rounded-6: 6px;
+$rounded-8: 8px;
+// Perfect circle
+$circle: 50%;
+
+// Box Shadow
+$color-shadow-small: 0 1px 0 rgba(27, 31, 36, 0.04);
+$color-shadow-medium: 0 3px 6px rgba(140, 149, 159, 0.15);
+$color-shadow-large: 0 8px 24px rgba(140, 149, 159, 0.2);
+$color-shadow-extra-large: 0 12px 28px rgba(140, 149, 159, 0.3);
