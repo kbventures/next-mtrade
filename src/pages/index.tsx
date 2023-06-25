@@ -1,5 +1,6 @@
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 
 export default function Home() {
     const { data, status } = useSession();
@@ -19,6 +20,7 @@ export default function Home() {
                     </button>
                 </>
             )}
+            <Footer />
         </div>
     );
 }

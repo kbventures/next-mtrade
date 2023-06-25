@@ -1,6 +1,13 @@
+NEXT:
+Make the footer CSS & Translation and the work your way up in terms of complexity. 
+
+
+
+
 CSS + CSS MODULES + SASS Files from previous version in this version
+Move Most Used Fonts Into Global CSS File
 Get Login / Log out To Work With Existing CSS
-Expand Schema Data to Include Trades
+Expand Schema Data to Include Trades(Use prisma tool to figure that out)
 Trades Functionality
 Automated Testing
 Docker Run Postgresql Instance Locally for Development
