@@ -1,6 +1,7 @@
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
     const { data, status } = useSession();
@@ -23,4 +24,13 @@ export default function Home() {
             <Footer />
         </div>
     );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ["common"])),
+            // Will be passed to the page component as props
+        },
+    };
 }
