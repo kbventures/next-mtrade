@@ -142,3 +142,15 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+body {
+  line-height: 1.2851;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  background: rgb(16, 35, 49);
+  background: black;
+  font-family: 'Roboto',sans-serif;
+  margin: 0;
+}
