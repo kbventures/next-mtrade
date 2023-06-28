@@ -4,6 +4,7 @@
     color:$text-color;
     background-color: $background-color;
     padding: 32px 0;
+    text-align: left;
 }
 
 .ContentWrapper{
@@ -20,11 +21,13 @@
     text-transform: uppercase;
     margin:0 0 0.5rem;
     line-height: 160%;;
+    text-align: left;
 }
 .SubTitle{
     font-size:$twentyeight;
     font-weight:$font-weight-light;
     margin:0 0 75px;
+    text-align: left;
 }
 
 .FeaturesList {
@@ -52,6 +55,7 @@
     font-weight:$font-weight-light;
     color: $text-color-variant;
     line-height: 130%;
+    text-align:left;
 }
 
 .FeatureListItem{
@@ -66,7 +70,8 @@
     margin:8px 0;
     padding:10px 0 0;
     font-size: $thirteen;
-    color: $primary-color;    
+    color: $primary-color;   
+    text-align: left; 
 }
 
 .LinkText{
