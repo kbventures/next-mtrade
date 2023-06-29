@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import Logo from "@/components/Logo/index";
 import LanguageSelector from "@/components/LanguageSelector";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styles from "./login.module.scss";
 
 const {
@@ -27,11 +28,11 @@ const {
 } = styles;
 
 function Login() {
-    const { t } = useTranslation();
+    const { t } = useTranslation("login");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     // const { login, error, isLoading } = useLogin();
-    const isLoading = true;
+    // const isLoading = true;
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore comment
@@ -51,10 +52,10 @@ function Login() {
                                                         {t('signup')}
                                                 </Link> */}
                         <Link href="/signup" className={baseLinkButton}>
-                            Sign Up
+                            {t("signup")}
                         </Link>
-                        <LanguageSelector />
                         {/* <LanguageSelector /> */}
+                        <LanguageSelector />
 
                         {/* <button type="button">English</button> */}
                     </div>
@@ -94,20 +95,29 @@ function Login() {
                     <button
                         className={button}
                         type="submit"
-                        disabled={isLoading}
+                        // disabled={isLoading}
                     >
                         {t("login")}
                     </button>
                     <Link href="/forgotpassword" className={link}>
-                        <p className={ReadMoreLink}>
+                        <div className={ReadMoreLink}>
                             <p className={LinkText}>{t("forgotPassword")}</p>
-                        </p>
+                        </div>
                     </Link>
                     {/* {error && <div className={Error}>{error}</div>} */}
                 </form>
             </div>
         </div>
     );
+}
+
+export async function getStaticProps({ locale }: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, "login")),
+            // Will be passed to the page component as props
+        },
+    };
 }
 
 export default Login;

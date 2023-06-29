@@ -1,0 +1,9 @@
+{
+    "signup": "Sign Up",
+    "visitingSiteWarning":"Please check you are visiting https://next-mtrade.vercel.app/",
+    "email":"Email",
+    "emailPlaceholder":"Email address",
+    "password":"Password",
+    "login": "Log In",
+    "forgotPassword":"Forgot password?"
+}
