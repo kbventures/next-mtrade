@@ -4,7 +4,6 @@ import "@/styles/global.css";
 import "@/styles/global.module.scss";
 import "@/styles/theme.css";
 import "@/styles/fonts.css";
-import "@/styles/auth.css";
 import React from "react";
 import { appWithTranslation } from "next-i18next";
 
