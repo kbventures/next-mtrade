@@ -1,0 +1,16 @@
+{
+    "login": "Se connecter",
+    "signup": "S'inscrire",
+    "email":"E-mail",
+    "emailPlaceholder":"Adresse e-mail",
+    "userName":"Nom d'utilisateur",
+    "userNamePlaceholder":"Ton nom d'utilisateur...",
+    "password":"Mot de passe",
+    "passwordPlaceholder":"Votre mot de passe",
+    "countryOfResidence":"Pays de résidence",
+    "countryResidencePlaceholder":"Sélectionner",
+    "hearAbout":"Comment avez-vous entendu parler de MTrade ?",
+    "hearAboutPlaceholder":"Sélectionner",
+    "referralCode":"Code de Parrainage",
+    "referralCodePlaceholder":"Ne peut pas être ajouté plus tard"
+}

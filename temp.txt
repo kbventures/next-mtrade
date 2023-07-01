@@ -1,5 +1,14 @@
 NEXT:
-Make the footer CSS & Translation and the work your way up in terms of complexity. 
+Build Responsive Signup Screen
+HTML
+CSS
+Make it function with authentication, logout and signin
+
+Automated Testing Automated Testing & Session for language
+
+Build trade analysis functionality work
+
+Add Third party API functionality
 
 
 

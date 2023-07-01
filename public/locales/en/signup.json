@@ -1,0 +1,16 @@
+{
+    "login": "Log In",
+    "signup": "Sign Up",
+    "email":"Email",
+    "emailPlaceholder":"Email address",
+    "userName":"User Name",
+    "userNamePlaceholder":"Your user name...",
+    "password":"Password",
+    "passwordPlaceholder":"Your password",
+    "countryOfResidence":"Country of residence",
+    "countryResidencePlaceholder":"Select",
+    "hearAbout":"How did you hear about MTrade?",
+    "hearAboutPlaceholder":"Select",
+    "referralCode":"Referral code",
+    "referralCodePlaceholder":"Can't be added later"
+}
