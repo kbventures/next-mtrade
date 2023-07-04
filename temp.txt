@@ -1,0 +1,39 @@
+Resources:
+Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
+Next Auth Examples:
+https://next-auth-example.vercel.app/
+Next Auth Documentation:
+
+If you're using Next.js 13.2 or above with the new App Router (app/), you can initialize the configuration using the new Route Handlers by following our guide.:
+https://next-auth.js.org/configuration/initialization#route-handlers-app
+
+
+Client side authentication (SOLVED)
+Add a Log Out Button
+Server side authentication needs to be solved(??? Maybe not a priority)
+Husky
+https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b
+Introduce Internationalisation:
+https://nextjs.org/docs/pages/building-your-application/routing/internationalization
+
+Convert to postgresql
+Development vs production environment(Running postgresql on docker for development)
+Convert this the new next.js(NOT NECESSARY, in BETA)
+Introduce SASS
+How to protected server side routes
+https://next-auth.js.org/getting-started/example
+Convert Static content to Template
+Introduce automated testing
+Introduce Functionalities
+Introduce Third Party API(Kraken)
+Introduce Payment
+
+
+
+To be sorted:
+Create global prisma object for development
+
+
+
+Scripts:
+clear && npm cache clean --force && npm run dev --turbolear && npm cache clean --force && npm run dev --t
