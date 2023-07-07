@@ -1,6 +1,8 @@
 TODO:
-Access THIRD Party API
-TEST THIRD PARTY API
+Access THIRD Party API(DONE)
+TEST THIRD PARTY API(PROVE IT WORKS)
+USE MOCK DATA TO AND CONNECT IT TO UX/UI
+
 Documentation because this is important for potential clients / jobs
 Vercel Tests Deployment
 Update SQL Structure For Users And Trades
