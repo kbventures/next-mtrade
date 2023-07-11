@@ -44,10 +44,9 @@ function Login() {
         await signIn("credentials", {
             username: username_,
             password: password_,
-            callbackUrl: "/",
+            callbackUrl: "/home",
         });
     }
-
     return (
         <div className={authLayout}>
             <div className={authLayoutHeader}>

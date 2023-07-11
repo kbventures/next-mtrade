@@ -53,7 +53,7 @@ function Signup() {
         await signIn("credentials", {
             username: data.user.username,
             password: password_,
-            callbackUrl: "/",
+            callbackUrl: "/home",
         });
     }
 
