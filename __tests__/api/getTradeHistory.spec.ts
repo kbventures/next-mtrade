@@ -1,33 +1,31 @@
-// import { NextApiResponse } from "next";
-// import { getTradeHistory } from "@/pages/api/krakenApi"; // Replace with the correct path to your API file
+// eslint-disable-next-line import/no-extraneous-dependencies
+import request from "supertest";
+import { getTradeHistory, getAccountBalances } from "@/pages/api/krakenApi"; // Replace with the correct path to your API file
 
-// const createMockRequest = (body = {}) => {
-//     return { body };
-// };
+describe("API Tests", () => {
+    it("should get trade history", async () => {
+        const response = await request(getTradeHistory).post("/").send({
+            // Define your request parameters for trade history here
+        });
 
-// const createMockResponse = () => {
-//     const res: NextApiResponse = {
-//         status: jest.fn().mockReturnThis(),
-//     json: jest.fn(),
-//   };
-//   return res;
-// };
+        if (response.status === 200) {
+            console.log("Received data:", response.body);
+            // Add more assertions based on the expected response
+        }
 
-// describe("getTradeHistory API", () => {
-//   it("should return trade history data", async () => {
-//     const req = createMockRequest();
-//     const res = createMockResponse();
+        expect(response.status).toBe(200);
+    });
 
-//     await getTradeHistory(req, res);
+    it("should get account balances", async () => {
+        const response = await request(getAccountBalances).post("/").send({
+            // Define your request parameters for account balances here
+        });
 
-//     // Assert that the response status is 200
-//     expect(res.status).toHaveBeenCalledWith(200);
+        if (response.status === 200) {
+            console.log("Received data:", response.body);
+            // Add more assertions based on the expected response
+        }
 
-//     // You can add more assertions to validate the response data as needed
-//     // For example, you can check if the JSON response contains the expected data.
-//     // For instance:
-//     // expect(res.json).toHaveBeenCalledWith({ ...expectedResponseData });
-//   });
-
-//   // Add more test cases for error scenarios, network errors, etc.
-// });
+        expect(response.status).toBe(200);
+    });
+});
