@@ -2,7 +2,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
-import prisma from "../../lib/prisma";
+import prisma from "@/lib/prisma";
 
 const registerUserSchema = z.object({
     username: z.string().regex(/^[a-z0-9_-]{3,15}$/g, "Invalid username"),
