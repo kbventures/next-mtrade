@@ -1,3 +1,15 @@
+Convert to postgresql(Almost finished)
+CSS + CSS MODULES + SASS Files from previous version in this version
+Deplay on vercel
+Expand Schema Data to Include Trades
+Trades Functionality
+Automated Testing
+Docker Run Postgresql Instance Locally for Development
+
+In paralel write blog about project how to
+Program used to white board how project works
+Video on how project works
+
 Resources:
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
 Next Auth Examples:
@@ -9,14 +21,11 @@ https://next-auth.js.org/configuration/initialization#route-handlers-app
 
 
 Client side authentication (SOLVED)
-Add a Log Out Button
 Server side authentication needs to be solved(??? Maybe not a priority)
-Husky
 https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b
 Introduce Internationalisation:
 https://nextjs.org/docs/pages/building-your-application/routing/internationalization
 
-Convert to postgresql
 Development vs production environment(Running postgresql on docker for development)
 Convert this the new next.js(NOT NECESSARY, in BETA)
 Introduce SASS
@@ -26,14 +35,28 @@ Convert Static content to Template
 Introduce automated testing
 Introduce Functionalities
 Introduce Third Party API(Kraken)
-Introduce Payment
+Introduce Payment API
 
 
-
-To be sorted:
-Create global prisma object for development
 
 
 
 Scripts:
 clear && npm cache clean --force && npm run dev --turbolear && npm cache clean --force && npm run dev --t
+
+
+
+Resources for blog
+Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
+https://vercel.com/guides/nextjs-prisma-postgres
+https://github.com/max-programming/auth-creds-tutorial
+
+
+Typescript Module Augmentation
+https://dev.to/josemukorivo/unlock-next-level-authentication-in-nextjs-with-next-auth-and-typescript-module-augmentation-1689
+
+
+
+
+Dmitry next-auth.t.ds custom fields
+https://github.com/dmitrykulakovfrontend/InterviewPlayBook/blob/main/types/next-auth.d.ts

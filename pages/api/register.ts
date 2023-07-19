@@ -1,13 +1,14 @@
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
+import prisma from "../../lib/prisma";
 
 const registerUserSchema = z.object({
     username: z.string().regex(/^[a-z0-9_-]{3,15}$/g, "Invalid username"),
     password: z.string().min(5, "Password should be minimum 5 characters"),
 });
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 export default async function registerUser(
     req: NextApiRequest,
