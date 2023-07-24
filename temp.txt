@@ -1,5 +1,6 @@
 CSS + CSS MODULES + SASS Files from previous version in this version
 Internationalisation
+Get Login / Log out To Work With Existing CSS
 Expand Schema Data to Include Trades
 Trades Functionality
 Automated Testing
