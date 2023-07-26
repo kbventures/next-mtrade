@@ -2,5 +2,18 @@
     "Hello": "Salut",
     "Welcome to": "Bienvenue",
     "Team": "Equipe",
-    "Copywright": "Droits d'auteur"
-    }
+    "Copywright": "Copyright @ 2013-2023 mTrade Inc. Tous droits réservés",
+    "english":"Anglais",
+    "french":"Français",   
+    "email":"Courriel",
+    "password":"Mot de passe",
+    "emailPlaceholder":"Adresse courriel",
+    "aboutus":"À propos de nous",
+    "logout": "Se déconnecter",
+    "login": "Connexion", 
+    "signup": "S'inscrire",
+    "forgotPassword":"Mot de passe oublié?",
+    "language":"Langue",
+    "error":"erreur"
+
+}

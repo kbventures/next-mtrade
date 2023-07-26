@@ -1,0 +1,16 @@
+{
+    "features":"Features",
+    "featuresTitle":"World class trade analysis platform",
+    "tradeAnalysis":"Trade Analysis",
+    "tradeAnalysisContent":"Our platform provides an in-depht and mindful analysis from you trade history. In effect giving a real sense on your trading performance and how to potentially improve your trades.",
+    "apiIntergration": "Crypto API Intergration",
+    "apiIntergrationContent":"Our platform provides the most sophisticated technology available which eneables you to connect diretly to the worlds largest crypto exchange API Binance and therefore instant access to the best industry data.",
+    "historicalData":"Historical Data Analysis",
+    "historicalDataContent":" mTrade is data agnostic. For us to provide advice and analysis, it does not matter where your trade originated. Using a simple CSV file, you are up and running and performing a performance analysis.",
+    "liveData":"Live Data",
+    "liveDataContent":"We provide instant easy to use data feeds from the best sources with beautiful custom made charts in order to enable you to strategise you next trade and minimise context switching.",
+    "security":"Security",
+    "securityContent":"Security is always paramount to our minds to protect our clients best interest. mTrade maintains and promotes the most up to date industry standards in client data privacy and security.",
+    "readMoreLink":"Read more about our features"
+}
+

@@ -1,0 +1,122 @@
+@import "@/styles/global.module.scss";
+
+.features{
+    color:$text-color;
+    background-color: $background-color;
+    padding: 32px 0;
+}
+
+.ContentWrapper{
+    padding:0 24px;
+}
+
+.Title, .SubTitle{
+    color:$primary-color;
+}
+
+.Title{
+    font-size: $twelve;
+    font-weight: $font-weight-extrabold;
+    text-transform: uppercase;
+    margin:0 0 0.5rem;
+    line-height: 160%;;
+}
+.SubTitle{
+    font-size:$twentyeight;
+    font-weight:$font-weight-light;
+    margin:0 0 75px;
+}
+
+.FeaturesList {
+    list-style: none;
+}
+
+.FeaturesList, .FeatureListItem { 
+    margin: 0;
+    padding: 0;
+}
+
+.FeatureImg{
+    width:120px;
+}
+
+.cardTitle{
+    font-size: $sixteen;
+    font-weight:$font-weight-semibold;
+    line-height: 140%;
+    margin: 11px 0;
+}
+
+.ListContent{
+    font-size: $thirteen;
+    font-weight:$font-weight-light;
+    color: $text-color-variant;
+    line-height: 130%;
+}
+
+.FeatureListItem{
+ padding: 0 32px 32px 0;   
+}
+
+.link{
+    text-decoration: none;
+}
+
+.ReadMoreLink{
+    margin:8px 0;
+    padding:10px 0 0;
+    font-size: $thirteen;
+    color: $primary-color;    
+}
+
+.LinkText{
+    background-color: transparent;
+    margin-left: 15px;
+}
+
+/* 900px */
+@media only screen and (min-width: 56.25rem) {
+
+.ContentWrapper{
+        margin: 48px 0 0;
+        padding:0 64px;
+        max-width: 79rem;
+        margin: 0 auto;
+    }    
+.FeatureListItem{
+    display:flex;
+    width:29%;
+    column-gap:30px;
+    flex-grow:1;
+
+}
+.FeaturesList{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.FeatureImg{
+    height:120px;
+}
+
+.SubTitle{
+    font-size:$fiftyPx;
+    max-width: 10em;
+}
+
+.ListContent{
+    font-size: $sixteen;
+}
+
+.cardTitle{
+    font-size: $twentyTwo;
+}
+.Listcontent{
+    font-size: $fifteen
+}
+
+.ReadMoreLink{
+    font-size: $fifteen;    
+}
+
+}
