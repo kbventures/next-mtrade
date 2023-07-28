@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useTranslation } from "next-i18next";
 import React from "react";
-import LinkButton from "@/components/LinkButton/index";
 import Link from "next/link";
+import LinkButton from "./LinkButton/index";
 import DeskTopNav from "./DesktopNav";
 import Logo from "./Logo/index";
 import styles from "./nav-bar.module.scss";
