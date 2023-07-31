@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import React from "react";
 import LinkButton from "@/components/LinkButton/index";
 import Link from "next/link";
+import DeskTopNav from "./DesktopNav";
 import Logo from "./Logo/index";
 import styles from "./nav-bar.module.scss";
 
@@ -53,6 +54,7 @@ function Navbar() {
                     </li>
                 </ul>
             </nav>
+            <DeskTopNav />
         </div>
     );
 }
