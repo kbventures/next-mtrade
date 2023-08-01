@@ -1,5 +1,6 @@
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
+import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -22,6 +23,7 @@ export default function Home() {
                     </button>
                 </>
             )}
+            <Hero />
             <Features />
             <Footer />
         </div>
@@ -31,7 +33,11 @@ export default function Home() {
 export async function getStaticProps({ locale }: { locale: string }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "features"])),
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "features",
+                "hero",
+            ])),
             // Will be passed to the page component as props
         },
     };

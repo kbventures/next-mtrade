@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
-import LinkButton from "../LinkButton/index";
+import { useTranslation } from "next-i18next";
+import LinkButton from "../LinkButton";
 
 import styles from "./hero.module.scss";
 
