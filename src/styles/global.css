@@ -150,7 +150,7 @@ body {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   background: rgb(16, 35, 49);
-  background: black;
+  background: #102331;
   font-family: 'Roboto',sans-serif;
   margin: 0;
 }
