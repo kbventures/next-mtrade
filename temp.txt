@@ -1,4 +1,4 @@
-Setup Postgresql prisma locally(DONE)
+Feature to add API from any exchange with tests
 Setup Next.js App as an image and orchestres the db and the app in docker-compose.yml 
 Fast setup process to install
 Get Deploy working again
@@ -153,3 +153,7 @@ https://blog.logrocket.com/processing-images-sharp-node-js/
 
 Prisma Vercel Solution: 
 https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue
+
+
+// To Run Docker locally 
+docker-compose -f docker-compose.dev.yml up -d

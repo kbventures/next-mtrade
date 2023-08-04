@@ -64,7 +64,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/home/api"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
