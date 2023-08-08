@@ -16,18 +16,21 @@ const {
 
 export default function LanguageSelector() {
     const [open, setOpen] = useState(false);
+
     const { t, i18n } = useTranslation();
 
     const languages = [
         { code: "en", name: t("english") },
         { code: "fr", name: t("french") },
     ];
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+    const [selectedLanguage, setSelectedLanguage] = useState(languages[0].code);
+
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore comment
     const handleLanguageChange = event => {
         const langCode = event.target.getAttribute("data-value");
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        const [setSelectedLanguage] = useState(languages[0].code);
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore comment
         setSelectedLanguage(langCode);
