@@ -67,6 +67,7 @@ export const getTradeHistory = async (
         }
 
         const responseData = await response.json();
+        console.log("response data", responseData);
 
         res.status(200).json(responseData);
     } catch (error) {
@@ -81,6 +82,7 @@ export const getTradeHistory = async (
 export const getAccountBalances = async (
     req: NextApiRequest,
     res: NextApiResponse
+    // eslint-disable-next-line consistent-return
 ) => {
     try {
         const nonce = new Date().getTime() * 1000;
@@ -115,9 +117,13 @@ export const getAccountBalances = async (
             throw new Error("Network response was not ok");
         }
 
-        const responseData = await response.json();
+        console.log("response", response);
+        // console.log("response result", response.result);
 
-        res.status(200).json(responseData);
+        const responseData = await response.json();
+        console.log("responseData", responseData);
+
+        return res.json(responseData);
     } catch (error) {
         // eslint-disable-next-line no-console
         console.error("API Request Error:", error);

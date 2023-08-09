@@ -37,3 +37,48 @@ next-env.d.ts
 
 .env
 prisma/test.db
+
+
+It looks like you're working with a .gitignore file, which specifies which files and directories should be ignored by Git when tracking changes. If you want to ignore .sh files, you can simply add a line to your .gitignore file that includes *.sh. Here's how you can modify it:
+
+gitignore
+Copy code
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env*.local
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ignore .sh files
+*.sh
