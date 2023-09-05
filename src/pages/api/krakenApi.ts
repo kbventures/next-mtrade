@@ -3,7 +3,6 @@ import crypto from "crypto";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import qs from "qs";
 
-// Define the Kraken API request interface
 interface KrakenApiRequest {
     pair?: string;
     type?: string;
