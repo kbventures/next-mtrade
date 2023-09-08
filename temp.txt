@@ -1,5 +1,6 @@
 TODO:
 Access THIRD Party API
+TEST THIRD PARTY API
 Documentation because this is important for potential clients / jobs
 Vercel Tests Deployment
 Update SQL Structure For Users And Trades
