@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import styles from "./language-selector.module.scss";
@@ -14,8 +15,22 @@ const {
 } = styles;
 
 export default function LanguageSelector() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+    const { pathname, push, route, asPath, locale } = useRouter();
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+    const [selectedLocale, setSelectedLocale] = useState(locale);
+
+    useEffect(() => {
+        const storedLocale = localStorage.getItem("selectedLocale");
+        if (storedLocale) {
+            setSelectedLocale(storedLocale);
+            push(route, asPath, { locale: storedLocale });
+        }
+    }, []);
+
     const [open, setOpen] = useState(false);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const languages = [
         { code: "en", name: t("english") },
@@ -24,16 +39,20 @@ export default function LanguageSelector() {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore comment
-    const handleLanguageChange = event => {
-        const langCode = event.target.getAttribute("data-value");
-        // eslint-disable-next-line no-use-before-define
-        setSelectedLanguage(langCode);
-        i18n.changeLanguage(langCode);
+    const handleLanguageChange = (event: ChangeEvent<HTMLSelectElement>) => {
+        const value = event.currentTarget.getAttribute("data-value");
+
+        const newLocale = value === "en" ? "en" : "fr";
+
+        setSelectedLocale(newLocale);
+        localStorage.setItem("selectedLocale", newLocale);
+
+        push(route, asPath, {
+            locale: newLocale,
+        });
+
         setOpen(false);
     };
-
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-    const [selectedLanguage, setSelectedLanguage] = useState(languages[0].code);
 
     const handleOpen = () => {
         setOpen(!open);
@@ -47,7 +66,7 @@ export default function LanguageSelector() {
                     type="button"
                     onClick={handleOpen}
                 >
-                    {i18n.language === "en" ? t("english") : t("french")}
+                    {locale === "en" ? t("english") : t("french")}
                     <FontAwesomeIcon className={icon} icon={faGreaterThan} />
                 </button>
                 {open && (
@@ -57,6 +76,8 @@ export default function LanguageSelector() {
                                 className={dropDownMenuItem}
                                 key={language.code}
                                 data-value={language.code}
+                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                // @ts-ignore
                                 onClick={handleLanguageChange}
                                 aria-hidden="true"
                             >

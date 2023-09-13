@@ -16,8 +16,8 @@ export default function Logo() {
                     className={mTradeLogo}
                     alt="Mindfulness Trade Logo"
                     src={logo}
-                    width={100} // Set the desired width (replace with the actual width of the image)
-                    height={100} // Set the desired height (replace with the actual height of the image)
+                    width={68} // Set the desired width (replace with the actual width of the image)
+                    height={45} // Set the desired height (replace with the actual height of the image)
                 />
             </div>
             ;

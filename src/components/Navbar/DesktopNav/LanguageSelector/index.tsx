@@ -21,7 +21,6 @@ export default function LanguageSelector() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     const [selectedLocale, setSelectedLocale] = useState(locale);
 
-    // ON COMPONENT LOAD
     useEffect(() => {
         const storedLocale = localStorage.getItem("selectedLocale");
         if (storedLocale) {

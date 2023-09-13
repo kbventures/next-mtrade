@@ -1,4 +1,4 @@
-@import '../../styles/global.module.scss';
+@import '@/styles/global.module.scss';
 
 .authLayoutLogo{
     display: flex; 
@@ -11,7 +11,7 @@
 }
 
 .authLogoPartOne{
-    font-size: 40px;
+    font-size: $forty;
     font-weight: $font-weight-extrabold;
     color: $primary-color;
     background-color: transparent;
