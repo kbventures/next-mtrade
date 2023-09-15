@@ -4,8 +4,8 @@ import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import Logo from "@/components/Logo/index";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import LanguageSelector from "./LanguageSelector/index";
 import styles from "./signup.module.scss";
 
@@ -22,9 +22,9 @@ const {
     cursor,
     loginInput,
     button,
-    link,
-    ReadMoreLink,
-    LinkText,
+    // link,
+    // ReadMoreLink,
+    // LinkText,
 } = styles;
 
 function Login() {
@@ -35,77 +35,7 @@ function Login() {
     // @ts-ignore comment
     const handleSubmit = async e => {
         e.preventDefault();
-
-        // await login(email, password);
     };
-
-    // return (
-    //     <div className={authLayout}>
-    //         <div className={authLayoutHeader}>
-    //             <div className={authLayoutHeader}>
-    //                 <Logo />
-    //                 <div className={authLayoutHeaderRight}>
-    //                     {/* <Link to="/signup" className={baseLinkButton}>
-    //                                                     {t('signup')}
-    //                                             </Link> */}
-    //                     <Link href="/signup" className={baseLinkButton}>
-    //                         {t("signup")}
-    //                     </Link>
-    //                     {/* <LanguageSelector /> */}
-    //                     <LanguageSelector />
-
-    //                     {/* <button type="button">English</button> */}
-    //                 </div>
-    //             </div>
-    //         </div>
-    //         <div className={loginSeperator} />
-    //         <div className={authLayoutContent}>
-    //             <form className={loginForm} onSubmit={handleSubmit}>
-    //                 <h1 className={title}>{t("login")}</h1>
-    //                 <p className={warning}>{t("visitingSiteWarning")}</p>
-    //                 <label className={label}>
-    //                     {t("email")}
-    //                     <div className={cursor}>
-    //                         <input
-    //                             className={loginInput}
-    //                             type="email"
-    //                             onChange={e => setEmail(e.target.value)}
-    //                             value={email}
-    //                             placeholder={t("emailPlaceholder")}
-    //                         />
-    //                         <i />
-    //                     </div>
-    //                 </label>
-    //                 <label className={label}>
-    //                     {t("password")}
-    //                     <div className={cursor}>
-    //                         <input
-    //                             className={loginInput}
-    //                             type="password"
-    //                             onChange={e => setPassword(e.target.value)}
-    //                             value={password}
-    //                             placeholder={t("password")}
-    //                         />
-    //                         <i />
-    //                     </div>
-    //                 </label>
-    //                 <button
-    //                     className={button}
-    //                     type="submit"
-    //                     // disabled={isLoading}
-    //                 >
-    //                     {t("login")}
-    //                 </button>
-    //                 <Link href="/forgotpassword" className={link}>
-    //                     <div className={ReadMoreLink}>
-    //                         <p className={LinkText}>{t("forgotPassword")}</p>
-    //                     </div>
-    //                 </Link>
-    //                 {/* {error && <div className={Error}>{error}</div>} */}
-    //             </form>
-    //         </div>
-    //     </div>
-    // );
 
     return (
         <div className={authLayout}>
@@ -134,7 +64,6 @@ function Login() {
                                 value={email}
                                 placeholder={t("emailPlaceholder")}
                             />
-                            {/* <i /> */}
                         </div>
                     </label>
                     <label className={label}>
@@ -147,7 +76,6 @@ function Login() {
                                 value={email}
                                 placeholder={t("userNamePlaceholder")}
                             />
-                            {/* <i /> */}
                         </div>
                     </label>
                     <label className={label}>
@@ -160,7 +88,6 @@ function Login() {
                                 value={password}
                                 placeholder={t("passwordPlaceholder")}
                             />
-                            {/* <i /> */}
                         </div>
                     </label>
                     <label className={label}>
@@ -224,7 +151,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
     return {
         props: {
             ...(await serverSideTranslations(locale, "signup")),
-            // Will be passed to the page component as props
         },
     };
 }
