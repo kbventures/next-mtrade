@@ -90,7 +90,7 @@ function Login() {
                             />
                         </div>
                     </label>
-                    <label className={label}>
+                    {/* <label className={label}>
                         {t("countryOfResidence")}
                         <div className={cursor}>
                             <input
@@ -100,9 +100,15 @@ function Login() {
                                 value={password}
                                 placeholder={t("countryResidencePlaceholder")}
                             />
-                            {/* <i /> */}
+                            <CountryList />
                         </div>
-                    </label>
+                    </label> */}
+                    {/* <label className={label}>
+                        {t("countryOfResidence")}
+                        <div className={cursor}>
+                            <CountryList />
+                        </div>
+                    </label> */}
                     {/* <label className={label}>
                         {t("hearAbout")}
                         <div className={cursor}>
