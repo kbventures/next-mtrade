@@ -1,15 +1,15 @@
 import { signOut, useSession } from "next-auth/react";
 // import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
+// import Navbar from "@/components/Navbar";
+// import Hero from "@/components/Hero";
+// import Features from "@/components/Features";
+// import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
     const { data, status } = useSession();
-    console.log("data index.js page", data);
-    console.log("status index.js page", status);
+    // console.log("data index.js page", data.user.username);
+    // console.log("status index.js page", data?.user.id);
     return (
         <div>
             {status === "authenticated" && data !== null && (
@@ -22,10 +22,10 @@ export default function Home() {
                     </button>
                 </>
             )}
-            <Navbar />
+            {/* <Navbar />
             <Hero />
             <Features />
-            <Footer />
+            <Footer /> */}
         </div>
     );
 }

@@ -41,20 +41,8 @@ function Login() {
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
         // const form = new FormData(e.target as HTMLFormElement);
-        const res = await fetch("/api/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                username: username_,
-                password: password_,
-            }),
-        });
-        const data = await res.json();
-        if (!data.user) return null;
         await signIn("credentials", {
-            username: data.user.username,
+            username: username_,
             password: password_,
             callbackUrl: "/",
         });

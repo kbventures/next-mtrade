@@ -70,6 +70,8 @@ const authOptions: AuthOptions = {
                 modifiedToken.username = (user as User).username;
             }
 
+            console.log("user", user);
+
             return modifiedToken;
         },
     },
