@@ -1,5 +1,5 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import { User } from "@prisma/client";
+import { User, PrismaClient } from "@prisma/client";
 import { AuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
@@ -7,7 +7,9 @@ import { z } from "zod";
 import bcrypt from "bcryptjs";
 // import { Session } from "next-auth/core/types";
 import { Session } from "next-auth/core/types";
-import prisma from "../../../lib/prisma"; // Import the global prisma object from the new file
+// import prisma from "../../../lib/prisma"; // Import the global prisma object from the new file
+
+const prisma = new PrismaClient();
 
 const loginUserSchema = z.object({
     username: z.string().regex(/^[a-z0-9_-]{3,15}$/g, "Invalid username"),

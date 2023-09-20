@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { useTranslation } from "next-i18next";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import Logo from "@/components/Logo/index";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -27,15 +28,34 @@ const {
     // LinkText,
 } = styles;
 
-function Login() {
+function Signup() {
     const { t } = useTranslation("signup");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const [username_, setUserName] = useState("");
+    const [password_, setPassword] = useState("");
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore comment
-    const handleSubmit = async e => {
+    // eslint-disable-next-line consistent-return
+    async function handleSubmit(e: FormEvent) {
         e.preventDefault();
-    };
+        // const form = new FormData(e.target as HTMLFormElement);
+        const res = await fetch("/api/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username: username_,
+                password: password_,
+            }),
+        });
+        const data = await res.json();
+        if (!data.user) return null;
+        await signIn("credentials", {
+            username: data.user.username,
+            password: password_,
+            callbackUrl: "/",
+        });
+    }
 
     return (
         <div className={authLayout}>
@@ -66,26 +86,28 @@ function Login() {
                             />
                         </div>
                     </label> */}
-                    <label className={label}>
+                    <label htmlFor="username" className={label}>
                         {t("userName")}
                         <div className={cursor}>
                             <input
+                                id="username"
                                 className={loginInput}
                                 type="text"
-                                onChange={e => setEmail(e.target.value)}
-                                value={email}
+                                onChange={e => setUserName(e.target.value)}
+                                value={username_}
                                 placeholder={t("userNamePlaceholder")}
                             />
                         </div>
                     </label>
-                    <label className={label}>
+                    <label htmlFor="password" className={label}>
                         {t("password")}
                         <div className={cursor}>
                             <input
+                                id="password"
                                 className={loginInput}
                                 type="password"
                                 onChange={e => setPassword(e.target.value)}
-                                value={password}
+                                value={password_}
                                 placeholder={t("passwordPlaceholder")}
                             />
                         </div>
@@ -161,4 +183,4 @@ export async function getStaticProps({ locale }: { locale: string }) {
     };
 }
 
-export default Login;
+export default Signup;

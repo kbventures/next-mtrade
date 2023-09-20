@@ -15,6 +15,8 @@ export default async function signupUser(
     res: NextApiResponse
 ) {
     const { username, password } = signupUserSchema.parse(req.body);
+    // This console.log is working
+    // console.log("username, password", username, password);
     const user = await prisma.user.findUnique({
         where: { username },
     });
