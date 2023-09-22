@@ -1,15 +1,15 @@
 NEXT:
-Build Responsive Signup Screen
-HTML
-CSS
+Make Signup Work
 Make it function with authentication, logout and signin
-
-Automated Testing Automated Testing & Session for language
-
-Build trade analysis functionality work
-
-Add Third party API functionality
-
+Deploy
+Update Documentation
+Make the todo type architecgture work
+Automated test 
+Third Party API
+Session for language
+Build trade analysis functionality work with visualisation
+Improve Iterate & add type safe back end language
+Change Password using email and create user using email as confirmation
 
 
 
