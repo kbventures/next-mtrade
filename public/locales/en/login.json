@@ -3,6 +3,8 @@
     "visitingSiteWarning":"Please check you are visiting https://next-mtrade.vercel.app/",
     "email":"Email",
     "emailPlaceholder":"Email address",
+    "username":"User Name",
+    "userNamePlaceHolder":"User Name", 
     "password":"Password",
     "login": "Log In",
     "forgotPassword":"Forgot password?"
