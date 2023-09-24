@@ -1,11 +1,10 @@
-// import { useSession, signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 // import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useSession } from "next-auth/react";
 
 export default function Home() {
     const { data, status } = useSession();
@@ -18,9 +17,9 @@ export default function Home() {
                     <h2>Welcome {data.user.username}</h2>
                     <p>User ID: {data.user.id}</p>
                     {JSON.stringify(data.user)}
-                    {/* <button type="button" onClick={() => signOut()}>
+                    <button type="button" onClick={() => signOut()}>
                         Sign out
-                    </button> */}
+                    </button>
                 </>
             )}
             <Navbar />
