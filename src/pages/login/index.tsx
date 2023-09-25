@@ -67,14 +67,14 @@ function Login() {
                     <h1 className={title}>{t("login")}</h1>
                     <p className={warning}>{t("visitingSiteWarning")}</p>
                     <label className={label}>
-                        {t("email")}
+                        {t("username")}
                         <div className={cursor}>
                             <input
                                 className={loginInput}
-                                type="email"
+                                type="text"
                                 onChange={e => setEmail(e.target.value)}
                                 value={email}
-                                placeholder={t("emailPlaceholder")}
+                                placeholder={t("userNamePlaceHolder")}
                             />
                             <i />
                         </div>
@@ -121,8 +121,6 @@ export async function getStaticProps({ locale }: { locale: string }) {
 }
 
 export default Login;
-
-
 
 // import { signIn } from 'next-auth/react';
 // import Link from 'next/link';

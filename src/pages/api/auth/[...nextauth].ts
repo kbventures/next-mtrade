@@ -22,7 +22,7 @@ const authOptions: AuthOptions = {
     providers: [
         CredentialsProvider({
             credentials: {
-                username: { type: "text", placeholder: "test@test.com" },
+                username: { type: "text", placeholder: "User Name" },
                 password: { type: "password", placeholder: "Pa$$w0rd" },
             },
             async authorize(credentials) {
