@@ -181,3 +181,7 @@ const resources = {
                 },
         },
 };
+
+
+How to close dropdown on outside click NEXT.JS
+https://stackoverflow.com/questions/63086609/how-to-close-dropdown-on-outside-click-next-js
