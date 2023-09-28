@@ -1,12 +1,28 @@
-// __tests__/api/hello.spec.ts
-import request from "supertest";
-import hello from "../../src/pages/api/hello";
+// eslint-disable-next-line import/no-extraneous-dependencies
+import httpMocks from "node-mocks-http";
+import exampleApi from "../../src/pages/api/hello";
 
-describe("API Route - /api/hello", () => {
-    it('responds with "Hello, World"', async () => {
-        const response = await request(hello).get("/api/hello");
+jest.mock("next");
 
-        expect(response.status).toBe(200);
-        expect(response.body).toEqual({ message: "Hello, World" });
-    }, 10000); // Set a 10-second timeout
+describe("/api/example", () => {
+    it("should return a message", async () => {
+        // Create a mock request and response using node-mocks-http
+        const req = httpMocks.createRequest({
+            method: "GET",
+            url: "/api/example",
+        });
+
+        const res = httpMocks.createResponse();
+
+        // Call the exampleApi with the mock request and response
+        await exampleApi(req, res);
+
+        // Use node-mocks-http assertions for the response
+        // eslint-disable-next-line no-underscore-dangle
+        expect(res._getStatusCode()).toBe(200);
+        // eslint-disable-next-line no-underscore-dangle
+        expect(JSON.parse(res._getData())).toEqual({
+            message: "Hello from the API!",
+        });
+    });
 });
