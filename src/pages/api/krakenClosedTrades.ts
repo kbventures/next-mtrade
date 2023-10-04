@@ -89,6 +89,7 @@ export default async function handler(
         // eslint-disable-next-line no-console
         // console.log("Private response", privateResponse);
         // eslint-disable-next-line no-console
+        // res.status(200).json({ message: "Success", privateResponse }); // Sending a success response with privateResponse
         res.status(200).json({ message: "Success", privateResponse }); // Sending a success response with privateResponse
     } catch (e) {
         throw new Error("An exception occured.");
@@ -121,3 +122,29 @@ export default async function handler(
 //   },
 //   count: 1
 // }
+
+// {
+//     closed: {
+//         "OCOIRM-3AVHM-7B2YLW": {
+//             refid: null,
+//             userref: null,
+//             status: "closed",
+//             opentm: 1588830213.657734,
+//             starttm: 0,
+//             expiretm: 0,
+//             descr: [Object],
+//             vol: "0.34000000",
+//             vol_exec: "0.34000000",
+//             cost: "4497.14600",
+//             fee: "11.69258",
+//             price: "13226.9",
+//             stopprice: "0.00000",
+//             limitprice: "0.00000",
+//             misc: "",
+//             oflags: "fciq",
+//             reason: null,
+//             closetm: 1588830213.6665378,
+//         },
+//     },
+//     count: 1,
+// },
