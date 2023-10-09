@@ -3,8 +3,8 @@ import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Footer from "./Footer/index";
 import styles from "./home.module.scss";
-// import NavBar from "./Navbar/index";
 import SideBarMenu from "./SideBarMenu/index";
+import NavBar from "./NavBar";
 
 const {
     headerWrapper,
@@ -35,7 +35,9 @@ const {
 export default function Home() {
     return (
         <div>
-            <div className={headerWrapper}>{/* <NavBar /> */}</div>
+            <div className={headerWrapper}>
+                <NavBar />
+            </div>
             <div className={mainContainer}>
                 <div className={content}>
                     <SideBarMenu />
