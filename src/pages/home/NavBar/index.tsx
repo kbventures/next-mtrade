@@ -7,6 +7,7 @@ import {
     faGreaterThan,
     //     faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
+import { signOut } from "next-auth/react";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
 // import SideBarMenuOnClick from "./SideBarMenuOnClick/index";
@@ -119,7 +120,7 @@ function Navbar() {
                                         className={menu.className}
                                         key={menu.name}
                                         data-value={menu.name}
-                                        onClick={handleUserOpen}
+                                        onClick={() => signOut()}
                                         aria-hidden="true"
                                     >
                                         {menu.name}
