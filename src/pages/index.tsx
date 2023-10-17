@@ -1,17 +1,52 @@
+// import Navbar from "@/components/Navbar";
+// import Hero from "@/components/Hero";
+// import Features from "@/components/Features";
+// import Footer from "@/components/Footer";
+// // import { useSession } from "next-auth/react";
+// import { getServerSideProps } from "@/lib/auth"; // Import your custom getServerSideProps
+
+// export default function Index() {
+//     return (
+//         <div>
+//             <Navbar />
+//             <Hero />
+//             <Features />
+//             <Footer />
+//         </div>
+//     );
+// }
+
+// // Use the custom getServerSideProps for authentication check
+// export { getServerSideProps };
+
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router"; // Import the useRouter
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Home() {
+export default function Index() {
     const { data, status } = useSession();
-    const router = useRouter(); // Initialize the router
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(true);
 
-    if (status === "authenticated" && data !== null) {
-        router.push("/home"); 
+    useEffect(() => {
+        if (status === "loading") {
+            // User authentication status is still loading
+            setIsLoading(true);
+        } else if (status === "authenticated" && data !== null) {
+            // User is authenticated, redirect to /home
+            router.push("/home");
+        } else {
+            setIsLoading(false);
+        }
+    }, [status, data, router]);
+
+    if (isLoading) {
+        return <div>Loading...</div>;
     }
 
     return (
