@@ -1,14 +1,14 @@
 NEXT:
-Make Signup Work
-Make it function with authentication, logout and signin
-Deploy
-Update Documentation
-Make the todo type architecgture work
+Make Signup Work(DONE)
+Make it function with authentication, logout and signin(DONE)
+Deploy(???)
+Update Documentation(Saturday or Sunday Morning)
+Make the todo type architecgture work(Next)
 Automated test 
-Third Party API
+Third Party API(Websockerse live data)
 Session for language
 Build trade analysis functionality work with visualisation
-Improve Iterate & add type safe back end language
+Improve Iterate & add type safe back end language for kraken api
 Change Password using email and create user using email as confirmation
 
 
