@@ -1,24 +1,3 @@
-// import Navbar from "@/components/Navbar";
-// import Hero from "@/components/Hero";
-// import Features from "@/components/Features";
-// import Footer from "@/components/Footer";
-// // import { useSession } from "next-auth/react";
-// import { getServerSideProps } from "@/lib/auth"; // Import your custom getServerSideProps
-
-// export default function Index() {
-//     return (
-//         <div>
-//             <Navbar />
-//             <Hero />
-//             <Features />
-//             <Footer />
-//         </div>
-//     );
-// }
-
-// // Use the custom getServerSideProps for authentication check
-// export { getServerSideProps };
-
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
