@@ -16,7 +16,7 @@
 <a href="https://github.com/kbventures/next-mtrade/contributors">
   <img height="28px" src="https://img.shields.io/github/contributors/kbventures/next-mtrade?color=88bc10&logo=github&logoColor=white" alt="Contributors"/>
 </a>
-<a href="https://github.com/kbventures/mtrade-next/issues">
+<a href="https://github.com/kbventures/next-mtrade/issues">
   <img height="28px" src="https://img.shields.io/github/issues/kbventures/next-mtrade" alt="Issues"/>
 </a>
 <a href="">
@@ -32,7 +32,7 @@
     <a href="https://github.com/kbventures/next-mtrade/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://mtrade-frontend.vercel.app/" target="_blank">View Demo</a>
+    <a href="https://next-mtrade.vercel.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/kbventures/next-mtrade/issues">Report Bug</a>
     ·
