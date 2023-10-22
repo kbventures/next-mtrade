@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link } from "next/link";
 // import Footer from "./Footer/Bottom/index";
-import styles from "./demo.module.scss";
+// import styles from "./demo.module.scss";
 // import NavBar from "./Navbar/index";
 // import SideBarMenu from "./SideBarMenu/index";
 
