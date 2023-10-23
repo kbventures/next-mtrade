@@ -10,7 +10,7 @@ import {
 import { signOut } from "next-auth/react";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
-// import SideBarMenuOnClick from "./SideBarMenuOnClick/index";
+import SideBarMenuOnClick from "./SideBarMenuOnClick/index";
 
 const {
     navigationContainer,
@@ -65,7 +65,7 @@ function Navbar() {
             <nav className={mobileNav}>
                 <div className={leftContainer}>
                     <div className={`${sideBar} ${isOpen ? open : ""}`}>
-                        {/* <SideBarMenuOnClick /> */}
+                        <SideBarMenuOnClick />
                     </div>
                     <button
                         type="button"

@@ -29,6 +29,7 @@
     display: block;
   }
 
+  // Main container
   .leftContainer{
     display: flex;
     flex-direction: row;
@@ -55,11 +56,11 @@
   }
 
   .open{
-    display: block;
-    position: absolute;
-    top: 57px;
-    left: 0;
-    z-index: 1000;
+    display: none;
+    // position: absolute;
+    // top: 57px;
+    // left: 0;
+    // z-index: 1000;
   }
 
 
