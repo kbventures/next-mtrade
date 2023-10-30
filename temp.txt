@@ -1,31 +1,23 @@
-NEXT:
-Make Signup Work(DONE)
-Make it function with authentication, logout and signin(DONE)
-Deploy(???)
-Update Documentation(Saturday or Sunday Morning)
-Make the todo type architecgture work(Next)
+TODO:
+Access Kraken API
+Documentation because this is important for potential clients / jobs
+Vercel Tests Deployment
+Update SQL Structure For Users And Trades
+Add Karen API Creator function
+Visual Feature Showing Trades Data
 Automated test 
-Third Party API(Websockerse live data)
+Manual Trades TODO
 Session for language
-Build trade analysis functionality work with visualisation
-Improve Iterate & add type safe back end language for kraken api
+Third Party API(Websockerse live data)
 Change Password using email and create user using email as confirmation
+Stripe for payements
+Run Postgresql Local Docker For Testing and Development
 
+2 Minutes Video Explaning project veted by mentor
+UML Diagram
+Implemenet CICD(Playwright)
+Setup Project
 
-
-CSS + CSS MODULES + SASS Files from previous version in this version
-Move Most Used Fonts Into Global CSS File
-Get Login / Log out To Work With Existing CSS
-Expand Schema Data to Include Trades(Use prisma tool to figure that out)
-Trades Functionality
-Automated Testing
-Docker Run Postgresql Instance Locally for Development
-Introduce Kraken API
-Stripe
-
-In paralel write blog about project how to
-Program used to white board how project works
-Video on how project works
 
 Resources:
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
@@ -37,31 +29,8 @@ If you're using Next.js 13.2 or above with the new App Router (app/), you can in
 https://next-auth.js.org/configuration/initialization#route-handlers-app
 
 
-Client side authentication (SOLVED)
-Server side authentication needs to be solved(??? Maybe not a priority)
-https://dev.to/joshchu/how-to-setup-prettier-eslint-husky-and-lint-staged-with-a-nextjs-and-typescript-project-i7b
-Introduce Internationalisation:
-https://nextjs.org/docs/pages/building-your-application/routing/internationalization
-
-Development vs production environment(Running postgresql on docker for development)
-Convert this the new next.js(NOT NECESSARY, in BETA)
-Introduce SASS
-How to protected server side routes
-https://next-auth.js.org/getting-started/example
-Convert Static content to Template
-Introduce automated testing
-Introduce Functionalities
-Introduce Third Party API(Kraken)
-Introduce Payment API
-
-
-
-
-
 Scripts:
 clear && npm cache clean --force && npm run dev --turbolear && npm cache clean --force && npm run dev --t
-
-
 
 Resources for blog
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
@@ -73,114 +42,12 @@ Typescript Module Augmentation
 https://dev.to/josemukorivo/unlock-next-level-authentication-in-nextjs-with-next-auth-and-typescript-module-augmentation-1689
 
 
-
-
 Dmitry next-auth.t.ds custom fields
 https://github.com/dmitrykulakovfrontend/InterviewPlayBook/blob/main/types/next-auth.d.ts
 
 
 Next.js configuration article
 https://www.ryanelainska.com/nextjs-starter
-
-
-
-
-
-
-Translation RAW: 
-
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-
-// Needs to be moved to independant JSON file
-const resources = {
-        en: {
-                translation: {
-                        'aboutus':'About Us',
-                        'logout': 'Logout',
-                        'login': 'Log In',
-                        'demo':'View Demo',
-                        'signup': 'Sign Up',
-                        'forgotPassword':'Forgot password?',
-                        'language': 'Language',
-                        'price':'Price',
-                        'amount':'Amount',
-                        'closed-price':'Closed price',
-                        'open-date':'Open date',
-                        'closed-date':'Closed date',
-                        'add-new-trade':'Add new trade',
-                        'add-trade':'Add trade',
-                        'pair-name':'Pair name',
-                        'must-be-logged-in':'You must be logged in!',
-                        'error':'error',
-                        'copywright':'Copyright @ 2013-2023 mTrade Inc. All rights reserved',
-                        'features':'Features',
-                        'featuresTitle':'World class trade analysis platform',
-                        'tradeAnalysis':'Trade Analysis',
-                        'tradeAnalysisContent':'Our platform provides an in-depht and mindful analysis from you trade history. In effect giving a real sense on your trading performance and how to potentially improve your trades.',
-                        'apiIntergration':'Crypto API Intergration',
-                        'apiIntergrationContent':'Our platform provides the most sophisticated technology available which eneables you to connect diretly to the worlds largest crypto exchange API Binance and therefore instant access to the best industry data.',
-                        'historicalData':'Historical Data Analysis',
-                        'historicalDataContent':' mTrade is data agnostic. For us to provide advice and analysis, it does not matter where your trade originated. Using a simple CSV file, you are up and running and performing a performance analysis.',
-                        'liveData':'Live Data',
-                        'liveDataContent':'We provide instant easy to use data feeds from the best sources with beautiful custom made charts in order to enable you to strategise you next trade and minimise context switching.',
-                        'security':'Security',
-                        'securityContent':'Security is always paramount to our minds to protect our clients best interest. mTrade maintains and promotes the most up to date industry standards in client data privacy and security.',
-                        'readMoreLink':'Read more about our features',
-                        'freedom':'Delivering Mindful Analysis Of Your Trades',
-                        'ourAnalysis':'Your assets. Your Trades. Our Analysis.',
-                        'visitingSiteWarning':'Please check you are visiting https://mtrade-frontend.vercel.app/',
-                        'email':'Email',
-                        'password':'Password',
-                        'emailPlaceholder':'Email address',
-                        'english':'English',
-                        'french':'French',
-                },
-        },
-        fr: {
-                translation: {
-                        'aboutus':'À propos de nous',
-                        'logout': 'Se déconnecter',
-                        'login': 'Connexion',
-                        'demo':'Voir la démo',
-                        'signup': 'S\'inscrire',
-                        'forgotPassword':'Mot de passe oublié?',
-                        'language':'Langue',
-                        'price':'Prix',
-                        'amount':'Montant',
-                        'closed-price':'Prix fermé',
-                        'open-date':'Date d\'ouverture',
-                        'closed-date':'Date fermé',
-                        'add-new-trade':'Ajouter un nouveau titre',
-                        'add-trade':'Ajouter titre',
-                        'pair-name':"Nom de la paire",
-                        'must-be-logged-in':'Vous devez être identifié!',
-                        'error':'erreur',
-                        'copywright':'Droits d\'auteur @ 2013-2023 mTrade Inc. Tous droits réservés',
-                        'features':'Caractéristiques',
-                        'featuresTitle':'Plateforme d\'analyse commerciale de classe mondiale',
-                        'tradeAnalysis':'Analyse commericale',
-                        'tradeAnalysisContent':'Notre plateforme fournit une analyse approfondie et consciente de votre histoire commerciale. Donnant en effet un vrai sens sur vos performances de trading et comment les améliorer potentiellement vos métiers.',
-                        'apiIntergration':'Intégration de l\'API Crypto',
-                        'apiIntergrationContent':'Notre plate-forme fournit la technologie la plus sophistiquée disponible qui vous permet de vous connecter directement à la plus grande API d\'échange cryptographique au monde, Binance, et donc d\'accéder instantanément aux meilleures données de l\'industrie.',
-                        'historicalData':'Données Historique',
-                        'historicalDataContent':'mTrade est indépendant des données. Pour que nous puissions vous fournir des conseils et des analyses, peu importe l\'origine de votre commerce. À l\'aide d\'un simple fichier CSV, vous êtes opérationnel et effectuez une analyse des performances.',
-                        'liveData':'Données en direct',
-                        'liveDataContent':'Nous fournissons des flux de données instantanés et faciles à utiliser à partir des meilleures sources avec de superbes graphiques personnalisés afin de vous permettre d\'élaborer une stratégie pour votre prochaine transaction et de minimiser les changements de contexte.',
-                        'security':'Sécurité',
-                        'securityContent':'La sécurité est toujours primordiale pour nous afin de protéger les meilleurs intérêts de nos clients. mTrade maintient et promeut les normes les plus récentes de l\'industrie en matière de confidentialité et de sécurité des données des clients.',
-                        'readMoreLink':'En savoir plus sur nos fonctionnalités',
-                        'freedom':'Fournir Une Analyse Consciente De Vos Transactions',
-                        'ourAnalysis':'Vos atouts. Vos métiers. Notre Analyse.',
-                        'visitingSiteWarning':'Veuillez vérifier que vous visitez https://mtrade-frontend.vercel.app/',
-                        'email':'Courriel',
-                        'password':'Mot de passe',
-                        'emailPlaceholder':'Adresse courriel',
-                        'english':'Anglais',
-                        'french':'Français',
-                },
-        },
-};
 
 
 How to close dropdown on outside click NEXT.JS
