@@ -13,4 +13,7 @@ module.exports = {
     ],
     // Will check for .spec.ts .spec.tsx exclusively inside the __tests__ in the root directory
     testRegex: "__tests__/.*\\.spec\\.[jt]sx?$",
+    moduleNameMapper: {
+        "^@/(.*)$": "<rootDir>/src/$1",
+    },
 };

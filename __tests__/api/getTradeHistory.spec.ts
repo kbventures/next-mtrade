@@ -1,6 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import request from "supertest";
-import { getTradeHistory, getAccountBalances } from "@/pages/api/krakenApi"; // Replace with the correct path to your API file
+import {
+    getTradeHistory,
+    getAccountBalances,
+} from "@/pages/api/krakenApi"; // Replace with the correct path to your API file
 
 describe("API Tests", () => {
     it("should get trade history", async () => {
