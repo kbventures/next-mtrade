@@ -55,3 +55,32 @@ https://www.ryanelainska.com/nextjs-starter
 
 How to close dropdown on outside click NEXT.JS
 https://stackoverflow.com/questions/63086609/how-to-close-dropdown-on-outside-click-next-js
+
+
+
+Example closed trade object:
+{
+  closed: {
+    'OCOIRM-3AVHM-7B2YLW': {
+      refid: null,
+      userref: null,
+      status: 'closed',
+      opentm: 1588830213.657734,
+      starttm: 0,
+      expiretm: 0,
+      descr: [Object],
+      vol: '0.34000000',
+      vol_exec: '0.34000000',
+      cost: '4497.14600',
+      fee: '11.69258',
+      price: '13226.9',
+      stopprice: '0.00000',
+      limitprice: '0.00000',
+      misc: '',
+      oflags: 'fciq',
+      reason: null,
+      closetm: 1588830213.6665378
+    }
+  },
+  count: 1
+}
