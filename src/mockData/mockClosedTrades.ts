@@ -1,8 +1,6 @@
-// API documentation: https://docs.kraken.com/rest/#tag/Account-Data/operation/getTradeHistory
-import { NextApiRequest, NextApiResponse } from "next";
+// eslint-disable-next-line import/no-unresolved
 import { KrakenClosedTrade } from "@root/types/apiTypes";
 
-// Mock data for KrakenClosedTrade
 const mockClosedTrades: KrakenClosedTrade[] = [
     {
         refid: "1",
@@ -149,17 +147,6 @@ const mockClosedTrades: KrakenClosedTrade[] = [
         reason: null,
         closetm: 1637407421,
     },
-    // Add more mock data items as needed
 ];
 
-export default function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<KrakenClosedTrade[]>
-) {
-    if (req.method === "GET") {
-        // Return the mock data as a response
-        res.status(200).json(mockClosedTrades);
-    } else {
-        res.status(405).json({ message: "Method Not Allowed" });
-    }
-}
+export default mockClosedTrades;
