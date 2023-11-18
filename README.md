@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="./images/logo_img.png" alt="Logo">
+    <img src="./src/images/logo_img.png" alt="Logo">
   </a>
 <br />
 <br />
@@ -75,6 +75,8 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+MTrade is a crypto exchange trade analysis web application which enables users with crypto exchange API keys to obtain select data from their account, obtain a mindful analysis and easy to understand data visualisations. 
+
 ### Built With
 
 - ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
@@ -92,7 +94,8 @@
 - ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 - ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)
+</p>
 
 <!-- DESIGN -->
 
@@ -147,6 +150,10 @@ To get a local copy up and run follow these simple example steps.
 
 ## Run Unit Tests
 
+1. Terminal
+   ```sh
+   npm run test
+   ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Production build -->
@@ -159,15 +166,26 @@ npm run build
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Rung production build
+
+```sh
+npm run start
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- LEARNED -->
 
-## What we have learned
+## What I have learned
+1. Settin up unit tests, intergration tests & e2e tests
+2. Postgresql using a object relationnal maper Prisma. 
+3. Next.js advanced concept like Edge runtime
+4. Typescript
+5. Libraries likes next-autt & next-i18next
 
 ## What issues have I faced and how I resolved them
 
 **Example:**
-
-When I tried to connect to the third-party API, I was not sure how to use fetch and what is the difference between async/await, what are Promises and how to use them. After some Googling I found out the MDN documentation about async/await and tried to use it in practice - it worked!
 
 <!-- ROADMAP -->
 
