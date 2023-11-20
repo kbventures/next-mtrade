@@ -80,12 +80,11 @@ MTrade is a crypto exchange trade analysis web application which enables users w
 ### Built With
 
 - ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-- ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+- ![MongoDB](https://img.shields.io/badge/Postgresql-%234ea94b.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 - ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 - ![Next.js](https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 - ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-- ![CSS3](https://img.shields.io/badge/cssModules-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 - ![SASS](https://img.shields.io/badge/SASS-%231572B6.svg?style=for-the-badge&logo=sass&logoColor=pink)
 - ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 - ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
@@ -159,7 +158,7 @@ To get a local copy up and run follow these simple example steps.
 <!-- Production build -->
 
 ## Production build
-
+1. Terminal
 ```sh
 npm run build
 ```
@@ -167,7 +166,7 @@ npm run build
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Rung production build
-
+1. Terminal
 ```sh
 npm run start
 ```
@@ -177,11 +176,12 @@ npm run start
 <!-- LEARNED -->
 
 ## What I have learned
-1. Settin up unit tests, intergration tests & e2e tests
+1. Settin up unit, intergration& e2e tests
 2. Postgresql using a object relationnal maper Prisma. 
 3. Next.js advanced concept like Edge runtime
 4. Typescript
-5. Libraries likes next-autt & next-i18next
+5. Internationalization with next-i18-next
+6. Authentication with next-auth
 
 ## What issues have I faced and how I resolved them
 
@@ -191,7 +191,7 @@ npm run start
 
 ## Roadmap
 
-- [] MVP
+- [X] MVP
   - [ ]
   - [ ]
 
