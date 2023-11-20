@@ -90,7 +90,7 @@ export default async function handler(
         // console.log("Private response", privateResponse);
         // eslint-disable-next-line no-console
         // res.status(200).json({ message: "Success", privateResponse }); // Sending a success response with privateResponse
-        res.status(200).json({ message: "Success", privateResponse }); // Sending a success response with privateResponse
+        res.status(200).json({ privateResponse }); // Sending a success response with privateResponse
     } catch (e) {
         throw new Error("An exception occured.");
     }
