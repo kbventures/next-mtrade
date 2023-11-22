@@ -8,6 +8,8 @@ UX/UI to add kraken api
 Create Cron job to keep superbase alive
 Make Video
 
+Use Docker to host yoyur postgresql database for development
+
 
 Documentation because this is important for potential clients / jobs
 Vercel Tests Deployment
@@ -95,7 +97,8 @@ Example closed trade object:
 
 Plan:
 100Hours Project --> Enough for a 2 Minute Video
-Blog --> V1 Published
-OS --> Biodrop --> CCXT 
-Docker course --> AWS Certification
-Freelance Project 
+Blog --> V1 Published Part 1 --> Blog Part 2
+OS --> Biodrop --> CCXT --> Code Reviews 
+Docker course --> Apply Knowledge --> AWS Certification
+Freelance Project --> Find Clients --> Jamstack of Wordpress
+
