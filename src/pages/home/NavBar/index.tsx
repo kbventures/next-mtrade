@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { signOut } from "next-auth/react";
-import LanguageSelector from "@/components/LanguageSelector";
 import Link from "next/link";
+import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
 import SideBarMenuOnClick from "./SideBarMenuOnClick/index";
@@ -133,7 +133,7 @@ function Navbar() {
                                     >
                                         {menu.route ? (
                                             <Link href={menu.route}>
-                                                <a>{menu.name}</a>
+                                                {menu.name}
                                             </Link>
                                         ) : (
                                             <span>{menu.name}</span>

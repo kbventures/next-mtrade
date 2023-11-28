@@ -92,18 +92,35 @@
     box-shadow: 0 4px 4px 0 rgba(0,0,0,.3);
 }
 
-.dropDownMenuItem{
-    font-weight: 300;
-    color: $text-color-menu-item;
-    list-style: none;
-    text-align: left;
-    padding: 5px 7px;
-    font-size: $fourteen;    
+/* Style for dropdown menu items */
+.dropDownMenuItem {
+  font-weight: 300;
+  color: $text-color-menu-item;
+  list-style: none;
+  text-align: left;
+  padding: 5px 7px;
+  font-size: $fourteen;
+  text-decoration: none;
 }
 
-.dropDownMenuItem:hover{
-    color:$primary-color;
-    background-color: $on-surface-color-variant;
+/* Style for dropdown menu items on hover */
+.dropDownMenuItem:hover {
+  color: $primary-color;
+  background-color: $on-surface-color-variant;
+}
+
+/* Style for links within dropdown menu items */
+.dropDownMenuItem a {
+  color: inherit; /* Inherit the color from the parent */
+}
+
+/* Style for specific links within dropdown menu items */
+.dropDownMenuItem a[href='/home'] {
+  text-decoration: none; /* Remove underline for links with href="/home" */
+}
+
+.dropDownMenuItem a[href='/home/trades'] {
+  text-decoration: none; /* Remove underline for links with href="/home/trades" */
 }
 
 .divider{
