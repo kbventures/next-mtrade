@@ -75,7 +75,6 @@ describe("API Tests", () => {
 
         // eslint-disable-next-line no-underscore-dangle
         const data = JSON.parse(mockResponse._getData());
-        console.log("data", data);
         const { privateResponse } = data;
 
         // expect(privateResponse.message).toBe("Success");

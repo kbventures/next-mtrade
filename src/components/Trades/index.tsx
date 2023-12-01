@@ -55,13 +55,13 @@ function Trades() {
 
     const handleOpenMenu = useCallback(() => {
         // eslint-disable-next-line no-console
-        console.log("handleOpenMenu Clicked!");
+        // console.log("handleOpenMenu Clicked!");
         setShowPopup(true);
     }, []);
 
     const handleCloseMenu = useCallback(() => {
         // eslint-disable-next-line no-console
-        console.log("handleOpenClose Clicked!");
+        // console.log("handleOpenClose Clicked!");
         setShowPopup(false);
     }, []);
 

@@ -38,7 +38,7 @@ function Navbar() {
         setIsOpen(!isOpen);
     };
     // eslint-disable-next-line no-console
-    console.log(isOpen);
+    // console.log(isOpen);
 
     const menuItems = [
         { className: dropDownMenuItem, name: "Account" },

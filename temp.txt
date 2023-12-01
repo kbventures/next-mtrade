@@ -1,23 +1,28 @@
 TODO:
-Access THIRD Party API(DONE)
-TEST THIRD PARTY API(PROVE IT WORKS)
 USE MOCK DATA TO AND CONNECT IT TO UX/UI
+- Need to fix some minor css issues
+
+Starting giving functionalities to your data Set Mock which mimics kraken api data Set
+UX/UI to add kraken api
+Make Video
+
 
 Documentation because this is important for potential clients / jobs
 Vercel Tests Deployment
 Update SQL Structure For Users And Trades
-Add Exchange API Creator function
-Visual Feature Showing Trades Data
 Automated test 
-Manual Trades TODO
 Session for language
+Run Postgresql Local Docker For Testing and Development
+2 Minutes Video Explaning project veted by mentor
+Implemenet CICD(Playwright)
+
+
+Nice to have:
+Manual Trades TODO
 Third Party API(Websockerse live data)
 Change Password using email and create user using email as confirmation
 Stripe for payements
-Run Postgresql Local Docker For Testing and Development
-2 Minutes Video Explaning project veted by mentor
 UML Diagram
-Implemenet CICD(Playwright)
 Setup Project Management
 Postman Files
 
