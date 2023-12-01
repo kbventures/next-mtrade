@@ -37,7 +37,7 @@ export default function index() {
                 <div className={accountSettingsSideNavWrapper}>
                     <div className={accountSettingsSideNavList}>
                         <Link
-                            href="/"
+                            href="/home"
                             className={`${accountSettingsSideNavListItem} ${active}`}
                         >
                             <FontAwesomeIcon
