@@ -73,7 +73,7 @@ export default function index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/home/trades"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -155,24 +155,6 @@ export default function index() {
                                 className={svg}
                             />
                             Trade Analysis
-                            <FontAwesomeIcon
-                                size="xs"
-                                color="rgb(255, 255, 255)"
-                                icon={faCheck}
-                                className={icon}
-                            />
-                        </Link>
-                        <Link
-                            href="/"
-                            className={accountSettingsSideNavListItem}
-                        >
-                            <FontAwesomeIcon
-                                size="1x"
-                                color="rgb(255, 255, 255)"
-                                icon={faChartPie}
-                                className={svg}
-                            />
-                            Reports
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
