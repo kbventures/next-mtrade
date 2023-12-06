@@ -17,6 +17,7 @@ import {
     faCheck,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { useRouter } from "next/router";
 import styles from "./side-bar-menu.module.scss";
 
 const {
@@ -30,7 +31,13 @@ const {
     icon,
 } = styles;
 
-export default function index() {
+export default function Index() {
+    const router = useRouter();
+
+    // Function to check if a given path matches the current route
+    const isActive = (href: string) => {
+        return router.pathname === href ? active : "";
+    };
     return (
         <div>
             <div className={settingsSideNav}>
@@ -38,7 +45,9 @@ export default function index() {
                     <div className={accountSettingsSideNavList}>
                         <Link
                             href="/home"
-                            className={`${accountSettingsSideNavListItem} ${active}`}
+                            className={`${accountSettingsSideNavListItem} ${isActive(
+                                "/home"
+                            )}`}
                         >
                             <FontAwesomeIcon
                                 size="1x"
@@ -74,7 +83,9 @@ export default function index() {
                         </Link>
                         <Link
                             href="/home/trades"
-                            className={accountSettingsSideNavListItem}
+                            className={`${accountSettingsSideNavListItem} ${isActive(
+                                "/home/trades"
+                            )}`}
                         >
                             <FontAwesomeIcon
                                 size="1x"
