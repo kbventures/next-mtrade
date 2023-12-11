@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { signOut } from "next-auth/react";
 import LanguageSelector from "@/components/LanguageSelector";
+import Link from "next/link";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
 import SideBarMenuOnClick from "./SideBarMenuOnClick/index";
-import Link from "next/link";
 
 const {
     navigationContainer,
@@ -109,18 +109,6 @@ function Navbar() {
                         </button>
                         {openUser && (
                             <ul className={dropDownMenu}>
-                                {/* {menuItems.map((menu, index) => (
-                                    <li
-                                        className={menu.className}
-                                        // eslint-disable-next-line react/no-array-index-key
-                                        key={index}
-                                        data-value={menu.name}
-                                        onClick={menu.action} // Assigning action to onClick event
-                                        aria-hidden="true"
-                                    >
-                                        {menu.name}
-                                    </li>
-                                ))} */}
                                 {menuItems.map((menu, index) => (
                                     <li
                                         className={menu.className}
@@ -128,16 +116,25 @@ function Navbar() {
                                         key={index}
                                         data-value={menu.name}
                                         aria-hidden="true"
+                                        onClick={menu.action} // Assign click handler directly to the li element
+                                        onKeyDown={e => {
+                                            if (
+                                                e.key === "Enter" ||
+                                                e.key === "Space"
+                                            ) {
+                                                // eslint-disable-next-line no-unused-expressions
+                                                menu.action && menu.action(); // Trigger action on 'Enter' or 'Space' key press
+                                            }
+                                        }}
+                                        role={
+                                            menu.action ? "button" : undefined
+                                        } // Add 'role="button"' if there's a click action
+                                        tabIndex={menu.action ? 0 : undefined} // Add tabIndex to make element focusable
                                     >
                                         {menu.route ? (
                                             <Link href={menu.route}>
-                                                {menu.name}
+                                                <a>{menu.name}</a>
                                             </Link>
-                                        ) : menu.action ? (
-                                            // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-                                            <span onClick={menu.action}>
-                                                {menu.name}
-                                            </span>
                                         ) : (
                                             <span>{menu.name}</span>
                                         )}
