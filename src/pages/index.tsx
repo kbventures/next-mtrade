@@ -46,6 +46,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
                 "features",
                 "hero",
                 "navbar",
+                "test",
             ])),
         },
     };

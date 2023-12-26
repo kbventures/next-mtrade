@@ -126,4 +126,13 @@ Create a kron job so the project will not shut down due to superbase inactivity
 https://cron-job.org/en/
 
 
+Right now: 
+Internationalization
+Make demo data work has if its coming from kraken
+Make version work for where user creates new kraken api
+One Test Of Each
+pull request lint test build merge pr create image etc
+
+
+
 

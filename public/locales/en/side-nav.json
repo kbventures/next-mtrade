@@ -1,0 +1,14 @@
+{
+    "Account":"Account",
+    "Trades":"Trades",
+    "Security":"Security",
+    "Notifications":"Notifications",
+    "Leaderboard":"Leaderboard",
+    "TradeAnalysis":"Trade Analysis",
+    "Reports":"Reports",
+    "KnowledgeBase":"Knowledge Base",
+    "Support":"Support",
+    "Accountements":"Annoucements",
+    "Career":"Career",
+    "KrakenApiKey":"Kraken API Key"
+}
