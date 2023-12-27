@@ -22,6 +22,7 @@ Implemenet CICD(Playwright)
 
 
 Nice to have:
+Docker Compose Up so a project be up and running fast after git clone
 Manual Trades TODO
 Third Party API(Websockerse live data)
 Change Password using email and create user using email as confirmation
@@ -101,4 +102,28 @@ Blog --> V1 Published Part 1 --> Blog Part 2
 OS --> Biodrop --> CCXT --> Code Reviews 
 Docker course --> Apply Knowledge --> AWS Certification
 Freelance Project --> Find Clients --> Jamstack of Wordpress
+
+
+
+
+List of todos in order: 
+Demo 
+Demo User Login
+ADD New User(Authentication + kraken keys)
+Lighthouse report: SEO, Accessibility, best practices & performance 
+Testing: Unit Test, Intergration Test, e2e
+Dockerize your local setup(Local Postgresql Instance)
+pull request lint test build merge pr create image etc
+Internationalization
+authentication
+Responsive
+Goland Back End
+Project Management(See docker course for example)
+Documentation
+Trades not from exchange?s
+Visualization of trade data 
+Create a kron job so the project will not shut down due to superbase inactivity
+https://cron-job.org/en/
+
+
 
