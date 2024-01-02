@@ -1,3 +1,13 @@
+Setup Postgresql prisma locally
+Internationalize the trades screen
+Get Kraken API Data for Demo but duplicte it 15 times
+Insert Data in form and refactor form
+Fix CSS minor glitches
+Work on authenticated features
+Setup CIDC on github
+Setup Automated Tests Locally and on Github
+
+
 Resources:
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
 Next Auth Examples:

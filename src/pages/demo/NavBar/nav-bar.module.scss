@@ -112,14 +112,15 @@
 /* Style for links within dropdown menu items */
 .dropDownMenuItem a {
   color: inherit; /* Inherit the color from the parent */
+  text-decoration: none;
 }
 
 /* Style for specific links within dropdown menu items */
-.dropDownMenuItem a[href='/home'] {
+.dropDownMenuItem a[href='/demo'] {
   text-decoration: none; /* Remove underline for links with href="/home" */
 }
 
-.dropDownMenuItem a[href='/home/trades'] {
+.dropDownMenuItem a[href='/demo/trades'] {
   text-decoration: none; /* Remove underline for links with href="/home/trades" */
 }
 
