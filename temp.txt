@@ -1,37 +1,3 @@
-TODO:
-TRANSLATION CODE FOR POST AUTHENTICATION
-USE MOCK DATA TO AND CONNECT IT TO UX/UI
-- Need to fix some minor css issues
-
-Starting giving functionalities to your data Set Mock which mimics kraken api data Set
-UX/UI to add kraken api
-Create Cron job to keep superbase alive
-Make Video
-
-Use Docker to host yoyur postgresql database for development
-
-
-Documentation because this is important for potential clients / jobs
-Vercel Tests Deployment
-Update SQL Structure For Users And Trades
-Automated test 
-Session for language
-Run Postgresql Local Docker For Testing and Development
-2 Minutes Video Explaning project veted by mentor
-Implemenet CICD(Playwright)
-
-
-Nice to have:
-Docker Compose Up so a project be up and running fast after git clone
-Manual Trades TODO
-Third Party API(Websockerse live data)
-Change Password using email and create user using email as confirmation
-Stripe for payements
-UML Diagram
-Setup Project Management
-Postman Files
-
-
 Resources:
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
 Next Auth Examples:
@@ -95,17 +61,6 @@ Example closed trade object:
   count: 1
 }
 
-
-Plan:
-100Hours Project --> Enough for a 2 Minute Video
-Blog --> V1 Published Part 1 --> Blog Part 2
-OS --> Biodrop --> CCXT --> Code Reviews 
-Docker course --> Apply Knowledge --> AWS Certification
-Freelance Project --> Find Clients --> Jamstack of Wordpress
-
-
-
-
 List of todos in order: 
 Demo 
 Demo User Login
@@ -132,6 +87,18 @@ Make demo data work has if its coming from kraken
 Make version work for where user creates new kraken api
 One Test Of Each
 pull request lint test build merge pr create image etc
+
+Nice to have:
+Third Party API(Websockerse live data)
+Change Password using email and create user using email as confirmation
+Stripe for payements
+UML Diagram
+Setup Project Management
+Postman Files
+
+Need to fix some minor css issues
+Update SQL Structure For Users And Trades
+Session for language
 
 
 
