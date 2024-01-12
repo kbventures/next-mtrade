@@ -1,0 +1,9 @@
+{
+    "username": "username",
+    "change":"change",
+    "password":"password",
+    "language":"language",
+    "languageSelector":"languageselector", 
+    "deactivate": "deactivate",
+    "active":"Active"
+}

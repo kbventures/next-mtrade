@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
@@ -25,6 +26,7 @@ const {
 } = styles;
 
 function Navbar() {
+    const { t } = useTranslation("navbar");
     const [isOpen, setIsOpen] = useState(false);
     const [openUser, setOpenUser] = useState(false);
 
@@ -41,15 +43,19 @@ function Navbar() {
     };
 
     const menuItems = [
-        { className: dropDownMenuItem, name: "Account", route: "/demo" },
-        { className: dropDownMenuItem, name: "API Key" },
-        { className: dropDownMenuItem, name: "Trades", route: "/demo/trades" },
-        { className: dropDownMenuItem, name: "Security" },
-        { className: dropDownMenuItem, name: "Notifications" },
-        { className: dropDownMenuItem, name: "Leaderboard" },
-        { className: dropDownMenuItem, name: "Trade Analysis" },
+        { className: dropDownMenuItem, name: t("account"), route: "/demo" },
+        { className: dropDownMenuItem, name: t("apiKey") },
+        {
+            className: dropDownMenuItem,
+            name: t("trades"),
+            route: "/demo/trades",
+        },
+        { className: dropDownMenuItem, name: t("security") },
+        { className: dropDownMenuItem, name: t("notifications") },
+        { className: dropDownMenuItem, name: t("leaderboard") },
+        { className: dropDownMenuItem, name: t("tradeAnalysis") },
         { className: divider, name: "" },
-        { className: dropDownMenuItem, name: "Reports" },
+        { className: dropDownMenuItem, name: t("reports") },
         { className: divider, name: "" },
         // Language selector added as a menu item
         {
@@ -60,7 +66,7 @@ function Navbar() {
         },
         {
             className: dropDownMenuItem,
-            name: "Logout",
+            name: t("logOut"),
             action: handleLogout, // Trigger logout function for the Logout option
         },
     ];

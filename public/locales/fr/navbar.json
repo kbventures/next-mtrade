@@ -1,7 +1,12 @@
 {
-    "aboutus":"À propos de nous",
-    "login": "Connexion", 
+    "aboutus": "À propos de nous",
+    "login": "Connexion",
     "signup": "S'inscrire",
-    "english":"Anglais",
-    "french":"Français"
+    "english": "Anglais",
+    "french": "Français",
+    "account": "Compte",
+    "apiKey": "Clé API",
+    "trades": "Transactions",
+    "reports": "Rapports",
+    "logOut": "Se déconnecter"
 }

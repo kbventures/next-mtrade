@@ -3,5 +3,14 @@
     "login": "Login",
     "signup": "Sign up",
     "english":"English",
-    "french":"French"
+    "french":"French",
+    "account":"Account",
+    "apiKey":"API Key",
+    "trades":"Trades",
+    "security":"Security",
+    "notifications":"Notifications",
+    "leaderboard":"Leaderboard",
+    "tradeAnalysis":"Trade Analysis",
+    "report":"Reports",
+    "logOut":"Log out"
 }

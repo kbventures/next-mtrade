@@ -1,15 +1,15 @@
 {
-    "Account": "Compte",
-    "Trades": "Transactions",
-    "Security": "Sécurité",
-    "Notifications": "Notifications",
-    "Leaderboard": "Classement",
-    "TradeAnalysis": "Analyse de transactions",
-    "Reports": "Rapports",
-    "KnowledgeBase": "Base de connaissances",
-    "Support": "Support",
-    "Annoucements": "Annonces",
-    "Career": "Carrière",
-    "KrakenApiKey":"Clé API Kraken"
+    "account": "Compte",
+    "trades": "Transactions",
+    "security": "Sécurité",
+    "notifications": "Avis",
+    "leaderboard": "Classement",
+    "tradeAnalysis": "Analyse de transactions",
+    "reports": "Rapports",
+    "knowledgeBase": "Base de connaissances",
+    "support": "Support",
+    "announcements": "Annonces",
+    "career": "Carrière",
+    "krakenApiKey":"Clé API Kraken"
   }
   

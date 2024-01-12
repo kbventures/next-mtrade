@@ -57,7 +57,7 @@ export default function Index() {
                                 icon={faUser}
                                 className={svg}
                             />
-                            {t("Account")}
+                            {t("account")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -75,7 +75,7 @@ export default function Index() {
                                 icon={faKey}
                                 className={svg}
                             />
-                            {t("KrakenApiKey")}
+                            {t("krakenApiKey")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -95,7 +95,7 @@ export default function Index() {
                                 icon={faArrowTrendUp}
                                 className={svg}
                             />
-                            {t("Trades")}
+                            {t("trades")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -113,7 +113,7 @@ export default function Index() {
                                 icon={faLock}
                                 className={svg}
                             />
-                            {t("Security")}
+                            {t("security")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -131,7 +131,7 @@ export default function Index() {
                                 icon={faEnvelope}
                                 className={svg}
                             />
-                            {t("Notifications")}
+                            {t("notifications")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -149,7 +149,7 @@ export default function Index() {
                                 icon={faTrophy}
                                 className={svg}
                             />
-                            {t("Leaderboard")}
+                            {t("leaderboard")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -167,7 +167,7 @@ export default function Index() {
                                 icon={faChartLine}
                                 className={svg}
                             />
-                            {t("TradeAnalysis")}
+                            {t("tradeAnalysis")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -185,7 +185,7 @@ export default function Index() {
                                 icon={faChartPie}
                                 className={svg}
                             />
-                            {t("Reports")}
+                            {t("reports")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -205,7 +205,7 @@ export default function Index() {
                                 icon={faLightbulb}
                                 className={svg}
                             />
-                            {t("KnowledgeBase")}
+                            {t("knowledgeBase")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -223,7 +223,7 @@ export default function Index() {
                                 icon={faCircleQuestion}
                                 className={svg}
                             />
-                            {t("Support")}
+                            {t("support")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -241,7 +241,7 @@ export default function Index() {
                                 icon={faBullhorn}
                                 className={svg}
                             />
-                            {t("Annoucements")}
+                            {t("announcements")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -259,7 +259,7 @@ export default function Index() {
                                 icon={faBriefcase}
                                 className={svg}
                             />
-                            {t("Career")}
+                            {t("career")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"

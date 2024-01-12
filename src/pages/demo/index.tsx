@@ -53,7 +53,12 @@ export default function Home() {
 export async function getServerSideProps({ locale }: { locale: string }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, ["common", "side-nav"])),
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "side-nav",
+                "main-side-nav",
+                "navbar",
+            ])),
         },
     };
 }

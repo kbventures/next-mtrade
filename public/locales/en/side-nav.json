@@ -1,14 +1,14 @@
 {
-    "Account":"Account",
-    "Trades":"Trades",
-    "Security":"Security",
-    "Notifications":"Notifications",
-    "Leaderboard":"Leaderboard",
-    "TradeAnalysis":"Trade Analysis",
-    "Reports":"Reports",
-    "KnowledgeBase":"Knowledge Base",
-    "Support":"Support",
-    "Accountements":"Annoucements",
-    "Career":"Career",
-    "KrakenApiKey":"Kraken API Key"
+    "account":"Account",
+    "trades":"Trades",
+    "security":"Security",
+    "notifications":"Notifications",
+    "leaderboard":"Leaderboard",
+    "tradeAnalysis":"Trade Analysis",
+    "reports":"Reports",
+    "knowledgeBase":"Knowledge Base",
+    "support":"Support",
+    "announcements":"Announcements",
+    "career":"Career",
+    "krakenApiKey":"Kraken API Key"
 }

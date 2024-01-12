@@ -86,7 +86,7 @@ function Bottom() {
                         </Link>
                     </div>
                 </div>
-                <div className={FooterSection}>{t("Copywright")}</div>
+                <div className={FooterSection}>{t("copywright")}</div>
             </div>
         </div>
     );
