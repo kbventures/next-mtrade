@@ -36,6 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 .env
+.env.local
 prisma/test.db
 
 
@@ -71,7 +72,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env*.local
+.env.local
 
 # vercel
 .vercel
@@ -82,3 +83,5 @@ next-env.d.ts
 
 # Ignore .sh files
 *.sh
+
+

@@ -1,7 +1,7 @@
 // API documentation: https://docs.kraken.com/rest/#tag/Account-Data/operation/getTradeHistory
 import { NextApiRequest, NextApiResponse } from "next";
 // eslint-disable-next-line import/no-unresolved
-import { KrakenClosedTrade } from "@root/types/apiTypes";
+import { KrakenClosedTrade } from "@/types/apiTypes";
 import mockClosedTrades from "@/mockData/mockClosedTrades";
 
 export default function handler(

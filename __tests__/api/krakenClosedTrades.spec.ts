@@ -4,7 +4,7 @@ import handler from "../../src/pages/api/krakenClosedTrades";
 import {
     KrakenClosedTrade,
     KrakenClosedTradeResponse,
-} from "../../types/apiTypes";
+} from "../../src/types/apiTypes";
 
 jest.mock("axios");
 

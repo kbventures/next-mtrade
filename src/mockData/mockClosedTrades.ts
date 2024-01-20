@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { KrakenClosedTrade } from "@root/types/apiTypes";
+import { KrakenClosedTrade } from "@/types/apiTypes";
 
 const mockClosedTrades: KrakenClosedTrade[] = [
     {

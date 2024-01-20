@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { User, PrismaClient } from "@prisma/client";
-import { AuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
+import NextAuth, { NextAuthOptions } from "next-auth";
+// import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { z } from "zod";
 import bcrypt from "bcryptjs";
@@ -17,7 +17,7 @@ const loginUserSchema = z.object({
 });
 // const prisma = new PrismaClient();
 
-const authOptions: AuthOptions = {
+const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(prisma),
     providers: [
         CredentialsProvider({
@@ -53,10 +53,10 @@ const authOptions: AuthOptions = {
                 ...session,
                 user: {
                     ...session.user,
-                    id: token.id as string,
-                    username: token.username as string,
+                    id: token.id,
+                    username: token.username,
                 },
-            } satisfies Session;
+            } as Session;
         },
         jwt({ token, account, user }) {
             // console.log("account ...nexta", account);

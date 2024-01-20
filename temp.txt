@@ -1,4 +1,8 @@
-Setup Postgresql prisma locally
+Setup Postgresql prisma locally(DONE)
+Setup Next.js App as an image and orchestres the db and the app in docker-compose.yml 
+Fast setup process to install
+Get Deploy working again
+Update documentation
 Internationalize the trades screen
 Get Kraken API Data for Demo but duplicte it 15 times
 Insert Data in form and refactor form
@@ -113,3 +117,39 @@ Session for language
 
 
 
+
+Build your images seperately and then combine them using docker compose
+https://www.reddit.com/r/docker/comments/18d7641/ive_been_trying_to_set_up_docker_with_prisma/
+
+Testing Crash Course:
+https://betterprogramming.pub/a-crash-course-in-testing-next-js-projects-9fc57ed4a5bb
+
+
+Runs services found in you docker-compose.yml file
+sudo docker-compose up -d
+
+Container Service Status: 
+sudo docker-compose ps
+
+Postgresql shell inside container: 
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+
+
+Next.js Image
+sudo docker build -t mtrade-app-test .
+sudo docker run -p 3000:3000 --env-file .env.local mtrade-app-test
+sudo docker-compose logs -f
+
+ALSO REMOVE VOLUMES
+sudo docker-compose down -v
+
+
+
+
+upgrade to version 4: next auth
+https://next-auth.js.org/getting-started/upgrade-v4
+Setting up images with Sharp?(recomended by next.js)
+https://blog.logrocket.com/processing-images-sharp-node-js/
+
+Prisma Vercel Solution: 
+https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/vercel-caching-issue

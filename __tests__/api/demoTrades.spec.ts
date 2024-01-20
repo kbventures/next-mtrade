@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import handler from "@/pages/api/demoTrades";
 import httpMocks from "node-mocks-http";
 // eslint-disable-next-line import/no-unresolved
-import { KrakenClosedTrade } from "@root/types/apiTypes";
+import { KrakenClosedTrade } from "@/types/apiTypes";
 import mockClosedTrades from "@/mockData/mockClosedTrades";
 
 describe("API Test", () => {
