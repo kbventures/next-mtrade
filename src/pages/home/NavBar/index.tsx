@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import LanguageSelector from "./LanguageSelector";
 import Logo from "./Logo";
 import styles from "./nav-bar.module.scss";
@@ -25,6 +26,7 @@ const {
 } = styles;
 
 function Navbar() {
+    const { t } = useTranslation("navbar");
     const [isOpen, setIsOpen] = useState(false);
     const [openUser, setOpenUser] = useState(false);
 
@@ -41,8 +43,8 @@ function Navbar() {
     };
 
     const menuItems = [
-        { className: dropDownMenuItem, name: "Account", route: "/home" },
-        { className: dropDownMenuItem, name: "API Key" },
+        { className: dropDownMenuItem, name: t("account"), route: "/home" },
+        { className: dropDownMenuItem, name: t("apiKeys") },
         { className: dropDownMenuItem, name: "Trades", route: "/home/trades" },
         { className: dropDownMenuItem, name: "Security" },
         { className: dropDownMenuItem, name: "Notifications" },

@@ -5,8 +5,12 @@
     "english": "Anglais",
     "french": "Français",
     "account": "Compte",
-    "apiKey": "Clé API",
+    "apiKeys": "Clé API",
     "trades": "Transactions",
-    "reports": "Rapports",
+    "security": "Sécurité",
+    "notifications": "Notifications",
+    "leaderboard": "Classement",
+    "tradeAnalysis": "Analyse des transactions",
+    "report": "Rapports",
     "logOut": "Se déconnecter"
 }
