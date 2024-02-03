@@ -75,7 +75,7 @@ export default function Index() {
                                 icon={faKey}
                                 className={svg}
                             />
-                            {t("krakenApiKey")}
+                            {t("apiKeys")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"

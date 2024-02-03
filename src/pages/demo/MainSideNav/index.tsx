@@ -22,9 +22,9 @@ export default function MainSideNav() {
     return (
         <div className={mainSideNav}>
             <div className={accountSettingsWrapper}>
-                <h4 className={accountSettingsTitle}>Account</h4>
+                <h4 className={accountSettingsTitle}>{t("account")}</h4>
                 <div className={settingsTabHeader}>
-                    <div className={settingsTabHeaderTitle}>Account</div>
+                    <div className={settingsTabHeaderTitle}>{t("account")}</div>
                 </div>
                 <div className={settingsTabsContent}>
                     <div>

@@ -40,12 +40,14 @@ export default function Home() {
 }
 
 export async function getServerSideProps({ locale }: { locale: string }) {
-    // Fetch data from your API here and pass it as props
-    //   const userData = await fetchDataFromAPI()
-
     return {
         props: {
-            ...(await serverSideTranslations(locale, "common")),
+            ...(await serverSideTranslations(locale, [
+                "common",
+                "side-nav",
+                "main-side-nav",
+                "navbar",
+            ])),
         },
     };
 }

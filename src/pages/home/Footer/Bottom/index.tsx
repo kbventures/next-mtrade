@@ -15,7 +15,7 @@ import styles from "./bottom.module.scss";
 const { FooterBottom, FooterContainer, FooterSection, Social, span } = styles;
 
 function Bottom() {
-    const { t } = useTranslation();
+    const { t } = useTranslation("common");
     return (
         <div className={FooterBottom}>
             <div className={FooterContainer}>
@@ -86,7 +86,7 @@ function Bottom() {
                         </Link>
                     </div>
                 </div>
-                <div className={FooterSection}>{t("Copywright")}</div>
+                <div className={FooterSection}>{t("copywright")}</div>
             </div>
         </div>
     );
