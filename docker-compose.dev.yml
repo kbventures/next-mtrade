@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: mtrade-postgres-dev
+    image: postgres:13.3
+    environment:
+      POSTGRES_USER: mtrade
+      POSTGRES_PASSWORD: mtrade
+      POSTGRES_DB: mtrade-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - mtrade-postgres-data:/var/lib/postgresql/data
+
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mtrade-app-dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    env_file:
+      - .env.local
+    command: npm run dev 
+    volumes:
+      - /home/ken/Programming/next-mtrade:/usr/src/app  # Mount the local Next.js directory into the container
+
+volumes:
+  mtrade-postgres-data:
+
+
+
+# version: '3.8'
+# services:
+#   postgres:
+#     container_name: mtrade-postgres-dev
+#     image: postgres:13.3
+#     environment:
+#       POSTGRES_USER: mtrade
+#       POSTGRES_PASSWORD: mtrade
+#       POSTGRES_DB: mtrade-db
+#     ports:
+#       - "5432:5432"
+#     volumes:
+#       - mtrade-postgres-data:/var/lib/postgresql/data
+
+#   nextjs-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     container_name: mtrade-app-dev
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - postgres
+#     env_file:
+#       - .env.local
+#     command: npm run dev 
+
+
+# volumes:
+#   mtrade-postgres-data:
