@@ -73,7 +73,7 @@ export default function Index() {
                                 icon={faKey}
                                 className={svg}
                             />
-                            Binance API Key
+                            API Key
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
