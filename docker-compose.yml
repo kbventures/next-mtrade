@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    container_name: mtrade-postgres-test
+    container_name: mtrade-postgres
     image: postgres:13.3
     environment:
       POSTGRES_USER: mtrade
@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: mtrade-app-test
+    container_name: mtrade-app
     ports:
       - "3000:3000"
     depends_on:
