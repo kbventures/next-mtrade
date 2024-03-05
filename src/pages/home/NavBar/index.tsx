@@ -43,15 +43,19 @@ function Navbar() {
     };
 
     const menuItems = [
-        { className: dropDownMenuItem, name: t("account"), route: "/home" },
-        { className: dropDownMenuItem, name: t("apiKeys"), route: "/home/api" },
-        { className: dropDownMenuItem, name: "Trades", route: "/home/trades" },
-        { className: dropDownMenuItem, name: "Security" },
-        { className: dropDownMenuItem, name: "Notifications" },
-        { className: dropDownMenuItem, name: "Leaderboard" },
-        { className: dropDownMenuItem, name: "Trade Analysis" },
+        { className: dropDownMenuItem, name: t("account"), route: "/demo" },
+        { className: dropDownMenuItem, name: t("apiKeys") },
+        {
+            className: dropDownMenuItem,
+            name: t("trades"),
+            route: "/demo/trades",
+        },
+        { className: dropDownMenuItem, name: t("security") },
+        { className: dropDownMenuItem, name: t("notifications") },
+        { className: dropDownMenuItem, name: t("leaderboard") },
+        { className: dropDownMenuItem, name: t("tradeAnalysis") },
         { className: divider, name: "" },
-        { className: dropDownMenuItem, name: "Reports" },
+        { className: dropDownMenuItem, name: t("reports") },
         { className: divider, name: "" },
         // Language selector added as a menu item
         {
@@ -62,7 +66,7 @@ function Navbar() {
         },
         {
             className: dropDownMenuItem,
-            name: "Logout",
+            name: t("logOut"),
             action: handleLogout, // Trigger logout function for the Logout option
         },
     ];

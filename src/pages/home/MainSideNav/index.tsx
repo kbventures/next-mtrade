@@ -1,4 +1,5 @@
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+// import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import styles from "./mainSideNav.module.scss";
 
 const {
@@ -17,18 +18,19 @@ const {
 } = styles;
 
 export default function MainSideNav() {
+    const { t } = useTranslation("main-side-nav");
     return (
         <div className={mainSideNav}>
             <div className={accountSettingsWrapper}>
-                <h4 className={accountSettingsTitle}>Account</h4>
+                <h4 className={accountSettingsTitle}>{t("account")}</h4>
                 <div className={settingsTabHeader}>
-                    <div className={settingsTabHeaderTitle}>Account</div>
+                    <div className={settingsTabHeaderTitle}>{t("account")}</div>
                 </div>
                 <div className={settingsTabsContent}>
                     <div>
                         <div className={userSettingsItemWrapper}>
                             <div className={userSettingsItemLabel}>
-                                Username
+                                {t("username")}
                             </div>
                             <div className={userSettingsItemContent}>
                                 <div className={userSettingsItemValue}>
@@ -39,14 +41,14 @@ export default function MainSideNav() {
                                         type="button"
                                         className={userSettingsItemRightButton}
                                     >
-                                        Change
+                                        {t("change")}
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div className={userSettingsItemWrapper}>
                             <div className={userSettingsItemLabel}>
-                                Password
+                                {t("password")}
                             </div>
                             <div className={userSettingsItemContent}>
                                 <div className={userSettingsItemValue}>
@@ -57,7 +59,7 @@ export default function MainSideNav() {
                                         type="button"
                                         className={userSettingsItemRightButton}
                                     >
-                                        Change
+                                        {t("change")}
                                     </button>
                                 </div>
                             </div>
@@ -73,14 +75,14 @@ export default function MainSideNav() {
                                         type="button"
                                         className={userSettingsItemRightButton}
                                     >
-                                        Change
+                                        {t("change")}
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div className={userSettingsItemWrapper}>
                             <div className={userSettingsItemLabel}>
-                                Language
+                                {t("language")}
                             </div>
                             <div className={userSettingsItemContent}>
                                 <div className={userSettingsItemValue}>
@@ -91,7 +93,8 @@ export default function MainSideNav() {
                                         type="button"
                                         className={userSettingsItemRightButton}
                                     >
-                                        Language Selector Selector
+                                        {/* Language Selector Selector */}
+                                        {t("languageSelector")}
                                     </button>
                                 </div>
                             </div>
@@ -100,14 +103,14 @@ export default function MainSideNav() {
                             <div className={userSettingsItemLabel} />
                             <div className={userSettingsItemContent}>
                                 <div className={userSettingsItemValue}>
-                                    Active
+                                    {t("active")}
                                 </div>
                                 <div className={userSettingsItemRightButton}>
                                     <button
                                         type="button"
                                         className={userSettingsItemRightButton}
                                     >
-                                        Deactivate
+                                        {t("deactivate")}
                                     </button>
                                 </div>
                             </div>
@@ -119,13 +122,13 @@ export default function MainSideNav() {
     );
 }
 
-export async function getServerSideProps({ locale }: { locale: string }) {
-    // Fetch data from your API here and pass it as props
-    //   const userData = await fetchDataFromAPI()
+// export async function getServerSideProps({ locale }: { locale: string }) {
+//     // Fetch data from your API here and pass it as props
+//     //   const userData = await fetchDataFromAPI()
 
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, "common")),
-        },
-    };
-}
+//     return {
+//         props: {
+//             ...(await serverSideTranslations(locale, "common")),
+//         },
+//     };
+// }

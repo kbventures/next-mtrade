@@ -157,3 +157,14 @@ https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/verce
 
 // To Run Docker locally 
 docker-compose -f docker-compose.dev.yml up -d
+
+
+
+docker-compose exec nextjs-app npx prisma generate
+
+
+
+// Prisma manual db push. You need to run this again when you bring the volumes down. 
+docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
+
+

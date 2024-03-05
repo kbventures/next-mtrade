@@ -58,6 +58,7 @@ export async function getServerSideProps({ locale }: { locale: string }) {
                 "side-nav",
                 "main-side-nav",
                 "navbar",
+                "api",
             ])),
         },
     };

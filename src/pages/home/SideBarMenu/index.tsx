@@ -18,6 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import styles from "./side-bar-menu.module.scss";
 
 const {
@@ -32,6 +33,7 @@ const {
 } = styles;
 
 export default function Index() {
+    const { t } = useTranslation("side-nav");
     const router = useRouter();
 
     // Function to check if a given path matches the current route
@@ -44,7 +46,7 @@ export default function Index() {
                 <div className={accountSettingsSideNavWrapper}>
                     <div className={accountSettingsSideNavList}>
                         <Link
-                            href="/home"
+                            href="/demo"
                             className={`${accountSettingsSideNavListItem} ${isActive(
                                 "/home"
                             )}`}
@@ -55,7 +57,7 @@ export default function Index() {
                                 icon={faUser}
                                 className={svg}
                             />
-                            Account
+                            {t("account")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -64,7 +66,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/home/api"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -73,7 +75,7 @@ export default function Index() {
                                 icon={faKey}
                                 className={svg}
                             />
-                            API Key
+                            {t("apiKeys")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -82,9 +84,9 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/home/trades"
+                            href="/demo/trades"
                             className={`${accountSettingsSideNavListItem} ${isActive(
-                                "/home/trades"
+                                "/demo/trades"
                             )}`}
                         >
                             <FontAwesomeIcon
@@ -93,7 +95,7 @@ export default function Index() {
                                 icon={faArrowTrendUp}
                                 className={svg}
                             />
-                            Trades
+                            {t("trades")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -102,7 +104,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -111,7 +113,7 @@ export default function Index() {
                                 icon={faLock}
                                 className={svg}
                             />
-                            Security
+                            {t("security")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -120,7 +122,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -129,7 +131,7 @@ export default function Index() {
                                 icon={faEnvelope}
                                 className={svg}
                             />
-                            Notifications
+                            {t("notifications")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -138,7 +140,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -147,7 +149,7 @@ export default function Index() {
                                 icon={faTrophy}
                                 className={svg}
                             />
-                            Leaderboard
+                            {t("leaderboard")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -156,7 +158,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -165,7 +167,7 @@ export default function Index() {
                                 icon={faChartLine}
                                 className={svg}
                             />
-                            Trade Analysis
+                            {t("tradeAnalysis")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -174,7 +176,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -183,7 +185,7 @@ export default function Index() {
                                 icon={faChartPie}
                                 className={svg}
                             />
-                            Reports
+                            {t("reports")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -194,7 +196,7 @@ export default function Index() {
                     </div>
                     <div className={accountSettingsSideNavListSub}>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -203,7 +205,7 @@ export default function Index() {
                                 icon={faLightbulb}
                                 className={svg}
                             />
-                            Knowledge Base
+                            {t("knowledgeBase")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -212,7 +214,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -221,7 +223,7 @@ export default function Index() {
                                 icon={faCircleQuestion}
                                 className={svg}
                             />
-                            Support
+                            {t("support")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -230,7 +232,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -239,7 +241,7 @@ export default function Index() {
                                 icon={faBullhorn}
                                 className={svg}
                             />
-                            Annoucements
+                            {t("announcements")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"
@@ -248,7 +250,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/"
+                            href="/demo"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -257,7 +259,7 @@ export default function Index() {
                                 icon={faBriefcase}
                                 className={svg}
                             />
-                            Career
+                            {t("career")}
                             <FontAwesomeIcon
                                 size="xs"
                                 color="rgb(255, 255, 255)"

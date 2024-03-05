@@ -1,0 +1,11 @@
+{
+    "apiKey":"Api Keys",
+    "publicKey":"Public API Key",
+    "publicKeyPlaceholder":"Public API Key",
+    "secretKey":"Secret API Key",
+    "secretKeyPlaceholder":"Secret API Key",
+    "exchange":"Exchange",
+    "selectExchange":"Select Exchange",
+    "exchangeOption1":"Kraken",
+    "exchangeOption2":"Commex"
+   }

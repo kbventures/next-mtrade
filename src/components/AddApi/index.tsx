@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState, FormEvent } from "react";
-import { useTranslation } from "next-i18next";
 import { signIn } from "next-auth/react";
+import { useTranslation } from "next-i18next";
 import styles from "./add-api.module.scss";
 
 const {
@@ -79,18 +79,24 @@ function AddApi() {
                             />
                         </div>
                     </label>
-                    {/* Needs to become drop down menu */}
-                    <label htmlFor="password" className={label}>
-                        {t("secretKey")}
+                    <label htmlFor="exchange" className={label}>
+                        {t("exchange")}
                         <div className={cursor}>
-                            <input
+                            <select
                                 id="exchange"
                                 className={loginInput}
-                                type="password"
                                 onChange={e => setExchange(e.target.value)}
-                                value={secretKey__}
-                                placeholder={t("exchangePlaceholder")}
-                            />
+                                value={exchange__}
+                            >
+                                <option value="">{t("selectExchange")}</option>
+                                <option value="option1">
+                                    {t("exchangeOption1")}
+                                </option>
+                                <option value="option2">
+                                    {t("exchangeOption2")}
+                                </option>
+                                {/* Add more options as needed */}
+                            </select>
                         </div>
                     </label>
                     <button className={button} type="submit">

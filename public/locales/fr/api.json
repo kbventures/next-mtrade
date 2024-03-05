@@ -1,0 +1,11 @@
+{
+    "apiKey": "Clé API",
+    "publicKey": "Clé API publique",
+    "publicKeyPlaceholder": "Clé API publique",
+    "secretKey": "Clé API secrète",
+    "secretKeyPlaceholder": "Clé API secrète",
+    "exchange": "Bourse",
+    "selectExchange": "Sélectionner la bourse",
+    "exchangeOption1": "Kraken",
+    "exchangeOption2": "Commex"
+}
