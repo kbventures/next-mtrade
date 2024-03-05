@@ -43,12 +43,12 @@ function Navbar() {
     };
 
     const menuItems = [
-        { className: dropDownMenuItem, name: t("account"), route: "/demo" },
-        { className: dropDownMenuItem, name: t("apiKeys") },
+        { className: dropDownMenuItem, name: t("account"), route: "/home" },
+        { className: dropDownMenuItem, name: t("apiKeys"), route: "home/api" },
         {
             className: dropDownMenuItem,
             name: t("trades"),
-            route: "/demo/trades",
+            route: "/home/trades",
         },
         { className: dropDownMenuItem, name: t("security") },
         { className: dropDownMenuItem, name: t("notifications") },

@@ -46,7 +46,7 @@ export default function Index() {
                 <div className={accountSettingsSideNavWrapper}>
                     <div className={accountSettingsSideNavList}>
                         <Link
-                            href="/demo"
+                            href="/home"
                             className={`${accountSettingsSideNavListItem} ${isActive(
                                 "/home"
                             )}`}
@@ -66,7 +66,7 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/demo"
+                            href="/home/api"
                             className={accountSettingsSideNavListItem}
                         >
                             <FontAwesomeIcon
@@ -84,9 +84,9 @@ export default function Index() {
                             />
                         </Link>
                         <Link
-                            href="/demo/trades"
+                            href="/home/trades"
                             className={`${accountSettingsSideNavListItem} ${isActive(
-                                "/demo/trades"
+                                "/home/trades"
                             )}`}
                         >
                             <FontAwesomeIcon
