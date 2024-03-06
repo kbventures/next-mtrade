@@ -168,3 +168,9 @@ docker-compose exec nextjs-app npx prisma generate
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
 
 
+TODO NEXT
+Fix add api colors
+Make Responsive
+Make changes to SQL and api request
+trades page
+analysisq

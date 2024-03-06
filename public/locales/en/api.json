@@ -7,5 +7,6 @@
     "exchange":"Exchange",
     "selectExchange":"Select Exchange",
     "exchangeOption1":"Kraken",
-    "exchangeOption2":"Commex"
+    "exchangeOption2":"Commex",
+    "addKey":"Add Key"
    }

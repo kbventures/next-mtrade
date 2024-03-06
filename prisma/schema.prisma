@@ -43,6 +43,23 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  exchanges      Exchange[]
+}
+
+
+model Exchange {
+  id            String        @id @default(cuid())
+  name          String
+  apiKey        ApiKey[]      // One-to-many relationship
+  users         User[]        // Many-to-many relationship
+}
+
+model ApiKey {
+  id            String        @id @default(cuid())
+  publicKey     String
+  secretKey     String
+  exchange      Exchange      @relation(fields: [exchangeId], references: [id], onDelete: Cascade)
+  exchangeId    String
 }
 
 model VerificationToken {

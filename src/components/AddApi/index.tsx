@@ -14,6 +14,7 @@ const {
     cursor,
     loginInput,
     button,
+    exchange,
 } = styles;
 
 function AddApi() {
@@ -53,7 +54,7 @@ function AddApi() {
             <div className={authLayoutContent}>
                 <form className={loginForm} onSubmit={handleSubmit}>
                     <h1 className={title}>{t("apiKey")}</h1>
-                    <label htmlFor="password" className={label}>
+                    <label htmlFor="publicKey" className={label}>
                         {t("publicKey")}
                         <div className={cursor}>
                             <input
@@ -61,12 +62,12 @@ function AddApi() {
                                 className={loginInput}
                                 type="password"
                                 onChange={e => setPublicKey(e.target.value)}
-                                value={secretKey__}
+                                value={publicKey__}
                                 placeholder={t("publicKeyPlaceholder")}
                             />
                         </div>
                     </label>
-                    <label htmlFor="password" className={label}>
+                    <label htmlFor="secretKey" className={label}>
                         {t("secretKey")}
                         <div className={cursor}>
                             <input
@@ -83,7 +84,7 @@ function AddApi() {
                         {t("exchange")}
                         <div className={cursor}>
                             <select
-                                id="exchange"
+                                id={exchange}
                                 className={loginInput}
                                 onChange={e => setExchange(e.target.value)}
                                 value={exchange__}
