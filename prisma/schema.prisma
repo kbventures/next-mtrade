@@ -34,7 +34,7 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model User {
+ model User {
   id            String    @id @default(cuid())
   name          String?
   username      String    @unique
@@ -43,15 +43,13 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  exchanges      Exchange[]
+  apiKeys       ApiKey[]   // One-to-many relationship with ApiKey
 }
-
 
 model Exchange {
   id            String        @id @default(cuid())
   name          String
-  apiKey        ApiKey[]      // One-to-many relationship
-  users         User[]        // Many-to-many relationship
+  apiKey        ApiKey[]      // One-to-many relationship with ApiKey
 }
 
 model ApiKey {
@@ -60,12 +58,8 @@ model ApiKey {
   secretKey     String
   exchange      Exchange      @relation(fields: [exchangeId], references: [id], onDelete: Cascade)
   exchangeId    String
+  user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId        String
 }
 
-model VerificationToken {
-  identifier String
-  token      String   @unique
-  expires    DateTime
 
-  @@unique([identifier, token])
-}

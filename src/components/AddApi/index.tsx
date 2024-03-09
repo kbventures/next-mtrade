@@ -18,7 +18,7 @@ const {
 } = styles;
 
 function AddApi() {
-    const { t } = useTranslation("api");
+    const { t } = useTranslation("api-keys");
     const [publicKey__, setPublicKey] = useState("");
     const [secretKey__, setSecretKey] = useState("");
     const [exchange__, setExchange] = useState("");
@@ -90,13 +90,8 @@ function AddApi() {
                                 value={exchange__}
                             >
                                 <option value="">{t("selectExchange")}</option>
-                                <option value="option1">
-                                    {t("exchangeOption1")}
-                                </option>
-                                <option value="option2">
-                                    {t("exchangeOption2")}
-                                </option>
-                                {/* Add more options as needed */}
+                                <option value="kraken">{t("Kraken")}</option>
+                                <option value="commex">{t("Commex")}</option>
                             </select>
                         </div>
                     </label>

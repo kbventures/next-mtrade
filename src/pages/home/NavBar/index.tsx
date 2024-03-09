@@ -44,7 +44,11 @@ function Navbar() {
 
     const menuItems = [
         { className: dropDownMenuItem, name: t("account"), route: "/home" },
-        { className: dropDownMenuItem, name: t("apiKeys"), route: "home/api" },
+        {
+            className: dropDownMenuItem,
+            name: t("apiKeys"),
+            route: "home/apiKeys",
+        },
         {
             className: dropDownMenuItem,
             name: t("trades"),

@@ -168,9 +168,24 @@ docker-compose exec nextjs-app npx prisma generate
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
 
 
-TODO NEXT
+TODO NEXTdocker
 Fix add api colors
 Make Responsive
 Make changes to SQL and api request
 trades page
 analysisq
+
+
+
+Your API Key Page checks to see if any exiss
+If they do they show them in the page they show them by exchange category
+clicking on exchange takes you to the list of available apis where you can or delete
+
+Start here: 
+If they don't exist you shoudl be ad the add exchange api screen by default
+
+docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
+docker-compose -f docker-compose.dev.yml up -d --build --no-cache
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+
+insert into "Exchange" (id, name) values (gen_random_uuid(), 'Commex');  

@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import AddApi from "@/components/AddApi";
+import AddApi from "@/components/AddApi/index";
 import Footer from "../Footer/index";
 import styles from "../home.module.scss";
 import SideBarMenu from "../SideBarMenu/index";
@@ -46,7 +46,7 @@ function ApiPage() {
 export async function getServerSideProps({ locale }: { locale: string }) {
     return {
         props: {
-            ...(await serverSideTranslations(locale, "api")),
+            ...(await serverSideTranslations(locale, "api-keys")),
         },
     };
 }

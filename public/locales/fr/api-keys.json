@@ -6,7 +6,7 @@
     "secretKeyPlaceholder": "Clé API secrète",
     "exchange": "Bourse",
     "selectExchange": "Sélectionner la bourse",
-    "exchangeOption1": "Kraken",
-    "exchangeOption2": "Commex",
+    "kraken": "Kraken",
+    "commex": "Commex",
     "addKey":"Ajouter Clé"
 }
