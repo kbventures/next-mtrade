@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useState, FormEvent } from "react";
-import { signIn } from "next-auth/react";
+import { useState, FormEvent, useEffect } from "react";
 import { useTranslation } from "next-i18next";
+import { Exchange } from "@/types/exchange";
 import styles from "./add-api.module.scss";
 
 const {
@@ -22,31 +22,71 @@ function AddApi() {
     const [publicKey__, setPublicKey] = useState("");
     const [secretKey__, setSecretKey] = useState("");
     const [exchange__, setExchange] = useState("");
+    const [exchanges, setExchanges] = useState<Exchange[]>([]);
+
+    useEffect(() => {
+        const fetchExchanges = async () => {
+            try {
+                const res = await fetch("/api/exchanges"); // Adjust the endpoint accordingly
+                const data = await res.json();
+
+                // Log the content of the fetched data to the console
+                // eslint-disable-next-line no-console
+                console.log("Fetched Exchanges Data:", data);
+                setExchanges(data);
+            } catch (error) {
+                // Behavior needs to be implemented
+                // eslint-disable-next-line no-console
+                console.error("Error fetching exchanges:", error);
+            }
+        };
+
+        fetchExchanges();
+    }, []);
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore comment
     // eslint-disable-next-line consistent-return
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        // const form = new FormData(e.target as HTMLFormElement);
-        const res = await fetch("/api/apikeys", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                publicKey: publicKey__,
-                secretKey: secretKey__,
-            }),
-        });
-        const data = await res.json();
-        if (!data.user) return null;
-        await signIn("credentials", {
-            username: data.user.username,
-            password: secretKey__,
-            callbackUrl: "/home",
-        });
+        if (!publicKey__ || !secretKey__ || !exchange__) {
+            // Handle validation error, show a message or disable the submit button
+            // to be created later
+        }
+        try {
+            // eslint-disable-next-line no-console
+            console.log("Before fetch request");
+            const res = await fetch("/api/exchanges", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    publicKey__,
+                    secretKey__,
+                    id: exchange__, // Add the selected exchange ID to your payload
+                }),
+            });
+
+            const data = await res.json();
+            // eslint-disable-next-line no-console
+            console.log("form returned", data);
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error("Error submitting the form:", error);
+        }
+
+        // Reset form fields after submission if needed
+        setPublicKey("");
+        setSecretKey("");
+        setExchange("");
     }
+
+    const exchangeOptions = exchanges.map(exch => (
+        <option key={exch.id} value={exch.id}>
+            {exch.name}
+        </option>
+    ));
 
     return (
         <div className={authLayout}>
@@ -90,8 +130,7 @@ function AddApi() {
                                 value={exchange__}
                             >
                                 <option value="">{t("selectExchange")}</option>
-                                <option value="kraken">{t("Kraken")}</option>
-                                <option value="commex">{t("Commex")}</option>
+                                {exchangeOptions}
                             </select>
                         </div>
                     </label>

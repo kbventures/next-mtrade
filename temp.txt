@@ -189,3 +189,11 @@ docker-compose -f docker-compose.dev.yml up -d --build --no-cache
 sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
 
 insert into "Exchange" (id, name) values (gen_random_uuid(), 'Commex');  
+
+
+Fetch The available exchanges that should popular in your api adition menu
+Add exchange 
+Add exchange to user should change ux/ui
+Option to delete exchange(Further modification later)
+Then work on showing the data from BOTH exchanges 
+Simple Analysis visual
