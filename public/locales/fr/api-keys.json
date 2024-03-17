@@ -8,5 +8,7 @@
     "selectExchange": "Sélectionner la bourse",
     "kraken": "Kraken",
     "commex": "Commex",
-    "addKey":"Ajouter Clé"
+    "addKey":"Ajouter Clé",
+    "keyAlias":"Alias",
+    "keyAliasPlaceholder":"Alias"
 }

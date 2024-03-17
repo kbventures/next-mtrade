@@ -8,5 +8,7 @@
     "selectExchange":"Select Exchange",
     "kraken":"Kraken",
     "commex":"Commex",
-    "addKey":"Add Key"
+    "addKey":"Add Key",
+    "keyAlias": "Alias",
+    "keyAliasPlaceholder":"Alias"
    }

@@ -2,7 +2,6 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import { Exchange } from "@/types/exchange";
-import { useSession } from "next-auth/react";
 import styles from "./add-api.module.scss";
 
 const {
@@ -18,28 +17,20 @@ const {
 } = styles;
 
 function AddApi() {
-    const { data: session } = useSession();
     const { t } = useTranslation("api-keys");
+    const [keyAlias__, setKeyAlias] = useState("");
     const [publicKey__, setPublicKey] = useState("");
     const [secretKey__, setSecretKey] = useState("");
     const [exchange__, setExchange] = useState("");
     const [exchanges, setExchanges] = useState<Exchange[]>([]);
 
-    console.log("session console.log ", session?.user.id);
-    console.log("session console.log ", session?.user.username);
-
     useEffect(() => {
         const fetchExchanges = async () => {
             try {
-                const res = await fetch("/api/exchanges"); // Adjust the endpoint accordingly
+                const res = await fetch("/api/exchanges");
                 const data = await res.json();
-
-                // Log the content of the fetched data to the console
-                // eslint-disable-next-line no-console
-                console.log("Fetched Exchanges Data:", data);
                 setExchanges(data);
             } catch (error) {
-                // Behavior needs to be implemented
                 // eslint-disable-next-line no-console
                 console.error("Error fetching exchanges:", error);
             }
@@ -53,47 +44,25 @@ function AddApi() {
     // eslint-disable-next-line consistent-return
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
-        if (!publicKey__ || !secretKey__ || !exchange__) {
+        if (!publicKey__ || !secretKey__ || !exchange__ || !keyAlias__) {
+            // STUB
             // Handle validation error, show a message or disable the submit button
-            // to be created later
-            // eslint-disable-next-line no-console
-            console.group(
-                " publicKey__, secretKey__, exchange__ not defined!",
-                publicKey__,
-                secretKey__,
-                exchange__
-                // session?.user.id
-            );
         }
-        // eslint-disable-next-line no-console
-        console.group(
-            "Checking data exisits before try sending",
-            publicKey__,
-            secretKey__,
-            exchange__
-            // session?.user.id
-        );
-        // const userId = session?.user.id;
+
+        // console.log(publicKey__, secretKey__, exchange__, typeof keyAlias__);
         try {
-            // const { username } = session.user || null; // Extract the access token from the session
-            // const { user } = session || {};
-            // eslint-disable-next-line no-console
-            // console.log("Before fetch request", user);
             const res = await fetch("/api/exchanges", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
+                    keyAlias: keyAlias__,
                     publicKey: publicKey__,
                     secretKey: secretKey__,
                     exchangeId: exchange__,
-                    // userId,
                 }),
             });
-            // eslint-disable-next-line no-console
-            console.log("After fetch request");
-
             const data = await res.json();
             // eslint-disable-next-line no-console
             console.log("form returned", data);
@@ -106,6 +75,7 @@ function AddApi() {
         setPublicKey("");
         setSecretKey("");
         setExchange("");
+        setKeyAlias("");
     }
 
     const exchangeOptions = exchanges.map(exch => (
@@ -120,6 +90,19 @@ function AddApi() {
             <div className={authLayoutContent}>
                 <form className={loginForm} onSubmit={handleSubmit}>
                     <h1 className={title}>{t("apiKey")}</h1>
+                    <label htmlFor="keyAlias" className={label}>
+                        {t("keyAlias")}
+                        <div className={cursor}>
+                            <input
+                                id="keyAlias"
+                                className={loginInput}
+                                type="text"
+                                onChange={e => setKeyAlias(e.target.value)}
+                                value={keyAlias__}
+                                placeholder={t("keyAliasPlaceholder")}
+                            />
+                        </div>
+                    </label>
                     <label htmlFor="publicKey" className={label}>
                         {t("publicKey")}
                         <div className={cursor}>
