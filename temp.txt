@@ -157,6 +157,8 @@ https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/verce
 
 // To Run Docker locally 
 docker-compose -f docker-compose.dev.yml up -d
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+
 
 
 
@@ -197,3 +199,10 @@ Add exchange to user should change ux/ui
 Option to delete exchange(Further modification later)
 Then work on showing the data from BOTH exchanges 
 Simple Analysis visual
+
+
+
+
+//Basic start up 
+docker-compose -f docker-compose.dev.yml up -d
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db

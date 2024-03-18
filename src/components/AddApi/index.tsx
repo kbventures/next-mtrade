@@ -2,6 +2,7 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import { Exchange } from "@/types/exchange";
+import { useSession } from "next-auth/react";
 import styles from "./add-api.module.scss";
 
 const {
@@ -14,10 +15,10 @@ const {
     cursor,
     loginInput,
     button,
-    exchange,
 } = styles;
 
 function AddApi() {
+    const { data: session } = useSession();
     const { t } = useTranslation("api-keys");
     const [publicKey__, setPublicKey] = useState("");
     const [secretKey__, setSecretKey] = useState("");
@@ -52,21 +53,43 @@ function AddApi() {
         if (!publicKey__ || !secretKey__ || !exchange__) {
             // Handle validation error, show a message or disable the submit button
             // to be created later
-        }
-        try {
             // eslint-disable-next-line no-console
-            console.log("Before fetch request");
+            console.group(
+                " publicKey__, secretKey__, exchange__ not defined!",
+                publicKey__,
+                secretKey__,
+                exchange__,
+                session?.user.id
+            );
+        }
+        // eslint-disable-next-line no-console
+        console.group(
+            "Checking data exisits before try sending",
+            publicKey__,
+            secretKey__,
+            exchange__,
+            session?.user.id
+        );
+        const userId = session?.user.id;
+        try {
+            // const { username } = session.user || null; // Extract the access token from the session
+            const { user } = session || {};
+            // eslint-disable-next-line no-console
+            console.log("Before fetch request", user);
             const res = await fetch("/api/exchanges", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    publicKey__,
-                    secretKey__,
-                    id: exchange__, // Add the selected exchange ID to your payload
+                    publicKey: publicKey__,
+                    secretKey: secretKey__,
+                    exchangeId: exchange__,
+                    userId,
                 }),
             });
+            // eslint-disable-next-line no-console
+            console.log("After fetch request");
 
             const data = await res.json();
             // eslint-disable-next-line no-console
@@ -124,7 +147,7 @@ function AddApi() {
                         {t("exchange")}
                         <div className={cursor}>
                             <select
-                                id={exchange}
+                                id="exchange" // Change this to "exchange"
                                 className={loginInput}
                                 onChange={e => setExchange(e.target.value)}
                                 value={exchange__}
