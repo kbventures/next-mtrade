@@ -25,6 +25,9 @@ function AddApi() {
     const [exchange__, setExchange] = useState("");
     const [exchanges, setExchanges] = useState<Exchange[]>([]);
 
+    console.log("session console.log ", session?.user.id);
+    console.log("session console.log ", session?.user.username);
+
     useEffect(() => {
         const fetchExchanges = async () => {
             try {
@@ -58,8 +61,8 @@ function AddApi() {
                 " publicKey__, secretKey__, exchange__ not defined!",
                 publicKey__,
                 secretKey__,
-                exchange__,
-                session?.user.id
+                exchange__
+                // session?.user.id
             );
         }
         // eslint-disable-next-line no-console
@@ -67,15 +70,15 @@ function AddApi() {
             "Checking data exisits before try sending",
             publicKey__,
             secretKey__,
-            exchange__,
-            session?.user.id
+            exchange__
+            // session?.user.id
         );
-        const userId = session?.user.id;
+        // const userId = session?.user.id;
         try {
             // const { username } = session.user || null; // Extract the access token from the session
-            const { user } = session || {};
+            // const { user } = session || {};
             // eslint-disable-next-line no-console
-            console.log("Before fetch request", user);
+            // console.log("Before fetch request", user);
             const res = await fetch("/api/exchanges", {
                 method: "POST",
                 headers: {
@@ -85,7 +88,7 @@ function AddApi() {
                     publicKey: publicKey__,
                     secretKey: secretKey__,
                     exchangeId: exchange__,
-                    userId,
+                    // userId,
                 }),
             });
             // eslint-disable-next-line no-console

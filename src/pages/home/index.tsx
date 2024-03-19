@@ -13,6 +13,7 @@ const { headerWrapper, mainContainer, content } = styles;
 export default function Home() {
     const { data: session } = useSession();
     const router = useRouter();
+    console.log("Session", JSON.stringify(session, null, 2));
 
     useEffect(() => {
         if (!session) {

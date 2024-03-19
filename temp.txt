@@ -206,3 +206,7 @@ Simple Analysis visual
 //Basic start up 
 docker-compose -f docker-compose.dev.yml up -d
 sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+docker mtrade-app-dev logs
+
+// auth helper function
+https://next-auth.js.org/configuration/nextjs#getserversession

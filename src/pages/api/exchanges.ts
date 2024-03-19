@@ -1,7 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
-// import { Session } from "next-auth";
 // import { getSession } from "next-auth/react";
+// import { getServerSession } from "next-auth/next";
+import { getToken } from "next-auth/jwt";
+// import authOptions from "./auth/[...nextauth]";
 
 const prisma = new PrismaClient();
 
@@ -9,6 +11,27 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
+    const token = await getToken({ req });
+    if (token) {
+        // Signed in
+        console.log("JSON Web Token", JSON.stringify(token, null, 2));
+    }
+
+    console.log("token sub", token?.sub)
+    // const session1 = await getServerSession(req, res, authOptions);
+    // // const session = await getServerSession(req);
+    // if (session1) {
+    //     // Signed in
+    //     console.log("Session", JSON.stringify(session1, null, 2));
+    // }
+    // const session = await getSession();
+    // // eslint-disable-next-line no-console
+    // console.log("getServerSession", session1);
+    // console.log("valid", typeof session1);
+    // const userId = session?.user.id;
+    // eslint-disable-next-line no-console
+    // console.log("userId", userId);
+
     if (req.method === "GET") {
         try {
             const exchanges = await prisma.exchange.findMany();
@@ -20,9 +43,9 @@ export default async function handler(
         }
     } else if (req.method === "POST") {
         // eslint-disable-next-line no-console
-        const { publicKey, secretKey, exchangeId, userId } = req.body;
+        const { publicKey, secretKey, exchangeId } = req.body;
         // eslint-disable-next-line no-console
-        console.log(publicKey, secretKey, exchangeId, userId);
+        // console.log("post", publicKey, secretKey, exchangeId, userId);
         // eslint-disable-next-line no-console
         // const session: Session | null = await getSession({ req });
         // console.log("session test", session);
@@ -41,11 +64,11 @@ export default async function handler(
                     publicKey,
                     secretKey,
                     exchangeId,
-                    userId,
+                    userId: token?.sub || "", // Ensure userId is never undefined
                 },
             });
             // eslint-disable-next-line no-console
-            console.log(newApi);
+            console.log("newApi", newApi);
             res.status(201).json(newApi);
         } catch (error) {
             // eslint-disable-next-line no-console
