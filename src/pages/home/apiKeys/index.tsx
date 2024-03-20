@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import AddApi from "@/components/AddApi/index";
+import APiList from "@/components/ApiList";
 import Footer from "../Footer/index";
 import styles from "../home.module.scss";
 import SideBarMenu from "../SideBarMenu/index";
@@ -13,7 +13,6 @@ const { headerWrapper, mainContainer, content } = styles;
 function ApiPage() {
     const { data: session, status } = useSession();
     const router = useRouter();
-    console.log("status", status);
 
     useEffect(() => {
         if (status === "loading") return; // Don't perform redirection while session is loading
@@ -36,7 +35,7 @@ function ApiPage() {
             <div className={mainContainer}>
                 <div className={content}>
                     <SideBarMenu />
-                    <AddApi />
+                    <APiList />
                 </div>
             </div>
             <Footer />
