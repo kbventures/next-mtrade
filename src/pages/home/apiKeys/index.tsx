@@ -2,7 +2,7 @@ import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import APiList from "@/components/ApiList";
+import ApiList from "@/components/ApiList";
 import Footer from "../Footer/index";
 import styles from "../home.module.scss";
 import SideBarMenu from "../SideBarMenu/index";
@@ -35,7 +35,7 @@ function ApiPage() {
             <div className={mainContainer}>
                 <div className={content}>
                     <SideBarMenu />
-                    <APiList />
+                    <ApiList />
                 </div>
             </div>
             <Footer />

@@ -27,7 +27,7 @@ function AddApi() {
     useEffect(() => {
         const fetchExchanges = async () => {
             try {
-                const res = await fetch("/api/exchanges");
+                const res = await fetch("/api/api-keys");
                 const data = await res.json();
                 setExchanges(data);
             } catch (error) {
