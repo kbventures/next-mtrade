@@ -11,10 +11,13 @@ export default async function handler(
         try {
             const apikeys = await prisma.apiKey.findMany();
             // Extracting only id and exchangeId from each object
-            const simplifiedApiKeys = apikeys.map(({ id, exchangeId }) => ({
-                id,
-                exchangeId,
-            }));
+            const simplifiedApiKeys = apikeys.map(
+                ({ id, exchangeId, keyAlias }) => ({
+                    id,
+                    exchangeId,
+                    keyAlias,
+                })
+            );
             res.status(200).json(simplifiedApiKeys);
         } catch (error) {
             if (error instanceof Error) {
