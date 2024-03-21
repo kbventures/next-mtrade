@@ -2,7 +2,6 @@ import Link from "next/link";
 import NextImage from "next/image";
 import { useTranslation } from "next-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { faGreaterThan } from "@fortawesome/free-solid-svg-icons";
 import SecurityImg from "@/images/icon-security.png";
 import CryptoApiImg from "@/images/icon-exchange.png";

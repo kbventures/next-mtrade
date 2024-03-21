@@ -4,7 +4,13 @@ import { ApiKey } from "@/types/apiKey";
 import Image from "next/image";
 import styles from "./add-api.module.scss";
 
-const { authLayout, authLayoutContent, loginSeparator, exchangeIcon } = styles;
+const {
+    authLayout,
+    authLayoutContent,
+    loginSeparator,
+    exchangeIcon,
+    apiKeyText,
+} = styles;
 
 function AddApi() {
     const router = useRouter();
@@ -46,12 +52,15 @@ function AddApi() {
                 {apiKeys.map(apiKey => (
                     <div key={apiKey.id} className={exchangeIcon}>
                         {apiKey && apiKey.exchangeId && (
-                            <Image
-                                src={`/${apiKey.exchangeId}.png`}
-                                alt={apiKey.exchangeId}
-                                width={125}
-                                height={125}
-                            />
+                            <div>
+                                <Image
+                                    src={`/${apiKey.exchangeId}.png`}
+                                    alt={apiKey.exchangeId}
+                                    width={150}
+                                    height={150}
+                                />
+                                <p className={apiKeyText}>{apiKey.keyAlias}</p>
+                            </div>
                         )}
                     </div>
                 ))}
