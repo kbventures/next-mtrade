@@ -203,14 +203,15 @@ Simple Analysis visual
 
 
 //Basic start up 
-docker-compose exec -f docker-compose.dev.yml up -d --build
+docker-compose -f docker-compose.dev.yml up -d
+
 sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
 docker logs mtrade-app-dev
 // Prisma manual db push. You need to run this again when you bring the volumes down. 
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
 
 // Database refresh
-TRUNCATE "Exchange", "ApiKey";
+TRUNCATE "Exchange", "ApiKey";~
 docker-compose down -v
 docker-compose exec nextjs-app npx prisma generate
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push

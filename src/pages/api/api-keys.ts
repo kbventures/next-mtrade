@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
-import { getToken } from "next-auth/jwt";
 
 const prisma = new PrismaClient();
 
@@ -11,9 +10,10 @@ export default async function handler(
     if (req.method === "GET") {
         try {
             const apikeys = await prisma.apiKey.findMany();
-            res.status(200).json(apikeys);
+            // Extracting only id and exchangeId from each object
+            const simplifiedApiKeys = apikeys.map(({ id, exchangeId }) => ({ id, exchangeId }));
+            res.status(200).json(simplifiedApiKeys);
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.error("Error fetching Api Keys List:", error);
             res.status(500).json({ error: "Internal Server Error" });
         }
