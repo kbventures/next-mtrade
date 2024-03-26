@@ -56,8 +56,8 @@ function AddApi() {
                                 <Image
                                     src={`/${apiKey.exchangeId}.png`}
                                     alt={apiKey.exchangeId}
-                                    width={150}
-                                    height={150}
+                                    width={100}
+                                    height={100}
                                 />
                                 <p className={apiKeyText}>{apiKey.keyAlias}</p>
                             </div>
