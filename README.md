@@ -1,9 +1,10 @@
-<a name="readme-top"></a>
-
+<a href="https://vercel.com" name="readme-top">
+  <img src="https://therealsujitk-vercel-badge.vercel.app/?app=next-mtrade" height="28px" alt="Is MTrade Deployed Logo" />
+  </a>
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="">
+  <a href="https://next-mtrade-lime.vercel.app/">
     <img src="./src/images/logo_img.png" alt="Logo">
   </a>
 <br />
@@ -19,20 +20,13 @@
 <a href="https://github.com/kbventures/next-mtrade/issues">
   <img height="28px" src="https://img.shields.io/github/issues/kbventures/next-mtrade" alt="Issues"/>
 </a>
-<a href="">
-  <img src="https://therealsujitk-vercel-badge.vercel.app/?app=next-mtrade" height="28px" alt="Is MTrade Deployed Logo" />
-</a>
 </div>
 
-  <h3 align="center">mTrade</h3>
-
   <p align="center">
-    Mindful Analysis Of Your Trades!
-    <br />
-    <a href="https://github.com/kbventures/next-mtrade/wiki"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://next-mtrade.vercel.app/" target="_blank">View Demo</a>
+    <br />
+    <a href="https://next-mtrade-lime.vercel.app/home" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/kbventures/next-mtrade/issues">Report Bug</a>
     ·
@@ -48,18 +42,16 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
-        <li><a href="#design">Design</a></li>
       </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#gettingstarted">Getting started</a></li>
+        <li><a href="#run-application">Run Application</a></li>
       </ul>
     </li>
     <li><a href="#what-i-have-learned">What I have learned</a></li>
-    <li><a href="#what-issues-have-i-faced-and-how-i-resolved-them">What issues have I faced and how I resolved them</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#file-structure">File Structure</a></li>
@@ -75,32 +67,26 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-MTrade is a crypto exchange trade analysis web application which enables users with crypto exchange API keys to obtain select data from their account, obtain a mindful analysis and easy to understand data visualisations. 
-
+MTrade is a crypto exchange trade analysis web application which enables users with crypto exchange API keys to consolidate and vizualise select data from all their accounts.
 ### Built With
 
 - ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-- ![MongoDB](https://img.shields.io/badge/Postgresql-%234ea94b.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-- ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+- ![Postgresql](https://img.shields.io/badge/Postgresql-%234ea94b.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 - ![Next.js](https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 - ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 - ![SASS](https://img.shields.io/badge/SASS-%231572B6.svg?style=for-the-badge&logo=sass&logoColor=pink)
 - ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+<!-- - ![Playwright](https://img.shields.io/badge/-Playwright-%23C21325?style=for-the-badge&logo=Playwright&logoColor=white) -->
 - ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 - ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 - ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 - ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 - ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+- ![Docker](https://img.shields.io/badge/Docker-1572B6?style=for-the-badge&logo=3&logoColor=white)
 
 <p align="right">(<a href="#readme-top">back to top</a>)
 </p>
-
-<!-- DESIGN -->
-
-## Design
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
@@ -113,7 +99,7 @@ To get a local copy up and run follow these simple example steps.
 
 - Node.js: [Download](https://nodejs.org/en/)
 - Git: [Download](https://git-scm.com/)
-- Docker: [Download]()
+- Docker: [Download](https://www.docker.com/get-started/)
 
 ### Installation
 
@@ -129,28 +115,33 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    npm install
    ```
-4. Add .env file inside server directory
+4. Add `.envlocal` file inside root directory
    ```sh
-   JWT_SECRET="secret"
-   NEXTAUTH_URL="http://localhost:3000/"
-   DATABASE_URL=""
+   NEXTAUTH_URL="http://localhost:3000"
+   NEXTAUTH_SECRET="yourSecretGoesHere"
+   DATABASE_URL="postgresql://mtrade:mtrade@postgres:5432/mtrade-db"
+   ```
+4. Access Postgresql shell within its container:
+   ```sh
+    docker-compose exec postgres psql -U mtrade -d mtrade-db 
+   ```
+5. Insert hard code data
+   ```sh
+   INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Commex'); 
+   INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Kraken');"
+   ```
+6. Exit postgres shell
+   ```sh
+   exit
    ```
 
-### Running
+### Run Application
 
 1. Start App
-   ```sh
-   npm run dev
-   ```
-2. Deploy Postgres and Next.js container
   ```sh
-  docker-compose -f docker-compose.dev.yml up -d 
+docker-compose exec postgres psql -U mtrade -d mtrade-db 
   ```
-3. Insert necessary hard coded data
-  ```sh
-  docker-compose exec postgres psql -U mtrade -d mtrade-db -c "INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Commex'); INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Kraken');"
-  ```
-4. Go to http://localhost:300/ if you wanna see client
+2. Go to http://localhost:300/ if you wanna see client
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,7 +165,7 @@ npm run build
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Rung production build
+## Run production build
 1. Terminal
 ```sh
 npm run start
@@ -185,24 +176,24 @@ npm run start
 <!-- LEARNED -->
 
 ## What I have learned
-1. Settin up unit, intergration& e2e tests
-2. Postgresql using a object relationnal maper Prisma. 
-3. Next.js advanced concept like Edge runtime
-4. Typescript
-5. Internationalization with next-i18-next
-6. Authentication with next-auth
-
-## What issues have I faced and how I resolved them
-
-**Example:**
+1. Authentication with next-auth
+2. Psql, Postgresql 
+3. Docker, docker-compose
+4. Creating Next.js Image
+5. Containerizing a next.js app and postgresl instance
+6. Internationalization with next-i18-next
 
 <!-- ROADMAP -->
 
 ## Roadmap
+  - [ ] Consolidation Of Trades screen
+  - [ ] Visual Analysis
+  - [ ] Automated testing: Unit, e2e and intergration tests
+  - [ ] Devops: Github actions linting and testing before introducing to production
+  - [ ] Utilizing email in the authentication process
+  - [ ] Password reset utilizing email
+  - [ ] Administrative access to database
 
-- [X] MVP
-  - [ ]
-  - [ ]
 
 See the [open issues](https://github.com/kbventures/next-mtrade/issues) for a full list of proposed features (and known issues).
 
@@ -329,7 +320,7 @@ In each commit message:
 
 ## File Structure
 
-We are grouping by feature as listed in React docs. See [Grouping by features or routes](https://nextjs.org/docs/getting-started/project-structure)
+My Next.js project follows a structured organization where configuration files, setup scripts, installation instructions, testing suites, Prisma schemas, and Docker Compose files are located at the project's root directory. The actual project files, including source code and assets, are contained within the 'src' directory. This separation allows for a clear distinction between project configuration and implementation details, facilitating ease of maintenance and collaboration among developers. See [Grouping by features or routes](https://nextjs.org/docs/getting-started/project-structure)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
