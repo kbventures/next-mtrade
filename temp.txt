@@ -216,6 +216,7 @@ docker-compose down -v
 docker-compose exec nextjs-app npx prisma generate
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
 Need to insert Exchanges manually:
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
 insert into "Exchange" (id, name) values (gen_random_uuid(), 'Commex');  
 
 

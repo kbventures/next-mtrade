@@ -19,5 +19,7 @@ RUN npx dotenv -e .env.local -- prisma generate
 # # Expose the port that the app will run on
 EXPOSE 3000
 
-# Command to run your Next.js app with Prisma setup at runtime
+# # Command to run your Next.js app with Prisma setup at runtime
 CMD sh -c "npx dotenv -e .env.local -- prisma db push && npm run dev"
+
+

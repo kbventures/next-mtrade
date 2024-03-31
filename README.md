@@ -113,6 +113,7 @@ To get a local copy up and run follow these simple example steps.
 
 - Node.js: [Download](https://nodejs.org/en/)
 - Git: [Download](https://git-scm.com/)
+- Docker: [Download]()
 
 ### Installation
 
@@ -132,7 +133,7 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    JWT_SECRET="secret"
    NEXTAUTH_URL="http://localhost:3000/"
-   DATABASE_URL="file:./dev.db"
+   DATABASE_URL=""
    ```
 
 ### Running
@@ -141,7 +142,15 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    npm run dev
    ```
-2. Go to http://localhost:300/ if you wanna see client
+2. Deploy Postgres and Next.js container
+  ```sh
+  docker-compose -f docker-compose.dev.yml up -d 
+  ```
+3. Insert necessary hard coded data
+  ```sh
+  docker-compose exec postgres psql -U mtrade -d mtrade-db -c "INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Commex'); INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Kraken');"
+  ```
+4. Go to http://localhost:300/ if you wanna see client
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
