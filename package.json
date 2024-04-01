@@ -18,7 +18,7 @@
         "prisma:setup": "npm run prisma:generate && npm run prisma:push",
         "local": "npm run prisma:generate && npm run dev",
         "linux:local": "npm run prisma:generate && sudo docker-compose up -d && npm run dev",
-        "vercel-build": "prisma generate && prisma db push && next build"
+        "vercel-build": "prisma generate && prisma db push --force-reset && next build"
     },
     "dependencies": {
         "@fortawesome/free-brands-svg-icons": "^6.4.0",
