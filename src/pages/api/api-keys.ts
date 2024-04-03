@@ -18,6 +18,7 @@ export default async function handler(
                     keyAlias,
                 })
             );
+            console.log(simplifiedApiKeys);
             res.status(200).json(simplifiedApiKeys);
         } catch (error) {
             if (error instanceof Error) {

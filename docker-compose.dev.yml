@@ -23,6 +23,10 @@ services:
       - postgres
     env_file:
       - .env.local
+    command: npm run dev 
+    volumes:
+      - /home/ken/Programming/next-mtrade:/usr/src/app
 
 volumes:
   mtrade-postgres-data:
+
