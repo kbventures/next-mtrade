@@ -224,3 +224,21 @@ insert into "Exchange" (id, name) values (gen_random_uuid(), 'Commex');
 
 // auth helper function
 https://next-auth.js.org/configuration/nextjs#getserversession
+
+sudo docker-compose up --build -d
+sudo docker-compose down
+docker-compose exec nextjs-app npm run dev
+sudo docker-compose logs nextjs-app
+
+docker-compose -f docker-compose.dev.yml up --build -d
+
+sudo docker-compose -f docker-compose.dev.yml exec nextjs-app sh
+
+
+
+
+
+
+Killing a port
+lsof -i :3000
+kill -9 <PID>

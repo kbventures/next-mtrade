@@ -115,33 +115,37 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    npm install
    ```
-4. Add `.envlocal` file inside root directory
+4. Add `.env.local` file inside root directory
    ```sh
    NEXTAUTH_URL="http://localhost:3000"
    NEXTAUTH_SECRET="yourSecretGoesHere"
    DATABASE_URL="postgresql://mtrade:mtrade@postgres:5432/mtrade-db"
+   ``` 
+5. Start Containers: 
+   ```sh
+   docker-compose -f docker-compose.dev.yml up -d
    ```
-4. Access Postgresql shell within its container:
+6. Access Postgresql shell within its container:
    ```sh
     docker-compose exec postgres psql -U mtrade -d mtrade-db 
    ```
-5. Insert hard code data
+7. Insert hard code data
    ```sh
-   INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Commex'); 
-   INSERT INTO Exchange (id, name) VALUES (gen_random_uuid(), 'Kraken');"
+   INSERT INTO "Exchange" (id, name) VALUES (gen_random_uuid(), 'Commex'); 
+   INSERT INTO "Exchange" (id, name) VALUES (gen_random_uuid(), 'Kraken');"
    ```
-6. Exit postgres shell
+8. Exit postgres shell
    ```sh
    exit
    ```
 
-### Run Application
+### Start Application
 
 1. Start App
   ```sh
-docker-compose exec postgres psql -U mtrade -d mtrade-db 
+docker-compose -f docker-compose.dev.yml up -d
   ```
-2. Go to http://localhost:300/ if you wanna see client
+2. Go to http://localhost:3000/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -192,7 +196,17 @@ npm run start
   - [ ] Devops: Github actions linting and testing before introducing to production
   - [ ] Utilizing email in the authentication process
   - [ ] Password reset utilizing email
-  - [ ] Administrative access to database
+  - [ ] Administrative access to database(Golan Back End)
+  - [ ] Debugging CSS glitches
+  - [ ] User Information Input & Change
+  - [ ] Invidual trade access with url for sharing
+  - [ ] Stripe Payment for Premium Users
+  - [ ] Expand user schema
+  - [ ] Delete & Modify exisiting user private and public keys
+  - [ ] Leaderboard
+  - [ ] Paper trade funtionality
+  - [ ] Live websocket price tracking
+ 
 
 
 See the [open issues](https://github.com/kbventures/next-mtrade/issues) for a full list of proposed features (and known issues).
