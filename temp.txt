@@ -1,4 +1,4 @@
-Feature to add API from any exchange with tests
+1Feature to add API from any exchange with tests
 Setup Next.js App as an image and orchestres the db and the app in docker-compose.yml 
 Fast setup process to install
 Get Deploy working again

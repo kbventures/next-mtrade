@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {  } from '@fortawesome/free-brands-svg-icons';
@@ -52,6 +52,8 @@ const {
 
 function Trades() {
     const [showPopup, setShowPopup] = useState(false);
+    const [tradesData, setTradesData] = useState([]);
+    const [error, setError] = useState<string | null>(null);
 
     const handleOpenMenu = useCallback(() => {
         // eslint-disable-next-line no-console
@@ -64,6 +66,31 @@ function Trades() {
         // console.log("handleOpenClose Clicked!");
         setShowPopup(false);
     }, []);
+
+    useEffect(() => {
+        const fetchTradesData = async () => {
+            try {
+                const response = await fetch("/api/trades");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+                const data = await response.json();
+                setTradesData(data);
+                console.log("data",data)
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(`Error fetching API keys: ${err.message}`);
+                } else {
+                    setError("Unknown error occurred");
+                }
+            }
+        };
+        fetchTradesData();
+    }, []);
+
+    if (error) {
+        return <div>{error}</div>;
+    }
 
     return (
         <div>
