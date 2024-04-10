@@ -111,7 +111,7 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    cd next-mtrade
    ```
-3. Install NPM packages
+3. Install dependencies
    ```sh
    npm install
    ```
@@ -125,14 +125,25 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    docker-compose -f docker-compose.dev.yml up -d
    ```
-6. Access Postgresql shell within its container:
+6. Push schema: 
+   ```sh
+   docker exec -it mtrade-app npx dotenv -e .env.local -- prisma db push
+   ```
+7. Access Postgresql shell within its container:
    ```sh
     docker-compose exec postgres psql -U mtrade -d mtrade-db 
    ```
-7. Insert hard code data
+8. Insert hard code data
    ```sh
-   INSERT INTO "Exchange" (id, name) VALUES (gen_random_uuid(), 'Commex'); 
-   INSERT INTO "Exchange" (id, name) VALUES (gen_random_uuid(), 'Kraken');"
+  INSERT INTO "Exchange" ("exchangeName")
+   VALUES 
+    ('Kraken'),
+    ('Coinbase'),
+    ('Okex'),
+    ('Derebit'),
+    ('KuCoin'),
+    ('Binance');
+
    ```
 8. Exit postgres shell
    ```sh

@@ -76,7 +76,7 @@ function Trades() {
                 }
                 const data = await response.json();
                 setTradesData(data);
-                console.log("data",data)
+                console.log("data", data);
             } catch (err) {
                 if (err instanceof Error) {
                     setError(`Error fetching API keys: ${err.message}`);

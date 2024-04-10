@@ -48,8 +48,8 @@ model Session {
 
 model Exchange {
   id            String        @id @default(cuid())
-  name          String
-  apiKey        ApiKey[]      // One-to-many relationship with ApiKey
+  name          String        @unique  
+  apiKey        ApiKey[]      
 }
 
 model ApiKey {
@@ -57,10 +57,8 @@ model ApiKey {
   keyAlias      String
   publicKey     String
   secretKey     String
-  exchange      Exchange      @relation(fields: [exchangeId], references: [id], onDelete: Cascade)
-  exchangeId    String
+  exchange      Exchange      @relation(fields: [exchangeName], references: [name], onDelete: Cascade)
+  exchangeName  String        
   user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId        String
 }
-
-

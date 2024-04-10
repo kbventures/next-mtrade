@@ -4,6 +4,6 @@ export interface ApiKey {
     keyAlias: string;
     publicKey: string;
     secretKey: string;
-    exchangeId: string;
-    name: string;
+    exchangeName: string;
+    userId: string;
 }

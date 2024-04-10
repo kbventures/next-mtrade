@@ -13,6 +13,7 @@ export default async function handler(
     if (req.method === "GET") {
         try {
             const exchanges = await prisma.exchange.findMany();
+            console.log("exchanges api", exchanges);
             res.status(200).json(exchanges);
         } catch (error) {
             // eslint-disable-next-line no-console
@@ -20,7 +21,7 @@ export default async function handler(
             res.status(500).json({ error: "Internal Server Error" });
         }
     } else if (req.method === "POST") {
-        const { keyAlias, publicKey, secretKey, exchangeId } = req.body;
+        const { keyAlias, publicKey, secretKey, exchangeName } = req.body;
         try {
             const newApi = await prisma.apiKey.create({
                 data: {
@@ -29,7 +30,7 @@ export default async function handler(
                     keyAlias,
                     publicKey,
                     secretKey,
-                    exchangeId,
+                    exchangeName,
                     userId: token?.sub || "",
                 },
             });

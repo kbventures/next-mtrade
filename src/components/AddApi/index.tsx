@@ -30,6 +30,7 @@ function AddApi() {
                 const res = await fetch("/api/exchanges");
                 const data = await res.json();
                 setExchanges(data);
+                console.log("exchange data", data);
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error("Error fetching exchanges:", error);
@@ -60,7 +61,7 @@ function AddApi() {
                     keyAlias: keyAlias__,
                     publicKey: publicKey__,
                     secretKey: secretKey__,
-                    exchangeId: exchange__,
+                    exchangeName: exchange__,
                 }),
             });
             const data = await res.json();

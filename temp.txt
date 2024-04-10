@@ -217,7 +217,7 @@ docker-compose exec nextjs-app npx prisma generate
 docker exec -it mtrade-app-dev npx dotenv -e .env.local -- prisma db push
 Need to insert Exchanges manually:
 sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
-insert into "Exchange" (id, name) values (gen_random_uuid(), 'Commex');  
+insert into "Exchange" (id, name) values (gen_random_uuid(), 'Ok');  
 
 
 
@@ -233,6 +233,10 @@ sudo docker-compose logs nextjs-app
 docker-compose -f docker-compose.dev.yml up --build -d
 
 sudo docker-compose -f docker-compose.dev.yml exec nextjs-app sh
+
+
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+
 
 
 
@@ -254,18 +258,10 @@ kill -9 <PID>
                 // });
 
 
-
-
-                let commex = new ccxt.commex ({
-  apiKey: '5A4D1D25AE95EB502061C061CAB3E3AB50A76CAC7D89FA3A4EB0B1E1157C1415',
-  secret: 'D598291CF01C76F70A73FAAF52B18B184AAFDDAD4F80356C0CB30162FCE5841A',
+let kraken = new ccxt.kraken ({
+  apiKey: '8kAC/5horFHKdLin4eiCb+t8Dr8E4oCEwM97+M86t8DZaavJ3ArJVbr4',
+  secret: 'zvKaDJsNgxiOx1gE/usnfk2/iYd17CFT+yX3GwpiV4HlkaAqdrPaGO723zDZCwqUaME/c0skb8kqjp+8WMgXAQ==',
 })
 
-
-UPDATE "ApiKey"
-SET
-    "publicKey" = '5A4D1D25AE95EB502061C061CAB3E3AB50A76CAC7D89FA3A4EB0B1E1157C1415',
-    "secretKey" = 'D598291CF01C76F70A73FAAF52B18B184AAFDDAD4F80356C0CB30162FCE5841A'
-WHERE
-    "keyAlias" = 'Commex Testing';
+    // To do onlyh one api key per exchange for now
 
