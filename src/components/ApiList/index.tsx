@@ -25,6 +25,7 @@ function AddApi() {
                     throw new Error("Failed to fetch API keys");
                 }
                 const data = await res.json();
+                console.log("data api keys", data);
                 setApiKeys(data);
                 if (data.length === 0) {
                     router.push("/home/addApiKeys");
@@ -51,11 +52,11 @@ function AddApi() {
             <div className={authLayoutContent}>
                 {apiKeys.map(apiKey => (
                     <div key={apiKey.id} className={exchangeIcon}>
-                        {apiKey && apiKey.exchangeId && (
+                        {apiKey && apiKey.exchangeName && (
                             <div>
                                 <Image
-                                    src={`/${apiKey.exchangeId}.png`}
-                                    alt={apiKey.exchangeId}
+                                    src={`/${apiKey.exchangeName}.png`}
+                                    alt={apiKey.exchangeName}
                                     width={100}
                                     height={100}
                                 />
