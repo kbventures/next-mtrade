@@ -135,15 +135,16 @@ To get a local copy up and run follow these simple example steps.
    ```
 8. Insert hard code data
    ```sh
-  INSERT INTO "Exchange" ("exchangeName")
+   INSERT INTO "Exchange" (id, name) 
    VALUES 
-    ('Kraken'),
-    ('Coinbase'),
-    ('Okex'),
-    ('Derebit'),
-    ('KuCoin'),
-    ('Binance');
-
+   (gen_random_uuid(), 'Commex'),
+   (gen_random_uuid(), 'Kraken'),
+   (gen_random_uuid(), 'Coinbase'),
+   (gen_random_uuid(), 'OkCoin'),
+   (gen_random_uuid(), 'KuCoin'),
+   (gen_random_uuid(), 'Gemini'),
+   (gen_random_uuid(), 'Deribit'),
+   (gen_random_uuid(), 'Binance');
    ```
 8. Exit postgres shell
    ```sh

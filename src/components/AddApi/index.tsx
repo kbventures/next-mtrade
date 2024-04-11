@@ -52,6 +52,7 @@ function AddApi() {
 
         // console.log(publicKey__, secretKey__, exchange__, typeof keyAlias__);
         try {
+            console.log("value", exchange__);
             const res = await fetch("/api/exchanges", {
                 method: "POST",
                 headers: {
@@ -80,7 +81,7 @@ function AddApi() {
     }
 
     const exchangeOptions = exchanges.map(exch => (
-        <option key={exch.id} value={exch.id}>
+        <option key={exch.id} value={exch.name}>
             {exch.name}
         </option>
     ));

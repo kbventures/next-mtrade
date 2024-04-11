@@ -13,15 +13,13 @@ export default async function handler(
     if (req.method === "GET") {
         try {
             const exchanges = await prisma.exchange.findMany();
-            console.log("exchanges api", exchanges);
             res.status(200).json(exchanges);
         } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error("Error fetching exchanges:", error);
             res.status(500).json({ error: "Internal Server Error" });
         }
     } else if (req.method === "POST") {
         const { keyAlias, publicKey, secretKey, exchangeName } = req.body;
+        console.log("exchangeName Post", exchangeName);
         try {
             const newApi = await prisma.apiKey.create({
                 data: {
