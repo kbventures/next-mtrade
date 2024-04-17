@@ -14,6 +14,7 @@ import {
 import styles from "./trades.module.scss";
 import TimeFramePopUp from "./Popup/index";
 import DesktopTrades from "./DeskTopTrades/index";
+import ExchangeTrade from "../../types/exchangeTrade";
 
 const {
     app,
@@ -52,7 +53,11 @@ const {
 
 function Trades() {
     const [showPopup, setShowPopup] = useState(false);
-    const [tradesData, setTradesData] = useState([]);
+    const [tradesData, setTradesData] = useState<{
+        [key: string]: ExchangeTrade[];
+    }>({});
+    console.log("Initial tradesData state:", tradesData);
+
     const [error, setError] = useState<string | null>(null);
 
     const handleOpenMenu = useCallback(() => {
@@ -75,11 +80,16 @@ function Trades() {
                     throw new Error("Failed to fetch data");
                 }
                 const data = await response.json();
-                setTradesData(data);
                 console.log("data", data);
+                // console.log("typeof data", Array.isArray(data));
+                // console.log("typeof data", data[0]);
+
+                setTradesData(data);
+                // console.log("data", data);
+                // console.log("trades", tradesData);
             } catch (err) {
                 if (err instanceof Error) {
-                    setError(`Error fetching API keys: ${err.message}`);
+                    setError(`Error fetching Trades: ${err.message}`);
                 } else {
                     setError("Unknown error occurred");
                 }
@@ -228,312 +238,82 @@ function Trades() {
                             </div>
                         </div>
                         <div className={collapsedTable}>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
+                            {Object.entries(tradesData).map(
+                                ([exchangeName, trades]) => (
+                                    <div
+                                        className={collapsedTableItem}
+                                        key={exchangeName}
+                                    >
+                                        {trades.map(trade => (
+                                            <div
+                                                key={trade.id}
+                                                style={{ marginBottom: "10px" }}
+                                            >
+                                                {/* Display Time */}
+                                                <div>
+                                                    <div>Time (+00:00)</div>
+                                                    <div>
+                                                        <div
+                                                            className={
+                                                                textFormat
+                                                            }
+                                                        >
+                                                            {trade.datetime}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {/* Display Type (Buy/Sell) */}
+                                                <div>
+                                                    <div>Type</div>
+                                                    <div>{trade.side}</div>
+                                                </div>
+                                                {/* Display Price */}
+                                                <div>
+                                                    <div>Price</div>
+                                                    <div
+                                                        className={
+                                                            amountGreenText
+                                                        }
+                                                    >
+                                                        <span>
+                                                            {trade.price}
+                                                        </span>
+                                                        .
+                                                        <span
+                                                            className={
+                                                                amountFraction
+                                                            }
+                                                        >
+                                                            0000000000
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                {/* Display Amount */}
+                                                <div>
+                                                    <div>Amount</div>
+                                                    <div
+                                                        className={
+                                                            amountGreenText
+                                                        }
+                                                    >
+                                                        <span>
+                                                            {trade.amount}
+                                                        </span>
+                                                        .
+                                                        <span
+                                                            className={
+                                                                amountFraction
+                                                            }
+                                                        >
+                                                            {trade.filled}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={collapsedTableItem}>
-                                <div>
-                                    <div>Time (+00:00)</div>
-                                    <div>
-                                        <div className={textFormat}>
-                                            24-04-23 15:44:17
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Type</div>
-                                    <div>BUY</div>
-                                </div>
-                                <div>
-                                    <div>Price</div>
-                                    <div>
-                                        <div className={amountGreenText}>
-                                            <span>27269</span>.
-                                            <span className={amountFraction}>
-                                                0000000000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>Amount</div>
-                                    <div className={amountGreenText}>
-                                        <span>-0</span>.
-                                        <span className={amountFraction}>
-                                            01500000
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                                )
+                            )}
                         </div>
                     </div>
                 </div>

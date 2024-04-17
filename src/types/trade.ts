@@ -53,6 +53,8 @@ export type Trade = {
     reduceOnly?: undefined;
 };
 
+export default Trade;
+
 // Usage example:
 // const tradeData: Trade[] = [
 //     {
@@ -99,4 +101,3 @@ export type Trade = {
 // ];
 
 // Export the Trade type
-export default Trade;

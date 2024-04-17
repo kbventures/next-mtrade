@@ -6,10 +6,10 @@ services:
     image: postgres:13.3
     environment:
       POSTGRES_USER: mtrade
-      POSTGRES_PASSWORD: mtrade
+      POSTGRES_PASSWORD: mtrade-pwd
       POSTGRES_DB: mtrade-db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - mtrade-postgres-data:/var/lib/postgresql/data
   nextjs-app:
@@ -23,6 +23,10 @@ services:
       - postgres
     env_file:
       - .env.local
+    command: npm run dev 
+    volumes:
+      - /home/ken/Programming/next-mtrade:/usr/src/app
 
 volumes:
   mtrade-postgres-data:
+
