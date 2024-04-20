@@ -199,7 +199,7 @@ function Trades() {
                                 </span>
                             </div>
                         </div>
-                        <DesktopTrades />
+                        <DesktopTrades tradesData={tradesData} />
                         <div className={pagination}>
                             <div className={paginationGroup}>
                                 <FontAwesomeIcon

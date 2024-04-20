@@ -12,40 +12,39 @@ export default async function handler(
     try {
         const apiKeys = await prisma.apiKey.findMany();
 
-        // Use a Map to store trades by exchangeName
-        const tradesByExchange: Map<string, Trade[]> = new Map();
+        // Use a Map to store exchange name and trades array
+        const exchangeNameTradesArrayMap: Map<string, Trade[]> = new Map();
 
         // eslint-disable-next-line no-restricted-syntax
         for (const { publicKey, secretKey, exchangeName } of apiKeys) {
-            if (exchangeName !== "") {
-                const tempApiKey = publicKey;
-                const tempSecret = secretKey;
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                const currentExchange = new (ccxt as any)[
-                    exchangeName.toLowerCase()
-                ]({
-                    apiKey: tempApiKey,
-                    secret: tempSecret,
-                });
+            const tempApiKey = publicKey;
+            const tempSecret = secretKey;
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const currentExchange = new (ccxt as any)[
+                exchangeName.toLowerCase()
+            ]({
+                apiKey: tempApiKey,
+                secret: tempSecret,
+            });
 
-                const trades: Trade[] =
-                    // eslint-disable-next-line no-await-in-loop
-                    (await currentExchange.fetchClosedOrders()) as Trade[];
+            const trades: Trade[] =
+                // eslint-disable-next-line no-await-in-loop
+                (await currentExchange.fetchClosedOrders()) as Trade[];
 
-                // Get existing trades array for the exchangeName
-                let existingTrades = tradesByExchange.get(exchangeName) || [];
+            // Get existing trades array for the exchangeName
+            let existingTrades =
+                exchangeNameTradesArrayMap.get(exchangeName) || [];
 
-                // Append newly fetched trades to existing trades array
-                existingTrades = [...existingTrades, ...trades];
+            // Append newly fetched trades to existing trades array
+            existingTrades = [...existingTrades, ...trades];
 
-                // Update the Map with aggregated trades for the exchangeName
-                tradesByExchange.set(exchangeName, existingTrades);
-            }
+            // Update the Map with aggregated trades for the exchangeName
+            exchangeNameTradesArrayMap.set(exchangeName, existingTrades);
         }
 
         // Convert Map to plain object for JSON response
         const tradesByExchangeAndApiKey: Record<string, Trade[]> = {};
-        tradesByExchange.forEach((trades, exchangeName) => {
+        exchangeNameTradesArrayMap.forEach((trades, exchangeName) => {
             tradesByExchangeAndApiKey[exchangeName] = trades;
         });
 
