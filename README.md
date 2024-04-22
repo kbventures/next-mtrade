@@ -119,11 +119,11 @@ To get a local copy up and run follow these simple example steps.
    ```sh
    NEXTAUTH_URL="http://localhost:3000"
    NEXTAUTH_SECRET="yourSecretGoesHere"
-   DATABASE_URL="postgresql://mtrade:mtrade@postgres:5432/mtrade-db"
+   DATABASE_URL="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
    ``` 
 5. Start Containers: 
    ```sh
-   docker-compose -f docker-compose.dev.yml up -d
+   docker-compose up -d
    ```
 6. Push schema: 
    ```sh

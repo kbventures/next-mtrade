@@ -265,3 +265,11 @@ let kraken = new ccxt.kraken ({
 
     // To do onlyh one api key per exchange for now
 
+
+
+//  Installing Docker-Compose
+
+
+// Starting Docker-compose desktop
+ systemctl --user start docker-desktop
+
