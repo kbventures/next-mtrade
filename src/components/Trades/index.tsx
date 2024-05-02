@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import {  } from '@fortawesome/free-brands-svg-icons';
 import {
     faCalendar,
     faRefresh,
@@ -14,7 +13,7 @@ import {
 import styles from "./trades.module.scss";
 import TimeFramePopUp from "./Popup/index";
 import DesktopTrades from "./DeskTopTrades/index";
-import ExchangeTrade from "../../types/exchangeTrade";
+import { Trade }from "../../types/trade";
 
 const {
     app,
@@ -53,9 +52,7 @@ const {
 
 function Trades() {
     const [showPopup, setShowPopup] = useState(false);
-    const [tradesData, setTradesData] = useState<{
-        [key: string]: ExchangeTrade[];
-    }>({});
+    const [tradesData, setTradesData] = useState<Trade[]>();
     console.log("Initial tradesData state:", tradesData);
 
     const [error, setError] = useState<string | null>(null);
@@ -237,84 +234,7 @@ function Trades() {
                                 />
                             </div>
                         </div>
-                        <div className={collapsedTable}>
-                            {Object.entries(tradesData).map(
-                                ([exchangeName, trades]) => (
-                                    <div
-                                        className={collapsedTableItem}
-                                        key={exchangeName}
-                                    >
-                                        {trades.map(trade => (
-                                            <div
-                                                key={trade.id}
-                                                style={{ marginBottom: "10px" }}
-                                            >
-                                                {/* Display Time */}
-                                                <div>
-                                                    <div>Time (+00:00)</div>
-                                                    <div>
-                                                        <div
-                                                            className={
-                                                                textFormat
-                                                            }
-                                                        >
-                                                            {trade.datetime}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {/* Display Type (Buy/Sell) */}
-                                                <div>
-                                                    <div>Type</div>
-                                                    <div>{trade.side}</div>
-                                                </div>
-                                                {/* Display Price */}
-                                                <div>
-                                                    <div>Price</div>
-                                                    <div
-                                                        className={
-                                                            amountGreenText
-                                                        }
-                                                    >
-                                                        <span>
-                                                            {trade.price}
-                                                        </span>
-                                                        .
-                                                        <span
-                                                            className={
-                                                                amountFraction
-                                                            }
-                                                        >
-                                                            0000000000
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                {/* Display Amount */}
-                                                <div>
-                                                    <div>Amount</div>
-                                                    <div
-                                                        className={
-                                                            amountGreenText
-                                                        }
-                                                    >
-                                                        <span>
-                                                            {trade.amount}
-                                                        </span>
-                                                        .
-                                                        <span
-                                                            className={
-                                                                amountFraction
-                                                            }
-                                                        >
-                                                            {trade.filled}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                )
-                            )}
-                        </div>
+
                     </div>
                 </div>
             </div>

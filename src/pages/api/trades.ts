@@ -12,43 +12,27 @@ export default async function handler(
     try {
         const apiKeys = await prisma.apiKey.findMany();
 
-        // Use a Map to store exchange name and trades array
-        const exchangeNameTradesArrayMap: Map<string, Trade[]> = new Map();
+        // Array to store all trades
+        const allTrades: Trade[] = [];
 
-        // eslint-disable-next-line no-restricted-syntax
         for (const { publicKey, secretKey, exchangeName } of apiKeys) {
-            const tempApiKey = publicKey;
-            const tempSecret = secretKey;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const currentExchange = new (ccxt as any)[
-                exchangeName.toLowerCase()
-            ]({
-                apiKey: tempApiKey,
-                secret: tempSecret,
+            // Create an instance of the exchange
+            const currentExchange = new (ccxt as any)[exchangeName.toLowerCase()]({
+                apiKey: publicKey,
+                secret: secretKey,
             });
 
-            const trades: Trade[] =
-                // eslint-disable-next-line no-await-in-loop
-                (await currentExchange.fetchClosedOrders()) as Trade[];
+            // Fetch closed orders for the exchange
+            const tradesFromExchange = await currentExchange.fetchClosedOrders();
 
-            // Get existing trades array for the exchangeName
-            let existingTrades =
-                exchangeNameTradesArrayMap.get(exchangeName) || [];
-
-            // Append newly fetched trades to existing trades array
-            existingTrades = [...existingTrades, ...trades];
-
-            // Update the Map with aggregated trades for the exchangeName
-            exchangeNameTradesArrayMap.set(exchangeName, existingTrades);
+            // Add the exchange name to each trade
+            tradesFromExchange.forEach((trade: Trade) => {
+                trade.exchange = exchangeName;
+                allTrades.push(trade);
+            });
         }
-
-        // Convert Map to plain object for JSON response
-        const tradesByExchangeAndApiKey: Record<string, Trade[]> = {};
-        exchangeNameTradesArrayMap.forEach((trades, exchangeName) => {
-            tradesByExchangeAndApiKey[exchangeName] = trades;
-        });
-
-        res.status(200).json(tradesByExchangeAndApiKey);
+        console.log("alltrades",allTrades)
+        res.status(200).json(allTrades);
     } catch (error) {
         if (error instanceof Error) {
             throw new Error(`Error fetching API keys: ${error.message}`);

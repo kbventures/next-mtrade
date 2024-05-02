@@ -2,6 +2,7 @@ import React from "react";
 // eslint-disable-next-line import/no-unresolved
 import styles from "./desk-top-trades.module.scss";
 import SingleTrade from "../../SingleTrade/index";
+import { Trade } from "../../../types/trade";
 
 const {
     collapsedTable,
@@ -12,7 +13,12 @@ const {
     tableContainer,
 } = styles;
 
-function DesktopTrades() {
+interface Props {
+    tradesData: Trade[]|undefined; 
+}
+
+
+function DesktopTrades({tradesData}:Props) {
     return (
         <div>
             <div className={tableContainer} />

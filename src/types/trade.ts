@@ -1,5 +1,6 @@
 // Define the Trade type
-export type Trade = {
+export interface Trade  {
+    exchange: string;
     id: string;
     clientOrderId?: undefined;
     info: {
@@ -52,52 +53,3 @@ export type Trade = {
     lastUpdateTimestamp?: undefined;
     reduceOnly?: undefined;
 };
-
-export default Trade;
-
-// Usage example:
-// const tradeData: Trade[] = [
-//     {
-//         id: "OCOIRM-3AVHM-7B2YLW",
-//         info: {
-//             id: "OCOIRM-3AVHM-7B2YLW",
-//             refid: null,
-//             userref: null,
-//             status: "closed",
-//             opentm: "1588830213.657734",
-//             starttm: "0",
-//             expiretm: "0",
-//             descr: {},
-//             vol: "0.34000000",
-//             vol_exec: "0.34000000",
-//             cost: "4497.14600",
-//             fee: "11.69258",
-//             price: "13226.9",
-//             stopprice: "0.00000",
-//             limitprice: "0.00000",
-//             misc: "",
-//             oflags: "fciq",
-//             reason: null,
-//             closetm: "1588830213.6665378",
-//         },
-//         timestamp: 1588830213657,
-//         datetime: "2020-05-07T05:43:33.657Z",
-//         status: "closed",
-//         symbol: "BTC/CAD",
-//         type: "market",
-//         timeInForce: "IOC",
-//         postOnly: false,
-//         side: "buy",
-//         price: 13226.9,
-//         cost: 4497.146,
-//         amount: 0.34,
-//         filled: 0.34,
-//         average: 13226.9,
-//         remaining: 0,
-//         fee: { cost: "11.69258", currency: "CAD" },
-//         trades: [],
-//         fees: [],
-//     },
-// ];
-
-// Export the Trade type

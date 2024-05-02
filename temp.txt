@@ -273,3 +273,18 @@ let kraken = new ccxt.kraken ({
 // Starting Docker-compose desktop
  systemctl --user start docker-desktop
 
+
+
+// Clean architecture
+https://www.freecodecamp.org/news/build-full-stack-app-with-typescript-nextjs-redux-toolkit-firebase/#howtoimplementauthenticationwithnextauthjs
+https://merlino.agency/blog/clean-architecture-in-express-js-applications/p
+
+
+
+
+
+
+TODO:
+
+Finish simple consolidation screen and then apply solid principles to pages
+Then resume adding features and dev ops / testing pieces
