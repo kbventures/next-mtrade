@@ -34,7 +34,7 @@ model Session {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
- model User {
+model User {
   id            String    @id @default(cuid())
   name          String?
   username      String    @unique
@@ -43,8 +43,10 @@ model Session {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  apiKeys       ApiKey[]   // One-to-many relationship with ApiKey
+  apiKeys       ApiKey[]
+  manualTrades  ManualTrade[]   // Add this line
 }
+
 
 model Exchange {
   id            String        @id @default(cuid())
@@ -62,3 +64,43 @@ model ApiKey {
   user          User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId        String
 }
+
+model ManualTrade {
+  id              String      @id
+  opentm          Float
+  closetm         Float
+  pair            String
+  type            String
+  ordertype       String
+  price           String
+  price2          String
+  leverage        String
+  order           String
+  close           String
+  vol             String
+  vol_exec        String
+  cost            String
+  fee             String
+  stopprice       String
+  limitprice      String
+  misc            String
+  oflags          String
+  reason          String
+  timestamp       Float
+  datetime        DateTime
+  status          String
+  symbol          String
+  timeInForce     String
+  postOnly        Boolean
+  side            String
+  amount          Float
+  filled          Float
+  average         Float
+  remaining       Float
+  fees            Json
+  trades          Json
+  exchange        String
+  user            User        @relation(fields: [userId], references: [id])
+  userId          String
+}
+
