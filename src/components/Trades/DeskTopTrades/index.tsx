@@ -19,6 +19,7 @@ interface Props {
 
 
 function DesktopTrades({tradesData}:Props) {
+    console.log("Props: ", tradesData)
     return (
         <div>
             <div className={tableContainer} />
@@ -181,7 +182,9 @@ function DesktopTrades({tradesData}:Props) {
                         </div>
                     </div>
                 </div> */}
-                <SingleTrade />
+               {tradesData && tradesData.map((trade, index) => (
+                    <SingleTrade key={index} trade={trade} />
+                ))}
             </div>
         </div>
     );
@@ -191,8 +194,6 @@ export default DesktopTrades;
 
 // import React from "react";
 // import styles from "./desk-top-trades.module.scss";
-// import ExchangeTrade from "../../../types/exchangeTrade";
-
 // const {
 //     collapsedTable,
 //     collapsedTableItem,

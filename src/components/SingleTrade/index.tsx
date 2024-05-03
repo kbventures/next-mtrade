@@ -1,15 +1,22 @@
 import React from "react";
 import styles from "./single-trade.module.scss";
+import {Trade} from "../../types/trade";
 
 const { textFormat, amountGreenText, amountFraction } = styles;
 
-function SingleTrade() {
+interface Props{
+    trade: Trade|undefined;
+}
+
+
+function SingleTrade({trade}: Props) {
+    console.log("Single Trade:", trade )
     return (
         <div className={styles.collapsedTableItem}>
             <div>
                 <div>Time (+00:00)</div>
                 <div>
-                    <div className={textFormat}>24-04-23 15:44:17</div>
+                    <div className={textFormat}>{trade?.datetime}</div>
                 </div>
             </div>
             <div>
