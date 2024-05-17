@@ -35,7 +35,7 @@
         "next-auth": "^4.24.5",
         "next-i18next": "^14.0.0",
         "node-fetch": "^3.3.2",
-        "prisma": "^4.16.2",
+        "prisma": "^5.14.0",
         "prop-types": "^15.8.1",
         "proptypes": "^1.1.0",
         "qs": "^6.11.2",
