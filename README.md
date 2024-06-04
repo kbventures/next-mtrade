@@ -68,22 +68,23 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 MTrade is a crypto exchange trade analysis web application which enables users with crypto exchange API keys to consolidate and vizualise select data from all their accounts.
+
 ### Built With
 
-- ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-- ![Postgresql](https://img.shields.io/badge/Postgresql-%234ea94b.svg?style=for-the-badge&logo=postgresql&logoColor=white)
-- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-- ![Next.js](https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-- ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-- ![SASS](https://img.shields.io/badge/SASS-%231572B6.svg?style=for-the-badge&logo=sass&logoColor=pink)
-- ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+-   ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+-   ![Postgresql](https://img.shields.io/badge/Postgresql-%234ea94b.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+-   ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+-   ![Next.js](https://img.shields.io/badge/next.js-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+-   ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+-   ![SASS](https://img.shields.io/badge/SASS-%231572B6.svg?style=for-the-badge&logo=sass&logoColor=pink)
+-   ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 <!-- - ![Playwright](https://img.shields.io/badge/-Playwright-%23C21325?style=for-the-badge&logo=Playwright&logoColor=white) -->
-- ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-- ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-- ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-- ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-- ![Docker](https://img.shields.io/badge/Docker-1572B6?style=for-the-badge&logo=3&logoColor=white)
+-   ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+-   ![Javascript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+-   ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+-   ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+-   ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+-   ![Docker](https://img.shields.io/badge/Docker-1572B6?style=for-the-badge&logo=3&logoColor=white)
 
 <p align="right">(<a href="#readme-top">back to top</a>)
 </p>
@@ -97,66 +98,68 @@ To get a local copy up and run follow these simple example steps.
 
 ### Prerequisites
 
-- Node.js: [Download](https://nodejs.org/en/)
-- Git: [Download](https://git-scm.com/)
-- Docker: [Download](https://www.docker.com/get-started/)
+-   Node.js: [Download](https://nodejs.org/en/)
+-   Git: [Download](https://git-scm.com/)
+-   Docker: [Download](https://www.docker.com/get-started/)
 
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/kbventures/next-mtrade.git
-   ```
+    ```sh
+    git clone https://github.com/kbventures/next-mtrade.git
+    ```
 2. Go to cloned folder
-   ```sh
-   cd next-mtrade
-   ```
+    ```sh
+    cd next-mtrade
+    ```
 3. Install dependencies
-   ```sh
-   npm install
-   ```
+    ```sh
+    npm install
+    ```
 4. Add `.env.local` file inside root directory
-   ```sh
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="yourSecretGoesHere"
-   DATABASE_URL="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
-   ``` 
-5. Start Containers: 
-   ```sh
-   docker-compose up -d
-   ```
-6. Push schema: 
-   ```sh
-   docker exec -it mtrade-app npx dotenv -e .env.local -- prisma db push
-   ```
+    ```sh
+    NEXTAUTH_URL="http://localhost:3000"
+    NEXTAUTH_SECRET="yourSecretGoesHere"
+    POSTGRES_URL_PRISMA="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
+    ```
+5. Start Containers:
+    ```sh
+    docker-compose up -d
+    ```
+6. Push schema:
+    ```sh
+    docker exec -it mtrade-app npx dotenv -e .env.local -- prisma db push
+    ```
 7. Access Postgresql shell within its container:
-   ```sh
-    docker-compose exec postgres psql -U mtrade -d mtrade-db 
-   ```
+    ```sh
+     docker-compose exec postgres psql -U mtrade -d mtrade-db
+    ```
 8. Insert hard code data
-   ```sh
-   INSERT INTO "Exchange" (id, name) 
-   VALUES 
-   (gen_random_uuid(), 'Commex'),
-   (gen_random_uuid(), 'Kraken'),
-   (gen_random_uuid(), 'Coinbase'),
-   (gen_random_uuid(), 'OkCoin'),
-   (gen_random_uuid(), 'KuCoin'),
-   (gen_random_uuid(), 'Gemini'),
-   (gen_random_uuid(), 'Deribit'),
-   (gen_random_uuid(), 'Binance');
-   ```
-8. Exit postgres shell
-   ```sh
-   exit
-   ```
+    ```sh
+    INSERT INTO "Exchange" (id, name)
+    VALUES
+    (gen_random_uuid(), 'Commex'),
+    (gen_random_uuid(), 'Kraken'),
+    (gen_random_uuid(), 'Coinbase'),
+    (gen_random_uuid(), 'OkCoin'),
+    (gen_random_uuid(), 'KuCoin'),
+    (gen_random_uuid(), 'Gemini'),
+    (gen_random_uuid(), 'Deribit'),
+    (gen_random_uuid(), 'Binance');
+    ```
+9. Exit postgres shell
+    ```sh
+    exit
+    ```
 
 ### Start Application
 
 1. Start App
-  ```sh
+
+```sh
 docker-compose -f docker-compose.dev.yml up -d
-  ```
+```
+
 2. Go to http://localhost:3000/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -166,15 +169,17 @@ docker-compose -f docker-compose.dev.yml up -d
 ## Run Unit Tests
 
 1. Terminal
-   ```sh
-   npm run test
-   ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+    ```sh
+    npm run test
+    ```
+    <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Production build -->
 
 ## Production build
+
 1. Terminal
+
 ```sh
 npm run build
 ```
@@ -182,7 +187,9 @@ npm run build
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Run production build
+
 1. Terminal
+
 ```sh
 npm run start
 ```
@@ -192,8 +199,9 @@ npm run start
 <!-- LEARNED -->
 
 ## What I have learned
+
 1. Authentication with next-auth
-2. Psql, Postgresql 
+2. Psql, Postgresql
 3. Docker, docker-compose
 4. Creating Next.js Image
 5. Containerizing a next.js app and postgresl instance
@@ -202,24 +210,23 @@ npm run start
 <!-- ROADMAP -->
 
 ## Roadmap
-  - [ ] Consolidation Of Trades screen
-  - [ ] Visual Analysis
-  - [ ] Automated testing: Unit, e2e and intergration tests
-  - [ ] Devops: Github actions linting and testing before introducing to production
-  - [ ] Utilizing email in the authentication process
-  - [ ] Password reset utilizing email
-  - [ ] Administrative access to database(Golan Back End)
-  - [ ] Debugging CSS glitches
-  - [ ] User Information Input & Change
-  - [ ] Invidual trade access with url for sharing
-  - [ ] Stripe Payment for Premium Users
-  - [ ] Expand user schema
-  - [ ] Delete & Modify exisiting user private and public keys
-  - [ ] Leaderboard
-  - [ ] Paper trade funtionality
-  - [ ] Live websocket price tracking
- 
 
+-   [ ] Consolidation Of Trades screen
+-   [ ] Visual Analysis
+-   [ ] Automated testing: Unit, e2e and intergration tests
+-   [ ] Devops: Github actions linting and testing before introducing to production
+-   [ ] Utilizing email in the authentication process
+-   [ ] Password reset utilizing email
+-   [ ] Administrative access to database(Golan Back End)
+-   [ ] Debugging CSS glitches
+-   [ ] User Information Input & Change
+-   [ ] Invidual trade access with url for sharing
+-   [ ] Stripe Payment for Premium Users
+-   [ ] Expand user schema
+-   [ ] Delete & Modify exisiting user private and public keys
+-   [ ] Leaderboard
+-   [ ] Paper trade funtionality
+-   [ ] Live websocket price tracking
 
 See the [open issues](https://github.com/kbventures/next-mtrade/issues) for a full list of proposed features (and known issues).
 
@@ -233,35 +240,35 @@ See the [open issues](https://github.com/kbventures/next-mtrade/issues) for a fu
 
 1. Clone the repository with this command if you don't have it:
 
-   ```shell
-   git clone https://github.com/kbventures/next-mtrade
-   ```
+    ```shell
+    git clone https://github.com/kbventures/next-mtrade
+    ```
 
 2. Run the following command to make sure you have the latest changes on the main branch
 
-   ```shell
-   git pull
-   ```
+    ```shell
+    git pull
+    ```
 
 3. Create a new feature branch with a descriptive name and only make your changes here. For example, to add this README documentation I would call this branch `add-git-workflow`.
 
-   ```shell
-   git checkout -b <your feature branch name>
-   ```
+    ```shell
+    git checkout -b <your feature branch name>
+    ```
 
 4. Make as many changes as you need in your feature branch. You can use the following commands per commit message.
 
-   ```shell
-   git add .
-   git status
-   git commit -m <your commit message>
-   ```
+    ```shell
+    git add .
+    git status
+    git commit -m <your commit message>
+    ```
 
 5. Once your feature is ready and you're ready to merge into the main branch first make sure to push your local branch changes to GitHub's computers.
 
-   ```shell
-   git push --set-upstream origin <your feature branch name>
-   ```
+    ```shell
+    git push --set-upstream origin <your feature branch name>
+    ```
 
 6. Go to https://github.com/kbventures/ecommerce/branches and you should see your newly pushed feature branch. Find and click the button "New pull request" to request for your changes to be "pulled" into the main branch.
 
@@ -277,30 +284,30 @@ See the [open issues](https://github.com/kbventures/next-mtrade/issues) for a fu
 
 1. From within your feature branch, fetch the latest changes from the main branch
 
-   ```sh
-   git fetch origin main
-   ```
+    ```sh
+    git fetch origin main
+    ```
 
 2. Rebase so that your feature branch history is stacked on top of the latest main branch history
 
-   ```sh
-   git rebase origin/main
-   ```
+    ```sh
+    git rebase origin/main
+    ```
 
 3. Now resolve the conflicts manually in your code editor one at a time. Git will tell you which files have a conflict. Once you've resolved the conflicts run the following commands:
 
-   ```sh
-   git add .
-   git rebase --continue
-   ```
+    ```sh
+    git add .
+    git rebase --continue
+    ```
 
 4. Write and save a commit message if all conflicts are resolved.
 
 5. Push your rebased feature branch changes to GitHub's computers.
 
-   ```sh
-   git push -f origin <your feature branch name>
-   ```
+    ```sh
+    git push -f origin <your feature branch name>
+    ```
 
 6. Go back to your pull request on Github your pull request should have no conflicts and you can merge into the main branch!
 
@@ -323,13 +330,13 @@ In each commit message:
 
 1. Specify the type of commit in the subject. Example: `Feat: create landing page`.
 
-   - feat: The new feature you're adding to a particular application
-   - fix: A bug fix
-   - style: Feature and updates related to styling
-   - refactor: Refactoring a specific section of the codebase
-   - test: Everything related to testing
-   - docs: Everything related to documentation
-   - chore: Regular code maintenance.
+    - feat: The new feature you're adding to a particular application
+    - fix: A bug fix
+    - style: Feature and updates related to styling
+    - refactor: Refactoring a specific section of the codebase
+    - test: Everything related to testing
+    - docs: Everything related to documentation
+    - chore: Regular code maintenance.
 
 2. Separate the subject from the body
 3. Remove whitespace errors
