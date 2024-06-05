@@ -104,37 +104,44 @@ To get a local copy up and run follow these simple example steps.
 
 ### Installation
 
-1. Clone the repo
+1.  Clone the repo
     ```sh
     git clone https://github.com/kbventures/next-mtrade.git
     ```
-2. Go to cloned folder
+2.  Go to cloned folder
     ```sh
     cd next-mtrade
     ```
-3. Install dependencies
+3.  Install dependencies
     ```sh
     npm install
     ```
-4. Add `.env.local` file inside root directory
-    ```sh
-    NEXTAUTH_URL="http://localhost:3000"
-    NEXTAUTH_SECRET="yourSecretGoesHere"
-    POSTGRES_URL_PRISMA="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
-    ```
-5. Start Containers:
+4.  Add `.env.local` file inside root directory
+
+        ```sh
+        NEXTAUTH_URL="http://localhost:3000"
+        NEXTAUTH_SECRET="yourSecretGoesHere"
+
+        POSTGRES_PRISMA_URL="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
+        POSTGRES_URL_NON_POOLING="postgresql://mtrade:mtrade-pwd@postgres:5432/mtrade-db"
+
+    "
+
+        ```
+
+5.  Start Containers:
     ```sh
     docker-compose up -d
     ```
-6. Push schema:
+6.  Push schema:
     ```sh
     docker exec -it mtrade-app npx dotenv -e .env.local -- prisma db push
     ```
-7. Access Postgresql shell within its container:
+7.  Access Postgresql shell within its container:
     ```sh
      docker-compose exec postgres psql -U mtrade -d mtrade-db
     ```
-8. Insert hard code data
+8.  Insert hard code data
     ```sh
     INSERT INTO "Exchange" (id, name)
     VALUES
@@ -147,7 +154,7 @@ To get a local copy up and run follow these simple example steps.
     (gen_random_uuid(), 'Deribit'),
     (gen_random_uuid(), 'Binance');
     ```
-9. Exit postgres shell
+9.  Exit postgres shell
     ```sh
     exit
     ```

@@ -1,25 +1,40 @@
-1Feature to add API from any exchange with tests
-Setup Next.js App as an image and orchestres the db and the app in docker-compose.yml 
-Fast setup process to install
-Get Deploy working again
+Get to a working product ASAP and then start iterating improvings!
+Front end features
+  Front End Analsysi Feature Utilising a Chart
+  Single Trade Share
+  Save Data in a consolidation manner in db
+  Insert Paper Trade
+  Modal
+  Websockets
+Project Management
+SOLID
+Automated Testing
+DevOps pipeline : pull request lint test build merge pr create image etc
+Back End Hosted On AWS, Kubernetes
+Architecture:
+Scaling:
+Security:
+SHARE
 Update documentation
-Internationalize the trades screen
-Get Kraken API Data for Demo but duplicte it 15 times
-Insert Data in form and refactor form
+Redis cache
 Fix CSS minor glitches
-Work on authenticated features
-Setup CIDC on github
-Setup Automated Tests Locally and on Github
+Demo screen
+Lighthouse report
+SEO Accessibility
+Change Password using email and create user using email as confirmation
+Stripe for payements
+UML Diagram
+Postman
+Session for language
+
 
 
 Resources:
+
 Authentiction resource: https://www.youtube.com/watch?v=fqXC2V-MSV4
 Next Auth Examples:
 https://next-auth-example.vercel.app/
-Next Auth Documentation:
 
-If you're using Next.js 13.2 or above with the new App Router (app/), you can initialize the configuration using the new Route Handlers by following our guide.:
-https://next-auth.js.org/configuration/initialization#route-handlers-app
 
 
 Scripts:
@@ -48,73 +63,10 @@ https://stackoverflow.com/questions/63086609/how-to-close-dropdown-on-outside-cl
 
 
 
-Example closed trade object:
-{
-  closed: {
-    'OCOIRM-3AVHM-7B2YLW': {
-      refid: null,
-      userref: null,
-      status: 'closed',
-      opentm: 1588830213.657734,
-      starttm: 0,
-      expiretm: 0,
-      descr: [Object],
-      vol: '0.34000000',
-      vol_exec: '0.34000000',
-      cost: '4497.14600',
-      fee: '11.69258',
-      price: '13226.9',
-      stopprice: '0.00000',
-      limitprice: '0.00000',
-      misc: '',
-      oflags: 'fciq',
-      reason: null,
-      closetm: 1588830213.6665378
-    }
-  },
-  count: 1
-}
 
-List of todos in order: 
-Demo 
-Demo User Login
-ADD New User(Authentication + kraken keys)
-Lighthouse report: SEO, Accessibility, best practices & performance 
-Testing: Unit Test, Intergration Test, e2e
-Dockerize your local setup(Local Postgresql Instance)
+
+
 pull request lint test build merge pr create image etc
-Internationalization
-authentication
-Responsive
-Goland Back End
-Project Management(See docker course for example)
-Documentation
-Trades not from exchange?s
-Visualization of trade data 
-Create a kron job so the project will not shut down due to superbase inactivity
-https://cron-job.org/en/
-
-
-Right now: 
-Internationalization
-Make demo data work has if its coming from kraken
-Make version work for where user creates new kraken api
-One Test Of Each
-pull request lint test build merge pr create image etc
-
-Nice to have:
-Third Party API(Websockerse live data)
-Change Password using email and create user using email as confirmation
-Stripe for payements
-UML Diagram
-Setup Project Management
-Postman Files
-
-Need to fix some minor css issues
-Update SQL Structure For Users And Trades
-Session for language
-
-
 
 
 
@@ -277,14 +229,31 @@ let kraken = new ccxt.kraken ({
 
 // Clean architecture
 https://www.freecodecamp.org/news/build-full-stack-app-with-typescript-nextjs-redux-toolkit-firebase/#howtoimplementauthenticationwithnextauthjs
-https://merlino.agency/blog/clean-architecture-in-express-js-applications/p
+https://merlino.agency/blog/clean-architecture-in-express-js-applications
 
 
 
 
 
 
-TODO:
 
-Finish simple consolidation screen and then apply solid principles to pages
-Then resume adding features and dev ops / testing pieces
+
+// Getting development started
+sudo docker-compose up -d
+sudo docker-compose exec postgres psql -U mtrade -d mtrade-db
+
+sudo: Execute the following command with superuser privileges.
+docker-compose: Command-line tool for managing multi-container Docker applications.
+exec: Execute a command within a running container.
+postgres: Name of the service defined in the Docker Compose file, representing the PostgreSQL database.
+psql -U mtrade -d mtrade-db: Command to run within the container:
+psql: PostgreSQL interactive terminal.
+-U mtrade: Specifies the PostgreSQL user as mtrade.
+-d mtrade-db: Specifies the PostgreSQL database as mtrade-db.
+
+
+
+
+
+
+
