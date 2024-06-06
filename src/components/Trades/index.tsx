@@ -13,7 +13,7 @@ import {
 import styles from "./trades.module.scss";
 import TimeFramePopUp from "./Popup/index";
 import DesktopTrades from "./DeskTopTrades/index";
-import { Trade }from "../../types/trade";
+import { Trade } from "../../types/trade";
 
 const {
     app,
@@ -43,11 +43,11 @@ const {
     paginationPage,
     paginationInput,
     paginationIcon,
-    collapsedTable,
-    collapsedTableItem,
-    textFormat,
-    amountGreenText,
-    amountFraction,
+    // collapsedTable,
+    // collapsedTableItem,
+    // textFormat,
+    // amountGreenText,
+    // amountFraction,
 } = styles;
 
 function Trades() {
@@ -234,7 +234,6 @@ function Trades() {
                                 />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

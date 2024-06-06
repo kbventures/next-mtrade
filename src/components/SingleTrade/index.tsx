@@ -1,36 +1,37 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import React from "react";
 import styles from "./single-trade.module.scss";
-import {Trade} from "../../types/trade";
+import { Trade } from "../../types/trade";
 
 const { textFormat, amountGreenText, amountFraction } = styles;
 
-interface Props{
-    trade: Trade|undefined;
+interface Props {
+    trade: Trade | undefined;
 }
 
 // 24-04-23 15:44:17
-function SingleTrade({trade}: Props) {
-    const timestampMilliseconds = trade?.timestamp // Example timestamp
-    let formattedTimestamp: string ="" 
+function SingleTrade({ trade }: Props) {
+    const timestampMilliseconds = trade?.timestamp; // Example timestamp
+    let formattedTimestamp: string = "";
     if (timestampMilliseconds !== undefined) {
         // Create a new Date object using the timestamp
         const date = new Date(timestampMilliseconds);
-      
+
         // Extract individual components of the date and time
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // January is 0
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0"); // January is 0
         const year = String(date.getFullYear()).slice(2); // Get last 2 digits of year
-        const hours = String(date.getHours()).padStart(2, '0');
-        const minutes = String(date.getMinutes()).padStart(2, '0');
-        const seconds = String(date.getSeconds()).padStart(2, '0');
-      
+        const hours = String(date.getHours()).padStart(2, "0");
+        const minutes = String(date.getMinutes()).padStart(2, "0");
+        const seconds = String(date.getSeconds()).padStart(2, "0");
+
         // Format the components into the desired string format
         formattedTimestamp = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
-      
+
         console.log(formattedTimestamp);
-      } else {
+    } else {
         console.log("Timestamp is undefined");
-      }
+    }
     return (
         <div className={styles.collapsedTableItem}>
             <div>
@@ -41,7 +42,7 @@ function SingleTrade({trade}: Props) {
             </div>
             <div>
                 <div>Type</div>
-                <div>{(trade?.side)?.toUpperCase()}</div>
+                <div>{trade?.side?.toUpperCase()}</div>
             </div>
             <div>
                 <div>Price</div>
@@ -65,7 +66,7 @@ function SingleTrade({trade}: Props) {
             </div>
             <div>
                 <div>Type</div>
-                <div>{(trade?.side)?.toUpperCase()}</div>
+                <div>{trade?.side?.toUpperCase()}</div>
             </div>
             <div>
                 <div>Price</div>

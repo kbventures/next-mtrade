@@ -2,6 +2,11 @@
     "name": "mtrade",
     "version": "0.1.0",
     "private": true,
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",
