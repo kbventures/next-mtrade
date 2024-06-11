@@ -13,7 +13,6 @@ const { headerWrapper, mainContainer, content } = styles;
 function ApiPage() {
     const { data: session, status } = useSession();
     const router = useRouter();
-    console.log("status", status);
 
     useEffect(() => {
         if (status === "loading") return; // Don't perform redirection while session is loading

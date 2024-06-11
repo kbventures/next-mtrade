@@ -19,7 +19,6 @@ export default async function handler(
         }
     } else if (req.method === "POST") {
         const { keyAlias, publicKey, secretKey, exchangeName } = req.body;
-        console.log("exchangeName Post", exchangeName);
         try {
             const newApi = await prisma.apiKey.create({
                 data: {

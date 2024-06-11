@@ -37,7 +37,7 @@ function TradesPage() {
             <div className={mainContainer}>
                 <div className={content}>
                     <SideBarMenu />
-                    <TradesComponent /> 
+                    <TradesComponent />
                 </div>
             </div>
             <Footer />

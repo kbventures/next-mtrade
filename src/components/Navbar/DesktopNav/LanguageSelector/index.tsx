@@ -27,7 +27,7 @@ export default function LanguageSelector() {
             setSelectedLocale(storedLocale);
             push(route, asPath, { locale: storedLocale });
         }
-    }, []);
+    }, [asPath, push, route]);
     const [open, setOpen] = useState(false);
 
     const { t } = useTranslation("navbar");

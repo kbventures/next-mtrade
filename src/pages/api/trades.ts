@@ -1,9 +1,10 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
-import ccxt from "ccxt";
-import { Trade } from "../../types/trade"; // Import the Trade type
+import ccxt, { Trade, exchanges } from "ccxt";
 
 const prisma = new PrismaClient();
+
+type ModifiedTrades = (Trade & { exchange: string })[];
 
 export default async function handler(
     req: NextApiRequest,
@@ -12,26 +13,37 @@ export default async function handler(
     try {
         const apiKeys = await prisma.apiKey.findMany();
 
-        // Array to store all trades
-        const allTrades: Trade[] = [];
+        const allTrades: ModifiedTrades = [];
 
-        for (const { publicKey, secretKey, exchangeName } of apiKeys) {
-            // Create an instance of the exchange
-            const currentExchange = new (ccxt as any)[exchangeName.toLowerCase()]({
-                apiKey: publicKey,
-                secret: secretKey,
-            });
+        const promises = apiKeys.map(
+            async ({ publicKey, secretKey, exchangeName }) => {
+                // Create an instance of the exchange
+                const currentExchange = new ccxt[
+                    exchangeName.toLowerCase() as keyof typeof exchanges
+                ]({
+                    apiKey: publicKey,
+                    secret: secretKey,
+                });
 
-            // Fetch closed orders for the exchange
-            const tradesFromExchange = await currentExchange.fetchClosedOrders();
+                // Fetch closed orders for the exchange
+                const tradesFromExchange =
+                    await currentExchange.fetchMyTrades();
 
-            // Add the exchange name to each trade
-            tradesFromExchange.forEach((trade: Trade) => {
-                trade.exchange = exchangeName;
-                allTrades.push(trade);
-            });
-        }
-        console.log("alltrades",allTrades)
+                // Create a new array with modified trades
+                const modifiedTrades = tradesFromExchange.map(
+                    trade =>
+                        ({
+                            ...trade,
+                            exchange: exchangeName,
+                        } as ModifiedTrades[number])
+                );
+
+                // Push modified trades to allTrades
+                allTrades.push(...modifiedTrades);
+            }
+        );
+
+        await Promise.all(promises);
         res.status(200).json(allTrades);
     } catch (error) {
         if (error instanceof Error) {

@@ -1,8 +1,8 @@
 import React from "react";
 // eslint-disable-next-line import/no-unresolved
+import { Trade } from "ccxt";
 import styles from "./desk-top-trades.module.scss";
 import SingleTrade from "../../SingleTrade/index";
-import { Trade } from "../../../types/trade";
 
 const {
     collapsedTable,
@@ -14,12 +14,10 @@ const {
 } = styles;
 
 interface Props {
-    tradesData: Trade[]|undefined; 
+    tradesData: Trade[] | undefined;
 }
 
-
-function DesktopTrades({tradesData}:Props) {
-    console.log("Props: ", tradesData)
+function DesktopTrades({ tradesData }: Props) {
     return (
         <div>
             <div className={tableContainer} />
@@ -182,9 +180,10 @@ function DesktopTrades({tradesData}:Props) {
                         </div>
                     </div>
                 </div> */}
-               {tradesData && tradesData.map((trade, index) => (
-                    <SingleTrade key={index} trade={trade} />
-                ))}
+                {tradesData &&
+                    tradesData.map(trade => (
+                        <SingleTrade key={trade.id} trade={trade} />
+                    ))}
             </div>
         </div>
     );

@@ -25,7 +25,6 @@ function AddApi() {
                     throw new Error("Failed to fetch API keys");
                 }
                 const data = await res.json();
-                console.log("data api keys", data);
                 setApiKeys(data);
                 if (data.length === 0) {
                     router.push("/home/addApiKeys");

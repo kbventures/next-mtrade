@@ -10,10 +10,10 @@ import {
     faAnglesRight,
     faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { Trade } from "ccxt";
 import styles from "./trades.module.scss";
 import TimeFramePopUp from "./Popup/index";
 import DesktopTrades from "./DeskTopTrades/index";
-import { Trade } from "../../types/trade";
 
 const {
     app,
@@ -53,19 +53,14 @@ const {
 function Trades() {
     const [showPopup, setShowPopup] = useState(false);
     const [tradesData, setTradesData] = useState<Trade[]>();
-    console.log("Initial tradesData state:", tradesData);
 
     const [error, setError] = useState<string | null>(null);
 
     const handleOpenMenu = useCallback(() => {
-        // eslint-disable-next-line no-console
-        // console.log("handleOpenMenu Clicked!");
         setShowPopup(true);
     }, []);
 
     const handleCloseMenu = useCallback(() => {
-        // eslint-disable-next-line no-console
-        // console.log("handleOpenClose Clicked!");
         setShowPopup(false);
     }, []);
 
@@ -77,13 +72,8 @@ function Trades() {
                     throw new Error("Failed to fetch data");
                 }
                 const data = await response.json();
-                console.log("data", data);
-                // console.log("typeof data", Array.isArray(data));
-                // console.log("typeof data", data[0]);
 
                 setTradesData(data);
-                // console.log("data", data);
-                // console.log("trades", tradesData);
             } catch (err) {
                 if (err instanceof Error) {
                     setError(`Error fetching Trades: ${err.message}`);

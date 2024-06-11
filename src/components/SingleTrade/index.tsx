@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import React from "react";
+import { Trade } from "ccxt";
 import styles from "./single-trade.module.scss";
-import { Trade } from "../../types/trade";
 
 const { textFormat, amountGreenText, amountFraction } = styles;
 
@@ -27,10 +27,6 @@ function SingleTrade({ trade }: Props) {
 
         // Format the components into the desired string format
         formattedTimestamp = `${day}-${month}-${year} ${hours}:${minutes}:${seconds}`;
-
-        console.log(formattedTimestamp);
-    } else {
-        console.log("Timestamp is undefined");
     }
     return (
         <div className={styles.collapsedTableItem}>

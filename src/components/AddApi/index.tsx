@@ -14,6 +14,7 @@ const {
     cursor,
     loginInput,
     button,
+    errorStyle,
 } = styles;
 
 function AddApi() {
@@ -23,26 +24,25 @@ function AddApi() {
     const [secretKey__, setSecretKey] = useState("");
     const [exchange__, setExchange] = useState("");
     const [exchanges, setExchanges] = useState<Exchange[]>([]);
-
+    const [error, setError] = useState<string | null>(null);
     useEffect(() => {
         const fetchExchanges = async () => {
             try {
                 const res = await fetch("/api/exchanges");
                 const data = await res.json();
                 setExchanges(data);
-                console.log("exchange data", data);
-            } catch (error) {
-                // eslint-disable-next-line no-console
-                console.error("Error fetching exchanges:", error);
+            } catch (err) {
+                if (err instanceof Error) {
+                    setError(`Error fetching Exchanges: ${err.message}`);
+                } else {
+                    setError("Unknown error occured");
+                }
             }
         };
 
         fetchExchanges();
     }, []);
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore comment
-    // eslint-disable-next-line consistent-return
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
         if (!publicKey__ || !secretKey__ || !exchange__ || !keyAlias__) {
@@ -50,10 +50,8 @@ function AddApi() {
             // Handle validation error, show a message or disable the submit button
         }
 
-        // console.log(publicKey__, secretKey__, exchange__, typeof keyAlias__);
         try {
-            console.log("value", exchange__);
-            const res = await fetch("/api/exchanges", {
+            await fetch("/api/exchanges", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -65,15 +63,14 @@ function AddApi() {
                     exchangeName: exchange__,
                 }),
             });
-            const data = await res.json();
-            // eslint-disable-next-line no-console
-            console.log("form returned", data);
-        } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error("Error submitting the form:", error);
+        } catch (err) {
+            if (err instanceof Error) {
+                setError(`Error fetchin exchange: ${err.message}`);
+            } else {
+                setError("Unknown error occured");
+            }
         }
 
-        // Reset form fields after submission if needed
         setPublicKey("");
         setSecretKey("");
         setExchange("");
@@ -90,6 +87,7 @@ function AddApi() {
         <div className={authLayout}>
             <div className={loginSeperator} />
             <div className={authLayoutContent}>
+                {error && <div className={errorStyle}>{error}</div>}
                 <form className={loginForm} onSubmit={handleSubmit}>
                     <h1 className={title}>{t("apiKey")}</h1>
                     <label htmlFor="keyAlias" className={label}>
